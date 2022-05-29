@@ -3,7 +3,7 @@ const playerHeight = 20;
 const radiusBall = 10;
 
 const Commons = {
-  canvasWidth: 500,
+  canvasWidth: 300,
   canvasHeight: cHeight,
   backgroundCanvas: "red",
   // joueur
@@ -26,7 +26,12 @@ const Commons = {
   bordeBrick: 2,
   brick: [
     {
-      with: 40,
+      with: 50,
+      height: 20,
+      color: "green",
+    },
+    {
+      with: 30,
       height: 20,
       color: "green",
     },

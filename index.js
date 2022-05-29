@@ -3,7 +3,7 @@ import Commons from "./app/commons.js";
 import backgroundCanvas from "./app/view/backgroundCanvas.js";
 import drawPlayer from "./app/view/drawPlayer.js";
 import drawBall from "./app/view/drawBall.js";
-
+import brickForLevel from "./app/model/brickForLevel.js";
 const canvas = document.getElementById("canvas");
 canvas.width = Commons.canvasWidth;
 canvas.height = Commons.canvasHeight;
@@ -16,5 +16,15 @@ const drawAll = () => {
   drawPlayer(ctx, Player);
   drawBall(ctx, Ball);
 };
-
+const leveling = [
+  {
+    bricks: 1,
+    numberBricks: 13,
+  },
+  {
+    bricks: 2,
+    numberBricks: 10,
+  },
+];
 drawAll();
+console.log(brickForLevel(leveling, Commons));
