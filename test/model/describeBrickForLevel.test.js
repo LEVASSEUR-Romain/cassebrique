@@ -1,4 +1,4 @@
-import brickForLevel from "../../app/model/brickForLevel";
+import describeBrickForLevel from "./../../app/model/describeBrickForLevel.js";
 
 test("brickforOne LEVEL", () => {
   const leveling = [
@@ -12,11 +12,11 @@ test("brickforOne LEVEL", () => {
     bordeBrick: 2,
     brick: [
       {
-        with: 40,
+        width: 40,
         height: 20,
       },
       {
-        with: 40,
+        width: 40,
         height: 20,
       },
     ],
@@ -25,11 +25,13 @@ test("brickforOne LEVEL", () => {
   const out = [
     {
       id: [1],
+      finish: false,
       level: 0,
+      sumWidth: 420,
       nbBrick: [10],
     },
   ];
-  expect(brickForLevel(leveling, commons)).toEqual(out);
+  expect(describeBrickForLevel(leveling, commons)).toEqual(out);
 });
 
 test("brick 1 for multi LEVEL", () => {
@@ -44,11 +46,11 @@ test("brick 1 for multi LEVEL", () => {
     bordeBrick: 2,
     brick: [
       {
-        with: 40,
+        width: 40,
         height: 20,
       },
       {
-        with: 40,
+        width: 40,
         height: 20,
       },
     ],
@@ -58,40 +60,54 @@ test("brick 1 for multi LEVEL", () => {
     {
       id: [1],
       level: 0,
+      sumWidth: 462,
+      finish: true,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 1,
+      finish: true,
+      sumWidth: 462,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 2,
+      finish: true,
+      sumWidth: 462,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 3,
+      finish: true,
+      sumWidth: 462,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 4,
+      finish: true,
+      sumWidth: 462,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 5,
+      finish: true,
+      sumWidth: 462,
       nbBrick: [11],
     },
     {
       id: [1],
       level: 6,
+      finish: false,
+      sumWidth: 168,
       nbBrick: [4],
     },
   ];
-  expect(brickForLevel(leveling, commons)).toEqual(out);
+  expect(describeBrickForLevel(leveling, commons)).toEqual(out);
 });
 
 test("brick 1 and 2 other LEVEL", () => {
@@ -110,33 +126,21 @@ test("brick 1 and 2 other LEVEL", () => {
     bordeBrick: 2,
     brick: [
       {
-        with: 50,
+        width: 50,
         height: 20,
       },
       {
-        with: 30,
+        width: 30,
         height: 20,
       },
     ],
   };
 
   const out = [
-    { id: [1], level: 0, nbBrick: [5] },
-    {
-      id: [1],
-      level: 1,
-      nbBrick: [5],
-    },
-    {
-      id: [1, 2],
-      level: 2,
-      nbBrick: [3, 4],
-    },
-    {
-      id: [2],
-      level: 3,
-      nbBrick: [6],
-    },
+    { id: [1], level: 0, finish: true, nbBrick: [5], sumWidth: 260 },
+    { id: [1], level: 1, finish: true, sumWidth: 260, nbBrick: [5] },
+    { id: [1, 2], level: 2, finish: true, sumWidth: 284, nbBrick: [3, 4] },
+    { id: [2], level: 3, finish: false, sumWidth: 192, nbBrick: [6] },
   ];
-  expect(brickForLevel(leveling, commons)).toEqual(out);
+  expect(describeBrickForLevel(leveling, commons)).toEqual(out);
 });

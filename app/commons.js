@@ -5,7 +5,7 @@ const radiusBall = 10;
 const Commons = {
   canvasWidth: 300,
   canvasHeight: cHeight,
-  backgroundCanvas: "red",
+  backgroundCanvas: "white",
   // joueur
   PlayerDefault: {
     height: playerHeight,
@@ -14,26 +14,27 @@ const Commons = {
     y: cHeight - playerHeight,
     color: "blue",
     vie: 4,
+    speed: 15,
   },
   // ball
   BallDefault: {
     x: playerHeight,
     y: cHeight - playerHeight - radiusBall,
     radius: radiusBall,
-    color: "white",
+    color: "black",
   },
   //brick
-  bordeBrick: 2,
+  bordeBrick: 5,
   brick: [
     {
-      with: 50,
+      width: 50,
       height: 20,
       color: "green",
     },
     {
-      with: 30,
+      width: 30,
       height: 20,
-      color: "green",
+      color: "red",
     },
   ],
 };
