@@ -1,5 +1,4 @@
-/* import level from "../../model/level.js";
-import commons from "../../model/commons.js";
+import positionInLevelBrick from "./../../app/model/positionInLevelBrick.js";
 
 test("2 bricks creation", () => {
   const leveling = [
@@ -8,13 +7,22 @@ test("2 bricks creation", () => {
       numberBricks: 2,
     },
   ];
-  const brick = commons.brick[0];
-  const myresult = [
-    [brick.canvasWidth / 2 - brick.width - brick.bordeBrick / 2, 0, 1][
-      (brick.canvasWidth / 2 + brick.width + brick.bordeBrick / 2, 0, 1)
+  const commonsChange = {
+    canvasWidth: 300,
+    bordeBrick: 5,
+    brick: [
+      {
+        width: 50,
+        height: 20,
+        color: "green",
+      },
     ],
+  };
+  const myresult = [
+    { id: 1, x: 95, y: 0 },
+    { id: 1, x: 150, y: 0 },
   ];
-  expect(level(leveling, commons)).toEqual(myresult);
+  expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
 test("nombre de brick a 0", () => {
   const leveling = [
@@ -35,43 +43,51 @@ test("nombre de brick a 0", () => {
       numberBricks: 0,
     },
   ];
-  expect(level(leveling, commons)).toEqual([]);
+  const commonsChange = {
+    canvasWidth: 300,
+    bordeBrick: 5,
+    brick: [
+      {
+        width: 50,
+        height: 20,
+        color: "green",
+      },
+    ],
+  };
+  expect(positionInLevelBrick(leveling, commonsChange)).toEqual([]);
 });
 test("depacement du nombre de brique en x", () => {
   const leveling = [
     {
       bricks: 2,
-      numberBricks: 8,
+      numberBricks: 6,
     },
   ];
   const commonsChange = {
-    width: 294,
-    bordeBrick: 2,
+    canvasWidth: 300,
+    bordeBrick: 5,
     brick: [
       {
-        with: 40,
+        width: 50,
         height: 20,
         color: "green",
       },
-      ,
       {
-        with: 40,
+        width: 50,
         height: 20,
         color: "red",
       },
     ],
   };
   const myresult = [
-    [0, 0, 2],
-    [84, 0, 2],
-    [126, 0, 2],
-    [168, 0, 2],
-    [210, 0, 2],
-    [252, 0, 2],
-    [126, 22, 2],
-    [168, 22, 2],
+    { x: 12.5, y: 0, id: 2 },
+    { x: 67.5, y: 0, id: 2 },
+    { x: 122.5, y: 0, id: 2 },
+    { x: 177.5, y: 0, id: 2 },
+    { x: 232.5, y: 0, id: 2 },
+    { x: 122.5, y: 25, id: 2 },
   ];
-  expect(level(leveling, commonsChange)).toEqual(myresult);
+  expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
 
 test("les briques le plus fort en premier", () => {
@@ -86,31 +102,30 @@ test("les briques le plus fort en premier", () => {
     },
   ];
   const commonsChange = {
-    canvasWidth: 108,
-    bordeBrick: 2,
+    canvasWidth: 300,
+    bordeBrick: 5,
     brick: [
       {
-        with: 40,
+        width: 50,
         height: 20,
         color: "green",
       },
-      ,
       {
-        with: 40,
+        width: 50,
         height: 20,
         color: "red",
       },
     ],
   };
   const myresult = [
-    [0, 0, 2],
-    [42, 0, 2],
-    [64, 0, 2],
-    [86, 0, 2],
-    [108, 0, 2],
-    [0, 22, 1],
-    [42, 22, 1],
+    { x: 12.5, y: 0, id: 2 },
+    { x: 67.5, y: 0, id: 2 },
+    { x: 122.5, y: 0, id: 2 },
+    { x: 177.5, y: 0, id: 2 },
+    { x: 232.5, y: 0, id: 2 },
+    { x: 67.5, y: 25, id: 2 },
+    { x: 122.5, y: 25, id: 1 },
+    { x: 177.5, y: 25, id: 1 },
   ];
-  expect(level(leveling, commonsChange)).toEqual(myresult);
+  expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
- */

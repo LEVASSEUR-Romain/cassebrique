@@ -7,7 +7,7 @@ import drawBricks from "./app/view/drawBricks.js";
 //model
 import positionInLevelBrick from "./app/model/positionInLevelBrick.js";
 // controller
-import moveBy from "./app/controler/moveBy.js";
+import moveByIsStarting from "./app/controler/moveByIsStarting.js";
 // level
 const leveling = [
   {
@@ -19,6 +19,7 @@ const leveling = [
     numberBricks: 8,
   },
 ];
+let start = false;
 const levelPositionBrick = positionInLevelBrick(leveling, Commons);
 const canvas = document.getElementById("canvas");
 canvas.width = Commons.canvasWidth;
@@ -38,6 +39,8 @@ drawAll();
 // lister les evenements
 
 window.addEventListener("keydown", (e) => {
-  moveBy(e, Player);
+  if (moveByIsStarting(e, Player, Ball, start, Commons)) {
+    console.log("start");
+  }
   drawAll();
 });
