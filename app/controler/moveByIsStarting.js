@@ -16,7 +16,9 @@ const moveByIsStarting = (event, player, ball, start, Commons) => {
       return false;
     // space
     case 32:
-      return true;
+      if (!start) {
+        return true;
+      }
   }
 };
 

@@ -14,13 +14,14 @@ test("2 bricks creation", () => {
       {
         width: 50,
         height: 20,
+        life: 2,
         color: "green",
       },
     ],
   };
   const myresult = [
-    { id: 1, x: 95, y: 0 },
-    { id: 1, x: 150, y: 0 },
+    { id: 1, x: 95, y: 0, life: 2 },
+    { id: 1, x: 150, y: 0, life: 2 },
   ];
   expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
@@ -51,6 +52,7 @@ test("nombre de brick a 0", () => {
         width: 50,
         height: 20,
         color: "green",
+        life: 1,
       },
     ],
   };
@@ -76,16 +78,17 @@ test("depacement du nombre de brique en x", () => {
         width: 50,
         height: 20,
         color: "red",
+        life: 1,
       },
     ],
   };
   const myresult = [
-    { x: 12.5, y: 0, id: 2 },
-    { x: 67.5, y: 0, id: 2 },
-    { x: 122.5, y: 0, id: 2 },
-    { x: 177.5, y: 0, id: 2 },
-    { x: 232.5, y: 0, id: 2 },
-    { x: 122.5, y: 25, id: 2 },
+    { x: 12.5, y: 0, id: 2, life: 1 },
+    { x: 67.5, y: 0, id: 2, life: 1 },
+    { x: 122.5, y: 0, id: 2, life: 1 },
+    { x: 177.5, y: 0, id: 2, life: 1 },
+    { x: 232.5, y: 0, id: 2, life: 1 },
+    { x: 122.5, y: 25, id: 2, life: 1 },
   ];
   expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
@@ -109,23 +112,25 @@ test("les briques le plus fort en premier", () => {
         width: 50,
         height: 20,
         color: "green",
+        life: 1,
       },
       {
         width: 50,
         height: 20,
         color: "red",
+        life: 2,
       },
     ],
   };
   const myresult = [
-    { x: 12.5, y: 0, id: 2 },
-    { x: 67.5, y: 0, id: 2 },
-    { x: 122.5, y: 0, id: 2 },
-    { x: 177.5, y: 0, id: 2 },
-    { x: 232.5, y: 0, id: 2 },
-    { x: 67.5, y: 25, id: 2 },
-    { x: 122.5, y: 25, id: 1 },
-    { x: 177.5, y: 25, id: 1 },
+    { x: 12.5, y: 0, id: 2, life: 2 },
+    { x: 67.5, y: 0, id: 2, life: 2 },
+    { x: 122.5, y: 0, id: 2, life: 2 },
+    { x: 177.5, y: 0, id: 2, life: 2 },
+    { x: 232.5, y: 0, id: 2, life: 2 },
+    { x: 67.5, y: 25, id: 2, life: 2 },
+    { x: 122.5, y: 25, id: 1, life: 1 },
+    { x: 177.5, y: 25, id: 1, life: 1 },
   ];
   expect(positionInLevelBrick(leveling, commonsChange)).toEqual(myresult);
 });
