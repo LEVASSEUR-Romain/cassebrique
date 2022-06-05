@@ -28,7 +28,7 @@ canvas.width = Commons.canvasWidth;
 canvas.height = Commons.canvasHeight;
 const ctx = canvas.getContext("2d");
 // variable
-const levelPositionBrick = positionInLevelBrick(leveling, Commons);
+const Briks = positionInLevelBrick(leveling, Commons);
 const Player = { ...Commons.PlayerDefault };
 const Ball = { ...Commons.BallDefault };
 let lifePlayer = Commons.PlayerDefault.life;
@@ -39,12 +39,12 @@ const drawAll = () => {
   backgroundCanvas(ctx, Commons);
   drawPlayer(ctx, Player);
   drawBall(ctx, Ball);
-  drawBricks(ctx, levelPositionBrick, Commons);
+  drawBricks(ctx, Briks, Commons);
 };
 drawAll();
 // boucle game
 const loop = () => {
-  loopGaming(Player, levelPositionBrick, Ball, Commons);
+  loopGaming(Player, Briks, Ball, Commons);
 
   if (lifePlayer !== Player.life) {
     start = false;
@@ -56,6 +56,12 @@ const loop = () => {
     start = false;
     clearTimeout(setTimeOutGame);
     alert("lose");
+  }
+  // si plus de brick
+  if (Briks.length === 0) {
+    start = false;
+    clearTimeout(setTimeOutGame);
+    alert("win");
   }
   drawAll();
 };

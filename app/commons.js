@@ -48,6 +48,13 @@ const Commons = {
   // game
   gameSpeedMillisecond: 30,
   gameSpeedCollisionBorder: 0.6,
+  // map
+  map: {
+    numberBoss: 2,
+    numberLevel: 6,
+    possibility: 3,
+    border: 10,
+  },
 };
 
 export default Commons;
