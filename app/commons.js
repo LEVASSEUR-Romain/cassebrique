@@ -1,33 +1,34 @@
-const cHeight = 300;
-const playerHeight = 10;
-const playerWidth = 80;
-const radiusBall = 10;
+const cHeight = window.innerHeight;
+const cWidth = window.innerWidth;
 
 const Commons = {
   // canvas
-  canvasWidth: 300,
+  canvasWidth: cWidth,
   canvasHeight: cHeight,
   backgroundCanvas: "white",
+  borderMenu: 5,
   // joueur
+  placementMore: 50,
   PlayerDefault: {
-    height: playerHeight,
-    width: playerWidth,
-    x: 0,
-    y: cHeight - playerHeight,
+    height: 4,
+    width: 20,
     color: "blue",
     life: 4,
-    speed: 30,
+    speed: 7,
+    //defaut recalculer dans rezise
+    x: 0,
+    y: 0,
   },
   // ball
   BallDefault: {
-    x: playerWidth / 2,
-    y: cHeight - playerHeight - radiusBall,
-    radius: radiusBall,
+    radius: 2,
     color: "black",
-    //angleDirection: -Math.PI / 4 - Math.PI / 2,
     angleDirectionX: 0,
     angleDirectionY: -1,
     speed: 5,
+    // defaut recalculer dans rezise
+    x: 0,
+    y: 0,
   },
   //brick
   bordeBrick: 5,

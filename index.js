@@ -4,6 +4,7 @@ import backgroundCanvas from "./app/view/backgroundCanvas.js";
 import drawPlayer from "./app/view/drawPlayer.js";
 import drawBall from "./app/view/drawBall.js";
 import drawBricks from "./app/view/drawBricks.js";
+import resize from "./app/view/resize.js";
 //model
 import positionInLevelBrick from "./app/model/positionInLevelBrick.js";
 import loseLifeRestartPosition from "./app/model/loseLifeRestartPosition.js";
@@ -23,10 +24,9 @@ const leveling = [
 ];
 
 // canvas
-const canvas = document.getElementById("canvas");
-canvas.width = Commons.canvasWidth;
-canvas.height = Commons.canvasHeight;
-const ctx = canvas.getContext("2d");
+const canvasPlay = document.getElementById("canvasPlay");
+const canvasMap = document.getElementById("canvasMap");
+const ctx = canvasPlay.getContext("2d");
 // variable
 const Briks = positionInLevelBrick(leveling, Commons);
 const Player = { ...Commons.PlayerDefault };
@@ -34,10 +34,13 @@ const Ball = { ...Commons.BallDefault };
 let lifePlayer = Commons.PlayerDefault.life;
 let setTimeOutGame = null;
 let start = false;
+// rezise
+resize(canvasPlay, Commons, Player, Ball, Briks);
+resize(canvasMap, Commons);
 // model
 const drawAll = () => {
   backgroundCanvas(ctx, Commons);
-  drawPlayer(ctx, Player);
+  drawPlayer(ctx, Player, Commons);
   drawBall(ctx, Ball);
   drawBricks(ctx, Briks, Commons);
 };
@@ -73,5 +76,10 @@ window.addEventListener("keydown", (e) => {
     lifePlayer = Player.life;
     loop();
   }
+  drawAll();
+});
+window.addEventListener("resize", () => {
+  resize(canvasPlay, Commons, Player, Ball);
+  resize(canvasMap, Commons, Briks);
   drawAll();
 });

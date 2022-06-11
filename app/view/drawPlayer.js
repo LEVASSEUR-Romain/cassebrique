@@ -1,6 +1,13 @@
-const drawPlayer = (ctx, player) => {
+const drawPlayer = (ctx, player, Commons) => {
   ctx.fillStyle = player.color;
-  ctx.fillRect(player.x, player.y, player.width, player.height);
+  const border = (Commons.borderMenu * window.innerHeight) / 100;
+  const ratio = window.innerWidth / window.innerHeight;
+  ctx.fillRect(
+    player.x,
+    player.y,
+    ((player.width * window.innerWidth) / 100) * ratio,
+    ((player.height * (window.innerHeight - border)) / 100) * ratio
+  );
 };
 
 export default drawPlayer;
