@@ -14,10 +14,14 @@ const describeBrickForLevel = (leveling, commons) => {
     if (nbMaxBrick[runLevel] === undefined) nbMaxBrick.push({});
 
     for (let i = 0; i < lvl.numberBricks; i++) {
-      const witdhAndBorderBrick =
-        commons.brick[lvl.bricks - 1].width + commons.bordeBrick;
+      const witdhAndBorderBrick = Math.round(
+        (commons.brick[lvl.bricks - 1].width * window.innerWidth) / 100 +
+          (commons.bordeBrick * window.innerWidth) / 100,
+        2
+      );
+
       // si il y a de la place dans le niveau
-      if (lengthInLevel + witdhAndBorderBrick <= commons.canvasWidth) {
+      if (lengthInLevel + witdhAndBorderBrick <= window.innerWidth) {
         // ajoute des constante par default du début de tableau
         lengthInLevel += witdhAndBorderBrick;
         nbMaxBrick[runLevel].sumWidth = lengthInLevel;

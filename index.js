@@ -31,6 +31,7 @@ const ctx = canvasPlay.getContext("2d");
 const Briks = positionInLevelBrick(leveling, Commons);
 const Player = { ...Commons.PlayerDefault };
 const Ball = { ...Commons.BallDefault };
+console.log(Ball);
 let lifePlayer = Commons.PlayerDefault.life;
 let setTimeOutGame = null;
 let start = false;
@@ -79,7 +80,7 @@ window.addEventListener("keydown", (e) => {
   drawAll();
 });
 window.addEventListener("resize", () => {
-  resize(canvasPlay, Commons, Player, Ball);
+  resize(canvasPlay, Commons, Player, Ball, Briks);
   resize(canvasMap, Commons, Briks);
   drawAll();
 });

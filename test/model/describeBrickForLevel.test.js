@@ -7,17 +7,17 @@ test("brickforOne LEVEL", () => {
       numberBricks: 10,
     },
   ];
+  window.innerWidth = 500;
   const commons = {
-    canvasWidth: 500,
-    bordeBrick: 2,
+    bordeBrick: 0.4,
     brick: [
       {
-        width: 40,
-        height: 20,
+        width: 8,
+        height: 4,
       },
       {
-        width: 40,
-        height: 20,
+        width: 8,
+        height: 4,
       },
     ],
   };
@@ -41,17 +41,17 @@ test("brick 1 for multi LEVEL", () => {
       numberBricks: 70,
     },
   ];
+  window.innerWidth = 500;
   const commons = {
-    canvasWidth: 500,
-    bordeBrick: 2,
+    bordeBrick: 0.4,
     brick: [
       {
-        width: 40,
-        height: 20,
+        width: 8,
+        height: 4,
       },
       {
-        width: 40,
-        height: 20,
+        width: 8,
+        height: 4,
       },
     ],
   };
@@ -121,17 +121,17 @@ test("brick 1 and 2 other LEVEL", () => {
       numberBricks: 10,
     },
   ];
+  window.innerWidth = 300;
   const commons = {
-    canvasWidth: 300,
-    bordeBrick: 2,
+    bordeBrick: 0.667,
     brick: [
       {
-        width: 50,
-        height: 20,
+        width: 16.667,
+        height: 6.667,
       },
       {
-        width: 30,
-        height: 20,
+        width: 10,
+        height: 6.667,
       },
     ],
   };

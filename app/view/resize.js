@@ -1,4 +1,5 @@
-const resize = (canvas, Commons, Player = 0, Ball = 0) => {
+import reziseBricks from "./reziseBricks.js";
+const resize = (canvas, Commons, Player = 0, Ball = 0, bricks = 0) => {
   canvas.width = window.innerWidth;
   // mise a jour pour les bricks
   Commons.widthCanvas = window.innerWidth;
@@ -16,7 +17,8 @@ const resize = (canvas, Commons, Player = 0, Ball = 0) => {
       ((Player.height * (window.innerHeight - border)) / 100) * ratio -
       border;
     Ball.y = Player.y - (Ball.radius * window.innerHeight * ratio) / 100;
-    Ball.x = Player.x + (Player.width * window.innerWidth) / 100 / 2;
+    Ball.x = Player.x + ((Player.width * window.innerWidth) / 100 / 2) * ratio;
+    reziseBricks(bricks, Commons);
   }
 };
 

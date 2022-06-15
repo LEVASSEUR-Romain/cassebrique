@@ -8,16 +8,31 @@ const positionInLevelBrick = (leveling, Commons) => {
   if (Object.keys(describelvl[0]).length === 0) return [];
   let y = 0;
   describelvl.forEach((lvl) => {
-    let x = (Commons.canvasWidth - lvl.sumWidth) / 2;
+    let x = (window.innerWidth - lvl.sumWidth) / 2;
     for (let inId = 0; inId < lvl.id.length; inId++) {
       const id = lvl.id[inId];
       for (let j = 0; j < lvl.nbBrick[inId]; j++) {
-        array.push({ x: x, y: y, id: id, life: Commons.brick[id - 1].life });
-        const cibleWidth = Commons.brick[id - 1].width;
-        x += cibleWidth + Commons.bordeBrick;
+        array.push({
+          x: x,
+          y: y,
+          id: id,
+          life: Commons.brick[id - 1].life,
+          px: Math.round((x / window.innerWidth) * 100, 2),
+          py: Math.round((y / window.innerHeight) * 100, 2),
+        });
+        const cibleWidth =
+          (Commons.brick[id - 1].width * window.innerWidth) / 100;
+        x += Math.round(
+          cibleWidth + (Commons.bordeBrick * window.innerWidth) / 100,
+          2
+        );
       }
     }
-    y += Commons.brick[lvl.id[0] - 1].height + Commons.bordeBrick;
+    y += Math.round(
+      (Commons.brick[lvl.id[0] - 1].height * window.innerHeight) / 100 +
+        (Commons.bordeBrick * window.innerHeight) / 100,
+      2
+    );
   });
 
   return array;
