@@ -5,9 +5,12 @@ import drawPlayer from "./app/view/drawPlayer.js";
 import drawBall from "./app/view/drawBall.js";
 import drawBricks from "./app/view/drawBricks.js";
 import resize from "./app/view/resize.js";
+import drawMapItem from "./app/view/map/drawMapItem.js";
 //model
 import positionInLevelBrick from "./app/model/positionInLevelBrick.js";
 import loseLifeRestartPosition from "./app/model/loseLifeRestartPosition.js";
+import createMap from "./app/model/map/createMap.js";
+import drawBackgroundMap from "./app/view/map/drawBackgroundMap.js";
 // controller
 import moveByIsStarting from "./app/controler/moveByIsStarting.js";
 import loopGaming from "./app/controler/loopGaming.js";
@@ -27,23 +30,79 @@ const leveling = [
 const canvasPlay = document.getElementById("canvasPlay");
 const canvasMap = document.getElementById("canvasMap");
 const ctx = canvasPlay.getContext("2d");
+const ctxMap = canvasMap.getContext("2d");
 // variable
 const Briks = positionInLevelBrick(leveling, Commons);
 const Player = { ...Commons.PlayerDefault };
 const Ball = { ...Commons.BallDefault };
-console.log(Ball);
 let lifePlayer = Commons.PlayerDefault.life;
 let setTimeOutGame = null;
 let start = false;
+// map
+// creation de map
+const mapImage = [
+  [
+    {
+      id: 1,
+      difficulty: 1,
+      type: "mob",
+    },
+    {
+      id: 2,
+      difficulty: 1,
+      type: "mob",
+    },
+    {
+      id: 3,
+      difficulty: 1,
+      type: "mob",
+    },
+  ],
+  [
+    {
+      id: 1,
+      difficulty: 1,
+      type: "mob",
+    },
+    {
+      id: 2,
+      difficulty: 1,
+      type: "mob",
+    },
+    {
+      id: 3,
+      difficulty: 1,
+      type: "mob",
+    },
+  ],
+  [
+    {
+      id: 1,
+      difficulty: 1,
+      type: "mob",
+    },
+    {
+      id: 2,
+      difficulty: 1,
+      type: "mob",
+    },
+  ],
+];
+const mapPosition = createMap(mapImage, Commons);
+console.log(mapPosition);
 // rezise
 resize(canvasPlay, Commons, Player, Ball, Briks);
 resize(canvasMap, Commons);
 // model
 const drawAll = () => {
+  // casse brique
   backgroundCanvas(ctx, Commons);
   drawPlayer(ctx, Player, Commons);
   drawBall(ctx, Ball);
   drawBricks(ctx, Briks, Commons);
+  // map
+  drawBackgroundMap(ctxMap, Commons);
+  drawMapItem(ctxMap, mapPosition, Commons);
 };
 drawAll();
 // boucle game
@@ -69,7 +128,6 @@ const loop = () => {
   }
   drawAll();
 };
-
 // lister les evenements
 window.addEventListener("keydown", (e) => {
   if (moveByIsStarting(e, Player, Ball, start, Commons)) {
@@ -81,6 +139,6 @@ window.addEventListener("keydown", (e) => {
 });
 window.addEventListener("resize", () => {
   resize(canvasPlay, Commons, Player, Ball, Briks);
-  resize(canvasMap, Commons, Briks);
+  resize(canvasMap, Commons);
   drawAll();
 });

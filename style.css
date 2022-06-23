@@ -9,10 +9,12 @@ html {
 }
 
 #canvasMap {
+    z-index: 2;
     position: absolute;
 }
 
 #canvasPlay {
+    z-index: 1;
     position: absolute;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

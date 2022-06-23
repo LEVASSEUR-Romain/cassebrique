@@ -7,12 +7,13 @@ const moveByIsStarting = (event, player, ball, start, Commons) => {
       const moveMin =
         -playerWidthCalcul / 2 + (ball.radius * window.innerWidth) / 100;
       const speed = (player.speed * window.innerWidth) / 100;
+      const ratio = window.innerWidth / window.innerHeight;
       player.x = player.x - speed < moveMin ? moveMin : player.x - speed;
       if (!start)
         ball.x =
           player.x +
           playerWidthCalcul / 2 +
-          (ball.radius * window.innerWidth) / 100;
+          ((ball.radius * window.innerWidth) / 100) * ratio;
       return false;
     //left
     case 39:
@@ -22,12 +23,13 @@ const moveByIsStarting = (event, player, ball, start, Commons) => {
         playerWidthCalcul2 / 2 +
         (-3 * (ball.radius * window.innerWidth)) / 100;
       const speed2 = (player.speed * window.innerWidth) / 100;
+      const ratio2 = window.innerWidth / window.innerHeight;
       player.x = player.x + speed2 > moveMax ? moveMax : player.x + speed2;
       if (!start)
         ball.x =
           player.x +
           playerWidthCalcul2 / 2 +
-          (ball.radius * window.innerWidth) / 100;
+          ((ball.radius * window.innerWidth) / 100) * ratio2;
       return false;
     // space
     case 32:

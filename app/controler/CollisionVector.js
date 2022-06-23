@@ -2,17 +2,26 @@ import tuchBrick from "../model/tuchBrick.js";
 import loseLife from "../model/loseLife.js";
 const collisionVector = (player, bricks, ball, Commons) => {
   // const
-  const goTox = ball.speed * ball.angleDirectionX;
-  const goToy = ball.speed * ball.angleDirectionY;
-  const ballXLeft = ball.x - ball.radius + goTox;
-  const ballXRight = ball.x + ball.radius + goTox;
-  const ballYTop = ball.y - ball.radius + goToy;
-  const ballYBottom = ball.y + ball.radius + goToy;
+  const goTox =
+    ((ball.speed * window.innerHeight) / 100) * ball.angleDirectionX;
+  const goToy =
+    ((ball.speed * window.innerHeight) / 100) * ball.angleDirectionY;
+  const playerWidth = (player.width * window.innerWidth) / 100;
+  const playerHeight = (player.height * window.innerHeight) / 100;
+  const ratio = window.innerWidth / window.innerHeight;
+  const ballRadius = ((ball.radius * window.innerWidth) / 100) * ratio;
+  const ballXLeft = ball.x - ballRadius + goTox;
+  const ballXRight = ball.x + ballRadius + goTox;
+  const ballYTop = ball.y - ballRadius + goToy;
+  const ballYBottom = ball.y + ballRadius + goToy;
   // rebond sur les bords du canvas
   const conditionLeftBorder = ballXLeft < 0;
-  const conditionRightBorder = ballXRight > Commons.canvasWidth;
+  const conditionRightBorder = ballXRight > window.innerWidth;
   const conditionTopBorder = ballYTop < 0;
-  const conditionBottomBorder = ballYBottom > Commons.canvasHeight;
+  const conditionBottomBorder =
+    ballYBottom >
+    window.innerHeight - (Commons.borderMenu * window.innerHeight) / 100;
+
   if (conditionLeftBorder || conditionRightBorder) {
     if (conditionLeftBorder)
       ball.angleDirectionX = Commons.gameSpeedCollisionBorder;
@@ -29,17 +38,17 @@ const collisionVector = (player, bricks, ball, Commons) => {
   // rebond sur le joueur
   if (
     ballXRight > player.x &&
-    ballXLeft < player.x + player.width &&
+    ballXLeft < player.x + playerWidth &&
     ballYBottom > player.y &&
-    ballYTop < player.y + player.height
+    ballYTop < player.y + playerHeight
   ) {
     // ball vers le haut
     ball.angleDirectionY = -1;
-    const centerPlayerX = player.x + player.width / 2;
+    const centerPlayerX = player.x + playerWidth / 2;
     if (ball.x < centerPlayerX) {
-      ball.angleDirectionX = (ball.x - centerPlayerX) / (player.width / 2);
+      ball.angleDirectionX = (ball.x - centerPlayerX) / (playerWidth / 2);
     } else if (ball.x > centerPlayerX) {
-      ball.angleDirectionX = -(centerPlayerX - ball.x) / (player.width / 2);
+      ball.angleDirectionX = -(centerPlayerX - ball.x) / (playerWidth / 2);
     } else {
       ball.angleDirectionX = 0;
     }
@@ -47,11 +56,15 @@ const collisionVector = (player, bricks, ball, Commons) => {
 
   // rebond sur les briques
   bricks.forEach((brick) => {
+    const birckWidth =
+      (Commons.brick[brick.id - 1].width * window.innerWidth) / 100;
+    const birckHeight =
+      (Commons.brick[brick.id - 1].height * window.innerHeight) / 100;
     if (
       ballXRight > brick.x &&
-      ballXLeft < brick.x + Commons.brick[brick.id - 1].width &&
+      ballXLeft < brick.x + birckWidth &&
       ballYBottom > brick.y &&
-      ballYTop < brick.y + Commons.brick[brick.id - 1].height
+      ballYTop < brick.y + birckHeight
     ) {
       ball.angleDirectionY = -ball.angleDirectionY;
       tuchBrick(bricks, bricks.indexOf(brick));

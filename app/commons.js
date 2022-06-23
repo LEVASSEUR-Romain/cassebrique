@@ -8,7 +8,7 @@ const Commons = {
     width: 20, // %
     color: "blue",
     life: 4,
-    speed: 7, // %
+    speed: 8, // %
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
@@ -19,7 +19,7 @@ const Commons = {
     color: "black",
     angleDirectionX: 0,
     angleDirectionY: -1,
-    speed: 5, // %
+    speed: 2, // %
     // defaut recalculer dans rezise
     x: 0,
     y: 0,
@@ -42,14 +42,12 @@ const Commons = {
   ],
   // game
   gameSpeedMillisecond: 30,
-  gameSpeedCollisionBorder: 0.6,
+  gameSpeedCollisionBorder: 0.5,
   // map
-  map: {
-    numberBoss: 2,
-    numberLevel: 6,
-    possibility: 3,
-    border: 10,
-  },
+  backgroundMap: "white",
+  borderMapTopBottom: 3, //%
+  radiusItemMap: 7, //%
+  mapColorDifficulty: ["red", "green"],
 };
 
 export default Commons;

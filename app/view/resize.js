@@ -18,7 +18,7 @@ const resize = (canvas, Commons, Player = 0, Ball = 0, bricks = 0) => {
       border;
     Ball.y = Player.y - (Ball.radius * window.innerHeight * ratio) / 100;
     Ball.x = Player.x + ((Player.width * window.innerWidth) / 100 / 2) * ratio;
-    reziseBricks(bricks, Commons);
+    reziseBricks(bricks);
   }
 };
 
