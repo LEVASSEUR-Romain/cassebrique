@@ -1,4 +1,4 @@
-import createMap from "../../../app/model/map/createMap.js";
+/* import createMap from "../../../app/model/map/createMap.js";
 test("map avec deux boss", () => {
   const map = [
     [
@@ -23,4 +23,4 @@ test("map avec deux boss", () => {
   };
   const result = {};
   expect(createMap(map, commons).toEqual(result));
-});
+}); */

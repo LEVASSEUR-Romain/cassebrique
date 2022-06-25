@@ -2,6 +2,7 @@ import tuchBrick from "../model/tuchBrick.js";
 import loseLife from "../model/loseLife.js";
 const collisionVector = (player, bricks, ball, Commons) => {
   // const
+  const border = (Commons.borderMenu * window.innerHeight) / 100;
   const goTox =
     ((ball.speed * window.innerHeight) / 100) * ball.angleDirectionX;
   const goToy =
@@ -18,9 +19,7 @@ const collisionVector = (player, bricks, ball, Commons) => {
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > window.innerWidth;
   const conditionTopBorder = ballYTop < 0;
-  const conditionBottomBorder =
-    ballYBottom >
-    window.innerHeight - (Commons.borderMenu * window.innerHeight) / 100;
+  const conditionBottomBorder = ballYBottom > window.innerHeight - border / 100;
 
   if (conditionLeftBorder || conditionRightBorder) {
     if (conditionLeftBorder)

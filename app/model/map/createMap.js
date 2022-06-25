@@ -1,17 +1,18 @@
 const createMap = (listMap, Commons) => {
-  const borderMap = (Commons.borderMenu * window.innerHeight) / 100;
+  const border = (Commons.borderMenu * window.innerHeight) / 100;
+  const borderMap = (Commons.borderMenu * window.innerHeight - border) / 100;
   const borderMapTopBottom =
-    (2 * (Commons.borderMapTopBottom * window.innerHeight)) / 100;
+    (2 * (Commons.borderMapTopBottom * window.innerHeight - border)) / 100;
   const heightPart =
     (window.innerHeight - borderMap - borderMapTopBottom) / listMap.length;
-  let id = 0;
-  let heightLvl = window.innerHeight - borderMapTopBottom / 100;
+  let id = 1;
+  let heightLvl = window.innerHeight - border - borderMapTopBottom / 100;
   let returnfunction = [];
-  listMap.forEach((level, index) => {
+  listMap.forEach((level) => {
     const widthPart = window.innerWidth / level.length;
     heightLvl -= heightPart;
     let pxMove = widthPart / 2;
-    if (returnfunction.length !== 1) returnfunction.push([]);
+    returnfunction.push([]);
     for (let i = 0; i < level.length; i++) {
       returnfunction[returnfunction.length - 1].push({
         id: id,
@@ -19,11 +20,13 @@ const createMap = (listMap, Commons) => {
         type: level[i].type,
         px: Math.round((pxMove / window.innerWidth) * 100, 2),
         py: Math.round((heightLvl / window.innerHeight) * 100, 2),
+        parent: level[i].parent,
       });
       pxMove += widthPart;
       id++;
     }
   });
+
   return returnfunction;
 };
 export default createMap;

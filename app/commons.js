@@ -1,10 +1,10 @@
 const Commons = {
   // canvas
   backgroundCanvas: "white",
-  borderMenu: 5, // %
+  borderMenu: 10, // %
   // joueur
   PlayerDefault: {
-    height: 4, // %
+    height: 2, // %
     width: 20, // %
     color: "blue",
     life: 4,
@@ -41,12 +41,14 @@ const Commons = {
     },
   ],
   // game
-  gameSpeedMillisecond: 30,
+  gameSpeedMillisecond: 120,
   gameSpeedCollisionBorder: 0.5,
   // map
   backgroundMap: "white",
-  borderMapTopBottom: 3, //%
-  radiusItemMap: 7, //%
+  borderMapTopBottom: 5, //%
+  radiusItemMap: 4, //%
+  colorLinksMap: "black",
+  widthLinksMap: 2,
   mapColorDifficulty: ["red", "green"],
 };
 
