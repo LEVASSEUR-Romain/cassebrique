@@ -41,12 +41,12 @@ const Commons = {
     },
   ],
   // game
-  gameSpeedMillisecond: 120,
+  gameSpeedMillisecond: 40,
   gameSpeedCollisionBorder: 0.5,
   // map
   backgroundMap: "white",
   borderMapTopBottom: 5, //%
-  radiusItemMap: 4, //%
+  radiusItemMap: 3, //%
   colorLinksMap: "black",
   widthLinksMap: 2,
   mapColorDifficulty: ["red", "green"],

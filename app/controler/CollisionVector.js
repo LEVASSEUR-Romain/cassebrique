@@ -4,17 +4,18 @@ const collisionVector = (player, bricks, ball, Commons) => {
   // const
   const border = (Commons.borderMenu * window.innerHeight) / 100;
   const goTox =
-    ((ball.speed * window.innerHeight) / 100) * ball.angleDirectionX;
+    ((ball.speed * (window.innerHeight - border)) / 100) * ball.angleDirectionX;
   const goToy =
-    ((ball.speed * window.innerHeight) / 100) * ball.angleDirectionY;
+    ((ball.speed * (window.innerHeight - border)) / 100) * ball.angleDirectionY;
   const playerWidth = (player.width * window.innerWidth) / 100;
-  const playerHeight = (player.height * window.innerHeight) / 100;
+  const playerHeight = (player.height * (window.innerHeight - border)) / 100;
   const ratio = window.innerWidth / window.innerHeight;
   const ballRadius = ((ball.radius * window.innerWidth) / 100) * ratio;
   const ballXLeft = ball.x - ballRadius + goTox;
   const ballXRight = ball.x + ballRadius + goTox;
   const ballYTop = ball.y - ballRadius + goToy;
   const ballYBottom = ball.y + ballRadius + goToy;
+
   // rebond sur les bords du canvas
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > window.innerWidth;

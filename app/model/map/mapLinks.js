@@ -1,6 +1,5 @@
 const mapLinks = (map) => {
   let arrayFinal = [];
-  console.log(map);
   for (let i = map.length - 1; i > 0; i--) {
     const positionI = map[i];
     for (let y = 0; y < positionI.length; y++) {

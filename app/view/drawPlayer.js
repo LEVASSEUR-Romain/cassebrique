@@ -5,8 +5,8 @@ const drawPlayer = (ctx, player, Commons) => {
   ctx.fillRect(
     player.x,
     player.y,
-    ((player.width * window.innerWidth) / 100) * ratio,
-    ((player.height * (window.innerHeight - border)) / 100) * ratio
+    (player.width * window.innerWidth) / 100,
+    (player.height * (window.innerHeight - border)) / 100
   );
 };
 

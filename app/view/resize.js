@@ -14,8 +14,9 @@ const resize = (canvas, Commons, Player = 0, Ball = 0, bricks = 0) => {
   if (canvas.id === "canvasPlay") {
     Player.y =
       window.innerHeight - (Player.height * window.innerHeight) / 100 - border;
-    Ball.y = Player.y - (Ball.radius * window.innerHeight * ratio) / 100;
-    Ball.x = Player.x + ((Player.width * window.innerWidth) / 100 / 2) * ratio;
+    Ball.y =
+      Player.y - (Ball.radius * ratio * (window.innerHeight - border)) / 100;
+    Ball.x = Player.x + (Player.width * window.innerWidth) / 100 / 2;
     reziseBricks(bricks);
   }
 };

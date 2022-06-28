@@ -2,7 +2,6 @@ const clickMenu = (event, start, canvasPlay, canvasMap) => {
   if (start === false) {
     switch (event.target.id) {
       case "play":
-        console.log("play");
         canvasPlay.style.zIndex = 2;
         canvasMap.style.zIndex = 1;
         break;

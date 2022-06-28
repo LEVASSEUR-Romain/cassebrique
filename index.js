@@ -21,7 +21,7 @@ import clickMenu from "./app/controler/clickMenu.js";
 const leveling = [
   {
     bricks: 1,
-    numberBricks: 12,
+    numberBricks: 20,
   },
   {
     bricks: 2,
@@ -116,7 +116,7 @@ const drawAll = () => {
   // casse brique
   backgroundCanvas(ctx, Commons);
   drawPlayer(ctx, Player, Commons);
-  drawBall(ctx, Ball);
+  drawBall(ctx, Ball, Commons);
   drawBricks(ctx, Briks, Commons);
   // map
   drawBackgroundMap(ctxMap, Commons);
