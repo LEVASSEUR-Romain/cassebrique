@@ -12,6 +12,10 @@ const Commons = {
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
+    //map controleur
+    lvlX: 0,
+    lvlY: 0,
+    lastClickLvlY: false,
   },
   // ball
   BallDefault: {
@@ -41,7 +45,7 @@ const Commons = {
     },
   ],
   // game
-  gameSpeedMillisecond: 40,
+  gameSpeedMillisecond: 30,
   gameSpeedCollisionBorder: 0.5,
   // map
   backgroundMap: "white",

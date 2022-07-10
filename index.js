@@ -17,6 +17,9 @@ import mapLinks from "./app/model/map/mapLinks.js";
 import moveByIsStarting from "./app/controler/moveByIsStarting.js";
 import loopGaming from "./app/controler/loopGaming.js";
 import clickMenu from "./app/controler/clickMenu.js";
+import mapClickEventMount from "./app/controler/map/mapClickEventMount.js";
+// tools
+import propertiesCss from "./app/tools/propertiesCss.js";
 // level
 const leveling = [
   {
@@ -103,10 +106,13 @@ const mapImage = [
   ],
   [{ id: 9, difficulty: 1, type: "boss", parent: [7, 8] }],
 ];
-const itemPosition = createMap(mapImage, Commons);
-const itemLinks = mapLinks(itemPosition);
+
+//debug
+const itemMapPosition = createMap(mapImage, Commons);
+const itemMapLinks = mapLinks(itemMapPosition);
 //console.log(JSON.stringify(itemPosition));
-//console.log(itemLinks);
+//console.log(itemMapLinks);
+
 // rezise
 resize(canvasPlay, Commons, Player, Ball, Briks);
 resize(canvasMap, Commons);
@@ -120,8 +126,8 @@ const drawAll = () => {
   drawBricks(ctx, Briks, Commons);
   // map
   drawBackgroundMap(ctxMap, Commons);
-  drawLinksItem(ctxMap, itemLinks, Commons);
-  drawMapItem(ctxMap, itemPosition, Commons);
+  drawLinksItem(ctxMap, itemMapLinks, Commons);
+  drawMapItem(ctxMap, itemMapPosition, Commons);
 };
 drawAll();
 // boucle game
@@ -165,9 +171,24 @@ window.addEventListener("resize", () => {
   navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
 });
 // menu
+const clickMap = (e) => {
+  mapClickEventMount(e, itemMapPosition, Commons, Player);
+};
+if (
+  propertiesCss(canvasMap, "z-index", "int") >
+  propertiesCss(canvasPlay, "z-index", "int")
+) {
+  canvasMap.addEventListener("click", clickMap);
+}
 playImg.addEventListener("click", (e) => {
   clickMenu(e, start, canvasPlay, canvasMap);
 });
 mapImg.addEventListener("click", (e) => {
   clickMenu(e, start, canvasPlay, canvasMap);
+  if (e.target.id === "map") {
+    canvasMap.addEventListener("click", clickMap);
+  } else {
+    // j'enlever
+    //canvasMap.removeEventListener('click',clikMap);
+  }
 });
