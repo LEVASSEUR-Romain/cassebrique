@@ -12,9 +12,11 @@ const Commons = {
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
+    pxMap: 0,
+    pyMap: 0,
     //map controleur
-    lvlY: 1,
-    currentIdLvl: 1,
+    lvlY: 0,
+    currentIdLvl: 0,
     lastClickLvl: false,
   },
   // ball
@@ -30,7 +32,15 @@ const Commons = {
   },
   //brick
   bordeBrick: 2, // %
+  // warning order
   brick: [
+    {
+      width: 10, //%
+      height: 10, //%
+      color: ["red"],
+      life: 1,
+    },
+
     {
       width: 10, //%
       height: 10, //%
@@ -38,10 +48,10 @@ const Commons = {
       life: 2,
     },
     {
-      width: 10, //%
+      width: 20, //%
       height: 10, //%
-      color: ["red"],
-      life: 1,
+      color: ["red", "green", "yellow"],
+      life: 3,
     },
   ],
   // game
@@ -51,9 +61,29 @@ const Commons = {
   backgroundMap: "white",
   borderMapTopBottom: 5, //%
   radiusItemMap: 3, //%
+  radiusPlayer: 1.5, //%
+  colorPlayerMap: "black",
   colorLinksMap: "black",
+  colorFinishRound: "blue",
   widthLinksMap: 2,
-  mapColorDifficulty: ["red", "green"],
+  mapColorDifficulty: [
+    {
+      type: "easy",
+      color: "#ffc9c9",
+    },
+    {
+      type: "bonus",
+      color: "#fa5252",
+      halo: "#efd807",
+      raidushalo: 1, //%
+    },
+    {
+      type: "boss",
+      color: "#c92a2a",
+    },
+  ],
+  // affichage passif choix
+  choiceOfPassive: 3,
 };
 
 export default Commons;

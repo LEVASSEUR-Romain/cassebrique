@@ -1,9 +1,12 @@
-const clickMenu = (event, start, canvasPlay, canvasMap) => {
+const clickMenu = (event, start, canvasPlay, canvasMap, Player) => {
   if (start === false) {
-    switch (event.target.id) {
+    const target = typeof event === "string" ? event : event.target.id;
+    switch (target) {
       case "play":
-        canvasPlay.style.zIndex = 2;
-        canvasMap.style.zIndex = 1;
+        if (Player.lastClickLvl) {
+          canvasPlay.style.zIndex = 2;
+          canvasMap.style.zIndex = 1;
+        }
         break;
       case "map":
         canvasPlay.style.zIndex = 1;

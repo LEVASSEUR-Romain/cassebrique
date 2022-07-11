@@ -23,6 +23,7 @@ const createMap = (listMap, Commons) => {
         px: Math.round((pxMove / window.innerWidth) * 100, 2),
         py: Math.round((heightLvl / window.innerHeight) * 100, 2),
         finish: false,
+        bonus: level[i].bonus,
         parent: level[i].parent,
       });
       pxMove += widthPart;

@@ -97,11 +97,17 @@ test("mapClickEventMount good click", () => {
   window.innerHeight = 927;
   window.innerWidth = 1454;
   // return
-  const idCible = 4;
-  expect(mapClickEventMount(event, itemMap, Commons, Player)).toEqual(idCible);
+  // id 4 difficulty 1
+  const difficulty = 1;
+  expect(mapClickEventMount(event, itemMap, Commons, Player)).toEqual(
+    difficulty
+  );
   // modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(4);
+  //dans le test id : 4 px: 17, py: 50,
+  expect(Player.pxMap).toEqual(17);
+  expect(Player.pyMap).toEqual(50);
   // modification for map for id : 1
   expect(itemMap[0][0].finish).toEqual(true);
 });
@@ -134,6 +140,8 @@ test("mapClickEventMount bad click", () => {
   // no modification for player
   expect(Player.lastClickLvl).toEqual(false);
   expect(Player.currentIdLvl).toEqual(1);
+  expect(Player.pxMap).toEqual(undefined);
+  expect(Player.pyMap).toEqual(undefined);
   // modification for map for id : 1
   expect(itemMap[0][0].finish).toEqual(false);
 });
@@ -166,6 +174,8 @@ test("mapClickEventMount lastClickLvl true", () => {
   // no modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(1);
+  expect(Player.pxMap).toEqual(undefined);
+  expect(Player.pyMap).toEqual(undefined);
   // modification for map for id : 1
   expect(itemMap[0][0].finish).toEqual(false);
 });

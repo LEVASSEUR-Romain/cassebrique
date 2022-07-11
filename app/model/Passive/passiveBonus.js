@@ -1,4 +1,4 @@
-const passifBonus = [
+const PassiveBonus = [
   {
     id: 1,
     name: "bonus vie joueur",
@@ -19,7 +19,7 @@ const passifBonus = [
   },
   {
     id: 3,
-    name: "taille largueur joeur",
+    name: "taille largueur joueur",
     description: "+5% largueur",
     image: "ici",
     effect: (player, ball = 0, Commons = 0) => {
@@ -84,4 +84,4 @@ const passifBonus = [
   },
 ];
 
-export default passifBonus;
+export default PassiveBonus;

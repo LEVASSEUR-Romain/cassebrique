@@ -1,6 +1,7 @@
 import mapControleAccesChangePlayer from "./mapControleAccesChangePlayer.js";
 import finishItemMap from "./finishItemMap.js";
 // there is test for this function
+// manipulation for all map controleur
 const mapClickEventMount = (event, itemMap, Commons, Player) => {
   if (!Player.lastClickLvl) {
     let elementCible = "";
@@ -24,13 +25,14 @@ const mapClickEventMount = (event, itemMap, Commons, Player) => {
           const afterId = Player.currentIdLvl;
           if (mapControleAccesChangePlayer(elmt, Player)) {
             finishItemMap(afterId, itemMap);
-            //console.log(elmt.id);
-            elementCible = elmt.id;
+            Player.pxMap = elmt.px;
+            Player.pyMap = elmt.py;
+            elementCible = elmt.difficulty;
           }
         }
       });
     });
-    return elementCible ? elementCible : false;
+    return elementCible || elementCible === 0 ? elementCible : false;
   }
   return false;
 };
