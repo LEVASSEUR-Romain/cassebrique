@@ -1,12 +1,14 @@
-import mapControleAcces from "./mapControleAcces.js";
+import mapControleAccesChangePlayer from "./mapControleAccesChangePlayer.js";
+import finishItemMap from "./finishItemMap.js";
+// there is test for this function
 const mapClickEventMount = (event, itemMap, Commons, Player) => {
-  if (!Player.lastClickLvlY) {
+  if (!Player.lastClickLvl) {
+    let elementCible = "";
     const clickX = event.layerX;
     const clickY = event.layerY;
     const ratio = window.innerWidth / window.innerHeight;
     const radiusElmt =
       (Commons.radiusItemMap * window.innerHeight * ratio) / 100;
-    const border = (Commons.borderMenu * window.innerHeight) / 100;
     itemMap.forEach((ligne) => {
       ligne.forEach((elmt) => {
         const elmtRight = (window.innerWidth * elmt.px) / 100 - radiusElmt;
@@ -19,11 +21,18 @@ const mapClickEventMount = (event, itemMap, Commons, Player) => {
           clickY > elemTop &&
           clickY < elemBottom
         ) {
-          mapControleAcces(elmt, Player);
+          const afterId = Player.currentIdLvl;
+          if (mapControleAccesChangePlayer(elmt, Player)) {
+            finishItemMap(afterId, itemMap);
+            //console.log(elmt.id);
+            elementCible = elmt.id;
+          }
         }
       });
     });
+    return elementCible ? elementCible : false;
   }
+  return false;
 };
 
 export default mapClickEventMount;

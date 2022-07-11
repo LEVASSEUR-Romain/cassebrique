@@ -1,7 +1,7 @@
 {
-    "name": "escargot",
+    "name": "caseBrique",
     "version": "1.0.0",
-    "description": "",
+    "description": "casse Brique Rogue Like",
     "main": "index.js",
     "type": "module",
     "scripts": {

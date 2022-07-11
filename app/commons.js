@@ -13,9 +13,9 @@ const Commons = {
     x: 0,
     y: 0,
     //map controleur
-    lvlX: 0,
-    lvlY: 0,
-    lastClickLvlY: false,
+    lvlY: 1,
+    currentIdLvl: 1,
+    lastClickLvl: false,
   },
   // ball
   BallDefault: {

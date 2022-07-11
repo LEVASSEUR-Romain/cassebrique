@@ -1,6 +1,5 @@
 const moveByIsStarting = (event, player, ball, start, Commons) => {
   switch (event.keyCode) {
-    // attention pas sortir du jeu
     // right
     case 37:
       const playerWidthCalcul = (player.width * window.innerWidth) / 100;

@@ -172,7 +172,9 @@ window.addEventListener("resize", () => {
 });
 // menu
 const clickMap = (e) => {
-  mapClickEventMount(e, itemMapPosition, Commons, Player);
+  const elementClick = mapClickEventMount(e, itemMapPosition, Commons, Player);
+  console.log(elementClick);
+  drawAll();
 };
 if (
   propertiesCss(canvasMap, "z-index", "int") >
