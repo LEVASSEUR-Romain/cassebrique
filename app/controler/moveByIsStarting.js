@@ -15,8 +15,8 @@ const moveByIsStarting = (event, player, ball, start, Commons) => {
       const playerWidthCalcul2 = (player.width * window.innerWidth) / 100;
       const moveMax =
         window.innerWidth -
-        playerWidthCalcul2 / 2 +
-        (-3 * (ball.radius * window.innerWidth)) / 100;
+        playerWidthCalcul2 / 2 -
+        (ball.radius * window.innerWidth) / 100;
       const speed2 = (player.speed * window.innerWidth) / 100;
       const ratio2 = window.innerWidth / window.innerHeight;
       player.x = player.x + speed2 > moveMax ? moveMax : player.x + speed2;

@@ -3,6 +3,7 @@ const Commons = {
   backgroundCanvas: "white",
   borderMenu: 10, // %
   // joueur
+  playerLoseLifeWitdh: 2,
   PlayerDefault: {
     height: 2, // %
     width: 20, // %
@@ -14,6 +15,7 @@ const Commons = {
     y: 0,
     pxMap: 0,
     pyMap: 0,
+    passiveBonus: [],
     //map controleur
     lvlY: 0,
     currentIdLvl: 0,

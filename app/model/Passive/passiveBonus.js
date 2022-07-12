@@ -1,63 +1,63 @@
 const PassiveBonus = [
   {
     id: 1,
-    name: "bonus vie joueur",
-    description: "+1 vie",
-    image: "ici",
+    name: "Bonus vie",
+    description: "le joueur gange +1 vie",
+    image: "./img/passive/falcon-moon.svg",
     effect: (player, ball = 0, Commons = 0) => {
       player.life += 1;
     },
   },
   {
     id: 2,
-    name: "bonus vitesse joueur",
-    description: "+5% vitesse",
-    image: "ici",
+    name: "Bonus vitesse",
+    description: "vous gagnez +5% vitesse",
+    image: "./img/passive/food-chain.svg",
     effect: (player, ball = 0, Commons = 0) => {
       player.speed = player.speed * 1.05;
     },
   },
   {
     id: 3,
-    name: "taille largueur joueur",
-    description: "+5% largueur",
-    image: "ici",
+    name: "Taille largueur",
+    description: "vous gagnez +5% largueur",
+    image: "./img/passive/giant-squid.svg",
     effect: (player, ball = 0, Commons = 0) => {
       player.width = player.width * 1.05;
     },
   },
   {
     id: 4,
-    name: "taille hauteur joueur",
-    description: "+5% hauteur",
-    image: "ici",
+    name: "Taille hauteur joueur",
+    description: "vous gagnez +5% hauteur",
+    image: "./img/passive/heptagram.svg",
     effect: (player, ball = 0, Commons = 0) => {
       player.height = player.height * 1.05;
     },
   },
   {
     id: 5,
-    name: "rayon de la ball",
-    description: "+5% rayon",
-    image: "ici",
+    name: "Rayon de la ball",
+    description: "vous gagnez +5% rayon",
+    image: "./img/passive/hydra.svg",
     effect: (player = 0, ball, Commons = 0) => {
       ball.radius = ball.radius * 1.05;
     },
   },
   {
     id: 6,
-    name: "vitesse de la ball",
-    description: "-5% vitesse",
-    image: "ici",
+    name: "Vitesse de la ball",
+    description: "vous gagnez -5% vitesse",
+    image: "./img/passive/lion.svg",
     effect: (player = 0, ball, Commons = 0) => {
       ball.speed = ball.speed * 0.95;
     },
   },
   {
     id: 7,
-    name: "game vitesse général",
-    description: "-2% game vitesse",
-    image: "ici",
+    name: "Vitesse général",
+    description: "la vitesse du jeu est ralenti de -2%",
+    image: "./img/passive/rose.svg",
     effect: (player = 0, ball = 0, Commons) => {
       Commons.gameSpeedMillisecond = Commons.gameSpeedMillisecond * 0.98;
     },
@@ -65,8 +65,8 @@ const PassiveBonus = [
   {
     id: 8,
     name: "Bonus personnage vitesse, ball vitesse",
-    description: "+10% vitesse",
-    image: "ici",
+    description: "vous gagnez +10% vitesse ainsi que la balle",
+    image: "./img/passive/stag-head.svg",
     effect: (player, ball, Commons = 0) => {
       player.speed = player.speed * 1.1;
       ball.speed = ball.speed * 1.1;
@@ -75,8 +75,8 @@ const PassiveBonus = [
   {
     id: 9,
     name: "Bonus personnage taille, ball rayon",
-    description: "+2.5% taille",
-    image: "ici",
+    description: "vous gagnez +2.5% taille ainsi que votre ball",
+    image: "./img/passive/sun-spear.svg",
     effect: (player, ball, Commons = 0) => {
       player.width = player.width * 1.025;
       ball.radius = ball.radius * 1.025;

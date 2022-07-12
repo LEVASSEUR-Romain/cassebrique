@@ -1,5 +1,6 @@
 import clickMenu from "../clickMenu.js";
 import searchBrickById from "../../tools/searchBrickById.js";
+import activateOnePassif from "../passive/activateOnePassif.js";
 const winLvl = (
   Player,
   start,

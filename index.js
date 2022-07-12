@@ -52,7 +52,6 @@ const itemMapLinks = mapLinks(itemMapPosition);
 //console.log(itemMapLinks);
 
 // rezise
-//resize(canvasPlay, Commons, Player, Ball, Briks);
 resize(canvasMap, Commons);
 navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
 // model
@@ -112,8 +111,10 @@ window.addEventListener("keydown", (e) => {
   drawAll();
 });
 window.addEventListener("resize", () => {
-  //zone de jeu
-  resize(canvasPlay, Commons, Player, Ball, Briks);
+  //zone play no resize if i don't bricks
+  if (Briks) {
+    resize(canvasPlay, Commons, Player, Ball, Briks);
+  }
   resize(canvasMap, Commons);
   drawAll();
   // menu du jeu

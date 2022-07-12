@@ -1,6 +1,6 @@
 const loseLife = (player, Commons) => {
   player.life -= 1;
-  player.width -= Commons.PlayerDefault.width / Commons.PlayerDefault.life;
+  player.width -= Commons.playerLoseLifeWitdh;
 };
 
 export default loseLife;
