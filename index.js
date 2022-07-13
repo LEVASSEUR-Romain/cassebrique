@@ -1,28 +1,10 @@
-import Commons from "./app/commons.js";
-// view
-import backgroundCanvas from "./app/view/backgroundCanvas.js";
-import drawPlayer from "./app/view/drawPlayer.js";
-import drawBall from "./app/view/drawBall.js";
-import drawBricks from "./app/view/drawBricks.js";
-import resize from "./app/view/resize.js";
-import drawMapItem from "./app/view/map/drawMapItem.js";
-import drawLinksItem from "./app/view/map/drawLinksItem.js";
-import drawBackgroundMap from "./app/view/map/drawBackgroundMap.js";
-import drawPlayerOnMap from "./app/view/map/drawPlayerOnMap.js";
 //model
-import positionInLevelBrick from "./app/model/positionInLevelBrick.js";
-import loseLifeRestartPosition from "./app/model/loseLifeRestartPosition.js";
 import createMap from "./app/model/map/createMap.js";
 import mapLinks from "./app/model/map/mapLinks.js";
 import map1 from "./app/model/map/typeMap/map1.js";
-import generateMapByDiffucult from "./app/model/map/generateMapByDiffucult.js";
+import Commons from "./app/commons.js";
 // controller
-import moveByIsStarting from "./app/controler/moveByIsStarting.js";
-import loopGaming from "./app/controler/loopGaming.js";
-import clickMenu from "./app/controler/clickMenu.js";
-import mapClickEventMount from "./app/controler/map/mapClickEventMount.js";
-import winLvl from "./app/controler/winLose/winLvl.js";
-
+import main from "./app/controler/main.js";
 // menu
 const navBar = document.querySelector("nav");
 const playImg = document.getElementById("play");
@@ -41,113 +23,30 @@ let lifePlayer = Commons.PlayerDefault.life;
 let setTimeOutGame = null;
 let start = false;
 // map
-// creation de map
-// copie ??
 const mapImage = map1;
-
-//debug
 const itemMapPosition = createMap(mapImage, Commons);
 const itemMapLinks = mapLinks(itemMapPosition);
+// global
+const objectGlobal = {
+  navBar: navBar,
+  canvasPlay: canvasPlay,
+  playImg: playImg,
+  mapImg: mapImg,
+  Ball: Ball,
+  canvasMap: canvasMap,
+  ctx: ctx,
+  ctxMap: ctxMap,
+  Briks: Briks,
+  leveling: leveling,
+  Player: Player,
+  lifePlayer: lifePlayer,
+  setTimeOutGame: setTimeOutGame,
+  start: start,
+  mapImage: mapImage,
+  itemMapPosition: itemMapPosition,
+  itemMapLinks: itemMapLinks,
+  Commons: Commons,
+};
+main(objectGlobal);
 //console.log(JSON.stringify(itemMapPosition));
 //console.log(itemMapLinks);
-
-// rezise
-resize(canvasMap, Commons);
-navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
-// model
-const drawAll = () => {
-  // casse brique
-  if (Briks) {
-    backgroundCanvas(ctx, Commons);
-    drawPlayer(ctx, Player, Commons);
-    drawBall(ctx, Ball, Commons);
-    drawBricks(ctx, Briks, Commons);
-  }
-  // map
-  drawBackgroundMap(ctxMap, Commons);
-  drawLinksItem(ctxMap, itemMapLinks, Commons);
-  drawMapItem(ctxMap, itemMapPosition, Commons);
-  drawPlayerOnMap(ctxMap, Player, Commons);
-};
-drawAll();
-// boucle game
-const loop = () => {
-  loopGaming(Player, Briks, Ball, Commons);
-
-  if (lifePlayer !== Player.life) {
-    start = false;
-    loseLifeRestartPosition(Player, Ball, Commons);
-    clearTimeout(setTimeOutGame);
-  } else setTimeOutGame = setTimeout(loop, Commons.gameSpeedMillisecond);
-  // if dead
-  if (Player.life === 0) {
-    start = false;
-    clearTimeout(setTimeOutGame);
-    alert("Perdu recommencer");
-  }
-  // if Win lvl
-  if (Briks.length === 0) {
-    start = false;
-    clearTimeout(setTimeOutGame);
-    winLvl(
-      Player,
-      start,
-      canvasPlay,
-      canvasMap,
-      itemMapPosition,
-      Ball,
-      Commons
-    );
-  }
-  drawAll();
-};
-// lister les evenements
-window.addEventListener("keydown", (e) => {
-  if (moveByIsStarting(e, Player, Ball, start, Commons)) {
-    start = true;
-    lifePlayer = Player.life;
-    loop();
-  }
-  drawAll();
-});
-window.addEventListener("resize", () => {
-  //zone play no resize if i don't bricks
-  if (Briks) {
-    resize(canvasPlay, Commons, Player, Ball, Briks);
-  }
-  resize(canvasMap, Commons);
-  drawAll();
-  // menu du jeu
-  navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
-});
-// menu
-const clickMap = (e) => {
-  const elementClickDifficulty = mapClickEventMount(
-    e,
-    itemMapPosition,
-    Commons,
-    Player
-  );
-  if (elementClickDifficulty != false) {
-    clickMenu("play", start, canvasPlay, canvasMap, Player);
-  }
-  // create level
-  leveling = [
-    {
-      bricks: 1,
-      numberBricks: 1,
-    },
-  ];
-  //leveling = generateMapByDiffucult(elementClickDifficulty);
-  Briks = positionInLevelBrick(leveling, Commons);
-  resize(canvasPlay, Commons, Player, Ball, Briks);
-  drawAll();
-};
-canvasMap.addEventListener("click", clickMap);
-
-playImg.addEventListener("click", (e) => {
-  clickMenu(e, start, canvasPlay, canvasMap, Player);
-});
-mapImg.addEventListener("click", (e) => {
-  clickMenu(e, start, canvasPlay, canvasMap, Player);
-});

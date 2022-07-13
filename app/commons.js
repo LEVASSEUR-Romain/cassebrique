@@ -17,6 +17,7 @@ const Commons = {
     pyMap: 0,
     passiveBonus: [],
     //map controleur
+    // level du boss lvly=4 currentId =10
     lvlY: 0,
     currentIdLvl: 0,
     lastClickLvl: false,

@@ -14,10 +14,15 @@ const winLvl = (
   Player.lastClickLvl = false;
   // search if bonus lvl
   const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
+  console.log(itemMap);
   if (itemMap && itemMap.bonus) {
     activateOnePassif(Player, Commons, ball);
+    // routing map
+    clickMenu("map", start, canvasPlay, canvasMap, Player);
+  } else if (itemMap && itemMap.type === "boss") {
+  } else {
+    // routing map
+    clickMenu("map", start, canvasPlay, canvasMap, Player);
   }
-  // routing map
-  clickMenu("map", start, canvasPlay, canvasMap, Player);
 };
 export default winLvl;

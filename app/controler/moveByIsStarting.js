@@ -1,4 +1,4 @@
-const moveByIsStarting = (event, player, ball, start, Commons) => {
+const moveByIsStarting = (event, player, ball, start) => {
   switch (event.keyCode) {
     // right
     case 37:

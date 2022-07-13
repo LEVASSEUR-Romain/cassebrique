@@ -1,5 +1,6 @@
 import reziseBricks from "./reziseBricks.js";
-const resize = (canvas, Commons, Player = 0, Ball = 0, bricks = 0) => {
+const resize = (canvas, navBar, Commons, Player = 0, Ball = 0, bricks = 0) => {
+  navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
   canvas.width = window.innerWidth;
   // mise a jour pour les bricks
   Commons.widthCanvas = window.innerWidth;
