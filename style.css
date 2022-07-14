@@ -90,6 +90,7 @@ nav {
     flex-wrap: wrap;
     gap: 10px;
     margin: 10px;
+    /*  modifier dans View passive composantPassive */
     height: 50%;
 
 }

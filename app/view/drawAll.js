@@ -17,6 +17,7 @@ const drawAll = ({
   itemMapPosition,
   Briks,
 }) => {
+  //Player ball bricks
   if (Briks) {
     backgroundCanvas(ctx, Commons);
     drawPlayer(ctx, Player, Commons);
@@ -28,5 +29,6 @@ const drawAll = ({
   drawLinksItem(ctxMap, itemMapLinks, Commons);
   drawMapItem(ctxMap, itemMapPosition, Commons);
   drawPlayerOnMap(ctxMap, Player, Commons);
+  // boss
 };
 export default drawAll;

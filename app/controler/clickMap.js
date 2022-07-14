@@ -13,6 +13,7 @@ const clickMap = (e, objectGlobal) => {
     Player
   );
   if (elementClickDifficulty != false) {
+    //rooting
     clickMenu("play", objectGlobal.start, canvasPlay, canvasMap, Player);
   }
   // create level

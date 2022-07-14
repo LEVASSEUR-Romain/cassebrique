@@ -13,7 +13,7 @@ const activateOnePassif = (Player, Commons, Ball) => {
     Commons.choiceOfPassive
   );
   //show
-  composantPassive(tblRandom);
+  composantPassive(tblRandom, Commons);
   // listen Click
   const clickPassive = (event) => {
     let target = "";
@@ -36,7 +36,7 @@ const activateOnePassif = (Player, Commons, Ball) => {
       // add on passive menu
       iconePassiveOnMenu(Player);
       //add lister on new icone Menu
-      clickOnPassifMenu(Player);
+      clickOnPassifMenu();
     }
   };
 

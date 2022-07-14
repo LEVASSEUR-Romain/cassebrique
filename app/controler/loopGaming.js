@@ -6,15 +6,7 @@ import drawAll from "./../view/drawAll.js";
 
 const loopGaming = (objectGlobal) => {
   // destructiring
-  const {
-    Player,
-    Briks,
-    Ball,
-    Commons,
-    canvasPlay,
-    canvasMap,
-    itemMapPosition,
-  } = objectGlobal;
+  const { Player, Briks, Ball, Commons } = objectGlobal;
   // collission avancement
   mainCollision(Player, Briks, Ball, Commons);
   Ball.x += ((Ball.speed * window.innerHeight) / 100) * Ball.angleDirectionX;
@@ -36,16 +28,8 @@ const loopGaming = (objectGlobal) => {
   // if Win lvl
   if (Briks.length === 0) {
     objectGlobal.start = false;
-    clearTimeout(objectGlobal.setTimeOutGame);
-    winLvl(
-      Player,
-      objectGlobal.start,
-      canvasPlay,
-      canvasMap,
-      itemMapPosition,
-      Ball,
-      Commons
-    );
+    // winlvl controle clearTimeout
+    winLvl(objectGlobal);
   }
   drawAll(objectGlobal);
 };
