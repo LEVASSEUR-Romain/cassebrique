@@ -4,7 +4,7 @@ import { listCollisionBoss1 } from "../../model/listLoop/listCollision.js";
 import { listeEventBoss1 } from "../../model/listLoop/listEvent.js";
 import setPositionDefaultPlayer from "../objetGlobalchange/setPositionDefaultPlayer.js";
 import setPositiondefaultBall from "../objetGlobalchange/setPositiondefaultPlayerBall.js";
-import loopGaming from "./../loopGaming";
+import loopGaming from "./../loopGaming.js";
 const controlerBoss1 = (objectGlobal) => {
   // restart de la game position pret a tirer
   setPositionDefaultPlayer(objectGlobal);
