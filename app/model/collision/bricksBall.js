@@ -1,12 +1,10 @@
 import tuchBrick from "../../model/tuchBrick.js";
 const bricksBall = (
-  Bricks,
-  Ball,
-  Commons,
-  ballXRight,
+  { Bricks, Ball, Commons },
   ballXLeft,
-  ballYBottom,
-  ballYTop
+  ballXRight,
+  ballYTop,
+  ballYBottom
 ) => {
   Bricks.forEach((brick) => {
     const birckWidth =

@@ -12,6 +12,8 @@ const commonsBoss = {
     shootWidth: 1, //%
     shootHeigth: 1, //%
     shootColor: "blue",
+    // tools du boss
+    drawAllForBoss: ["drawBoss1"],
   },
 };
 export default commonsBoss;

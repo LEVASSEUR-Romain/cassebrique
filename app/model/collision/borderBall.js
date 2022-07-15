@@ -1,15 +1,13 @@
-import loseLife from "../../model/loseLife.js";
+import loseLife from "../loseLife.js";
 
 const borderBall = (
-  Ball,
+  { Ball, Player, Commons },
   ballXLeft,
   ballXRight,
   ballYTop,
-  ballYBottom,
-  border,
-  Player,
-  Commons
+  ballYBottom
 ) => {
+  const border = (Commons.borderMenu * window.innerHeight) / 100;
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > window.innerWidth;
   const conditionTopBorder = ballYTop < 0;

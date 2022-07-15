@@ -1,13 +1,15 @@
 const playerBall = (
-  Ball,
-  Player,
-  ballXRight,
+  { Ball, Player },
   ballXLeft,
-  ballYBottom,
+  ballXRight,
   ballYTop,
-  playerWidth,
-  playerHeight
+  ballYBottom
 ) => {
+  //const
+  const border = (Commons.borderMenu * window.innerHeight) / 100;
+  const playerWidth = (Player.width * window.innerWidth) / 100;
+  const playerHeight = (Player.height * (window.innerHeight - border)) / 100;
+
   if (
     ballXRight > Player.x &&
     ballXLeft < Player.x + playerWidth &&

@@ -19,6 +19,9 @@ const main = (objectGlobal) => {
     playImg,
     mapImg,
   } = objectGlobal;
+  // collision gerer
+  const listCollision = ["borderBall", "bricksBall", "playerBall"];
+  const listEvent = ["moveBall", "restartLoseLife", "winLvl", "loseLvl"];
   // gestion affichage
   const showAll = () => {
     //zone play no resize if i don't bricks
@@ -51,8 +54,9 @@ const main = (objectGlobal) => {
     if (moveByIsStarting(e, Player, Ball, objectGlobal.start)) {
       objectGlobal.start = true;
       objectGlobal.lifePlayer = Player.life;
-      loopGaming(objectGlobal);
+      loopGaming(objectGlobal, listEvent, listCollision);
     }
+    // else ici peu etre
     drawAll(objectGlobal);
   });
 };
