@@ -5,8 +5,9 @@ import controlerBoss from "../../controler/boss/controlerBoss.js";
 // set getter global object
 import setStart from "../../controler/objetGlobalchange/setStart.js";
 import setLastClickLvl from "../../controler/objetGlobalchange/setLastClickLvl.js";
+import { removeListDraw } from "../../controler/objetGlobalchange/controleurListDraw.js";
 
-const winLvl = (objectGlobal) => {
+const defaultWin = (objectGlobal) => {
   if (objectGlobal.Briks.length === 0) {
     //destructuring
     const { Player, canvasPlay, canvasMap, itemMapPosition, Ball, Commons } =
@@ -21,6 +22,7 @@ const winLvl = (objectGlobal) => {
     //go bonus
     if (itemMap && itemMap.bonus) {
       activateOnePassif(Player, Commons, Ball);
+      removeListDraw(objectGlobal, "gameDefault");
       routing("map", canvasPlay, canvasMap);
     }
     //go boss
@@ -29,9 +31,9 @@ const winLvl = (objectGlobal) => {
     }
     // retour a la map
     else {
-      // routing map
+      removeListDraw(objectGlobal, "gameDefault");
       routing("map", canvasPlay, canvasMap);
     }
   }
 };
-export default winLvl;
+export default defaultWin;

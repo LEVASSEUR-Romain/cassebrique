@@ -1,5 +1,5 @@
 import commonsBoss from "./commonsBoss.js";
-const boss1 = (Player, Boss, Shoot, Commons) => {
+const boss1 = ({ Player, Boss, Shoot, Commons }) => {
   const CommonsBoss = commonsBoss.boss1;
   const goToPosition =
     (CommonsBoss.speed * Player.speed * window.innerWidth) / 100;

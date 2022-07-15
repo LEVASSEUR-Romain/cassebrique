@@ -19,7 +19,6 @@ test("intRandomOnListUnique search unique random", () => {
   const nb = 3;
   const listRandom = intRandomOnListUnique(min, max, nb);
 
-  console.log(tcheckList(listRandom, min, max));
   expect(listRandom.length).toEqual(nb);
   expect(tcheckList(listRandom, min, max)).toEqual(true);
   // si pas assez de nombre dans la range

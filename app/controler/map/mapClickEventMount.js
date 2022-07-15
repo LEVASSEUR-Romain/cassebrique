@@ -4,7 +4,12 @@ import finishItemMap from "./finishItemMap.js";
 // manipulation for all map controleur
 const mapClickEventMount = (
   event,
-  { itemMapPosition, Commons, Player, canvasMap }
+  {
+    itemMapPosition,
+    Commons,
+    Player,
+    canvasMap, //ctxMap
+  }
 ) => {
   if (!Player.lastClickLvl) {
     let elementCible = "";
@@ -18,6 +23,14 @@ const mapClickEventMount = (
         const elmtLeft = (canvasMap.width * elmt.px) / 100 + radiusElmt;
         const elemTop = (canvasMap.height * elmt.py) / 100 - radiusElmt;
         const elemBottom = (canvasMap.height * elmt.py) / 100 + radiusElmt;
+        //debug show collision
+        /*         ctxMap.fillStyle = "red";
+        ctxMap.fillRect(
+          elmtRight,
+          elemTop,
+          elmtLeft - elmtRight,
+          elemBottom - elemTop
+        ); */
         if (
           clickX > elmtRight &&
           clickX < elmtLeft &&

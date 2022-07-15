@@ -1,5 +1,5 @@
 const setLastClickLvl = (objectGlobal, bool) => {
-  objectGlobal.lastClickLvl = bool;
+  objectGlobal.Player.lastClickLvl = bool;
 };
 
 export default setLastClickLvl;

@@ -23,3 +23,14 @@ export const listGameDefault = [
   drawBall,
   drawBricks,
 ];
+
+// Boss draw
+import drawBoss1 from "../../view/boss/drawBoss1.js";
+import drawShoot from "../../view/boss/drawShoot.js";
+export const listBoss1 = [
+  backgroundCanvas,
+  drawPlayer,
+  drawBall,
+  drawBoss1,
+  drawShoot,
+];

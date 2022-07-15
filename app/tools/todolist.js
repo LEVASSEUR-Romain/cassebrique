@@ -2,7 +2,8 @@
 // map joueur bonus Commons ball
 
 // gere le boss
-// quand fini niveau faire apparaitre le boss
+// bossBall.js / shootBall.js / affichage Boss notif
+// shoot.js / restartLoseLifeBoss.js / winBoss.js
 
 //debug bonus au cas ou
 
