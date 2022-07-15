@@ -1,8 +1,8 @@
 import drawMapItemBonus from "./drawMapItemBonus.js";
 
-const drawMapItem = (ctxMap, listMap, Commons) => {
-  const ratio = window.innerWidth / window.innerHeight;
-  listMap.forEach((level) => {
+const drawMapItem = ({ ctxMap, itemMapPosition, Commons, canvasMap }) => {
+  const ratio = canvasMap.width / canvasMap.height;
+  itemMapPosition.forEach((level) => {
     for (let i = 0; i < level.length; i++) {
       // change couleur si fini
       if (!level[i].finish) {
@@ -29,16 +29,16 @@ const drawMapItem = (ctxMap, listMap, Commons) => {
 
       ctxMap.beginPath();
       ctxMap.arc(
-        (window.innerWidth * level[i].px) / 100,
-        (window.innerHeight * level[i].py) / 100,
-        (Commons.radiusItemMap * window.innerHeight * ratio) / 100,
+        (canvasMap.width * level[i].px) / 100,
+        (window.canvasMap.height * level[i].py) / 100,
+        (Commons.radiusItemMap * canvasMap.height * ratio) / 100,
         0,
         Math.PI * 2
       );
       ctxMap.fill();
 
       if (level[i].type === "mob" && level[i].bonus) {
-        drawMapItemBonus(ctxMap, level[i], Commons);
+        drawMapItemBonus(ctxMap, level[i], Commons, canvasMap);
       }
     }
   });

@@ -2,16 +2,20 @@ import routing from "../../controler/routing.js";
 import searchBrickById from "../../tools/searchBrickById.js";
 import activateOnePassif from "../../controler/passive/activateOnePassif.js";
 import controlerBoss from "../../controler/boss/controlerBoss.js";
+// set getter global object
+import setStart from "../../controler/objetGlobalchange/setStart.js";
+import setLastClickLvl from "../../controler/objetGlobalchange/setLastClickLvl.js";
+
 const winLvl = (objectGlobal) => {
   if (objectGlobal.Briks.length === 0) {
     //destructuring
     const { Player, canvasPlay, canvasMap, itemMapPosition, Ball, Commons } =
       objectGlobal;
     // fin de boucle
-    objectGlobal.start = false;
+    setStart(objectGlobal, false);
     clearTimeout(objectGlobal.setTimeOutGame);
     // Player choose lvl
-    Player.lastClickLvl = false;
+    setLastClickLvl(objectGlobal, false);
     // search if bonus lvl
     const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
     //go bonus

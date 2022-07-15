@@ -94,14 +94,21 @@ test("mapClickEventMount good click", () => {
     currentIdLvl: 1,
     lastClickLvl: false,
   };
-  window.innerHeight = 927;
-  window.innerWidth = 1454;
+  const canvasmap = {
+    height: 927,
+    width: 1454,
+  };
+  // add on objectGlobal
+  const objectGlobal = {
+    itemMapPosition: itemMap,
+    Commons: Commons,
+    Player: Player,
+    canvasMap: canvasmap,
+  };
   // return
   // id 4 difficulty 1
   const difficulty = 1;
-  expect(mapClickEventMount(event, itemMap, Commons, Player)).toEqual(
-    difficulty
-  );
+  expect(mapClickEventMount(event, objectGlobal)).toEqual(difficulty);
   // modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(4);
@@ -133,10 +140,19 @@ test("mapClickEventMount bad click", () => {
     currentIdLvl: 1,
     lastClickLvl: false,
   };
-  window.innerHeight = 927;
-  window.innerWidth = 1454;
+  const canvasmap = {
+    height: 927,
+    width: 1454,
+  };
+  // add on objectGlobal
+  const objectGlobal = {
+    itemMapPosition: itemMap,
+    Commons: Commons,
+    Player: Player,
+    canvasMap: canvasmap,
+  };
   // return
-  expect(mapClickEventMount(event, itemMap, Commons, Player)).toEqual(false);
+  expect(mapClickEventMount(event, objectGlobal)).toEqual(false);
   // no modification for player
   expect(Player.lastClickLvl).toEqual(false);
   expect(Player.currentIdLvl).toEqual(1);
@@ -167,10 +183,19 @@ test("mapClickEventMount lastClickLvl true", () => {
     currentIdLvl: 1,
     lastClickLvl: true,
   };
-  window.innerHeight = 927;
-  window.innerWidth = 1454;
+  const canvasmap = {
+    height: 927,
+    width: 1454,
+  };
+  // add on objectGlobal
+  const objectGlobal = {
+    itemMapPosition: itemMap,
+    Commons: Commons,
+    Player: Player,
+    canvasMap: canvasmap,
+  };
   // return
-  expect(mapClickEventMount(event, itemMap, Commons, Player)).toEqual(false);
+  expect(mapClickEventMount(event, objectGlobal)).toEqual(false);
   // no modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(1);

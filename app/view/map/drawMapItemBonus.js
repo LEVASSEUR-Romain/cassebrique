@@ -1,5 +1,6 @@
-const drawMapItemBonus = (ctxMap, item, Commons) => {
-  const ratio = window.innerWidth / window.innerHeight;
+// see drawMapItem
+const drawMapItemBonus = (ctxMap, item, Commons, canvasMap) => {
+  const ratio = canvasMap.width / canvasMap.height;
   const commonsBonus = Commons.mapColorDifficulty.find(
     (f) => f.type === "bonus"
   );
@@ -7,9 +8,9 @@ const drawMapItemBonus = (ctxMap, item, Commons) => {
 
   ctxMap.beginPath();
   ctxMap.arc(
-    (window.innerWidth * item.px) / 100,
-    (window.innerHeight * item.py) / 100,
-    (commonsBonus.raidushalo * window.innerHeight * ratio) / 100,
+    (canvasMap.width * item.px) / 100,
+    (canvasMap.height * item.py) / 100,
+    (commonsBonus.raidushalo * canvasMap.height * ratio) / 100,
     0,
     Math.PI * 2
   );

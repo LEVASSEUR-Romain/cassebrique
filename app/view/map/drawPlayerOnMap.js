@@ -1,13 +1,13 @@
-const drawPlayerOnMap = (ctxMap, Player, Commons) => {
-  const ratio = window.innerWidth / window.innerHeight;
+const drawPlayerOnMap = ({ ctxMap, Player, Commons, canvasMap }) => {
+  const ratio = canvasMap.width / canvasMap.height;
   //console.log(Player);
   if (Player.pxMap !== 0 && Player.pyMap !== 0) {
     ctxMap.fillStyle = Commons.colorPlayerMap;
     ctxMap.beginPath();
     ctxMap.arc(
-      (window.innerWidth * Player.pxMap) / 100,
-      (window.innerHeight * Player.pyMap) / 100,
-      (Commons.radiusPlayer * window.innerHeight * ratio) / 100,
+      (canvasMap.width * Player.pxMap) / 100,
+      (canvasMap.height * Player.pyMap) / 100,
+      (Commons.radiusPlayer * canvasMap.height * ratio) / 100,
       0,
       Math.PI * 2
     );

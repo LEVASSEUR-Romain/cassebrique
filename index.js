@@ -2,9 +2,10 @@
 import createMap from "./app/model/map/createMap.js";
 import mapLinks from "./app/model/map/mapLinks.js";
 import map1 from "./app/model/map/typeMap/map1.js";
-import Commons from "./app/commons.js";
+import Commons from "./app/model/commons.js";
 // controller
 import main from "./app/controler/main.js";
+import { listMap } from "./app/model/listLoop/listDraw.js";
 // menu
 const navBar = document.querySelector("nav");
 const playImg = document.getElementById("play");
@@ -26,14 +27,16 @@ let start = false;
 const mapImage = map1;
 const itemMapPosition = createMap(mapImage, Commons);
 const itemMapLinks = mapLinks(itemMapPosition);
+// list draw default
+const listDraw = listMap;
 // global
 const objectGlobal = {
   navBar: navBar,
   canvasPlay: canvasPlay,
+  canvasMap: canvasMap,
   playImg: playImg,
   mapImg: mapImg,
   Ball: Ball,
-  canvasMap: canvasMap,
   ctx: ctx,
   ctxMap: ctxMap,
   Briks: Briks,
@@ -46,6 +49,7 @@ const objectGlobal = {
   itemMapPosition: itemMapPosition,
   itemMapLinks: itemMapLinks,
   Commons: Commons,
+  listDraw: listDraw,
 };
 main(objectGlobal);
 //console.log(JSON.stringify(itemMapPosition));

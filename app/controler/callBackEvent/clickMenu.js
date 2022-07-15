@@ -1,16 +1,15 @@
+import routing from "../routing.js";
 const clickMenu = (event, start, canvasPlay, canvasMap, Player) => {
   if (start === false) {
-    const target = typeof event === "string" ? event : event.target.id;
+    const target = event.target.id;
     switch (target) {
       case "play":
         if (Player.lastClickLvl) {
-          canvasPlay.style.zIndex = 2;
-          canvasMap.style.zIndex = 1;
+          routing("play", canvasPlay, canvasMap);
         }
         break;
       case "map":
-        canvasPlay.style.zIndex = 1;
-        canvasMap.style.zIndex = 2;
+        routing("map", canvasPlay, canvasMap);
         break;
     }
   }
