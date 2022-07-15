@@ -1,6 +1,5 @@
 import PassiveBonus from "../../model/Passive/PassiveBonus.js";
 const iconePassiveOnMenu = (Player) => {
-  console.log(Player.passiveBonus);
   const passiveMenu = document.querySelector(".passiveMenu");
   // remove Child
   for (let i = 0; i < passiveMenu.children.length; i++) {
@@ -18,6 +17,5 @@ const iconePassiveOnMenu = (Player) => {
     img.setAttribute("data-id", passive);
     passiveMenu.appendChild(img);
   });
-  console.log(passiveMenu);
 };
 export default iconePassiveOnMenu;

@@ -1,19 +1,12 @@
-import clickMenu from "../../controler/clickMenu.js";
+import routing from "../../controler/routing.js";
 import searchBrickById from "../../tools/searchBrickById.js";
 import activateOnePassif from "../../controler/passive/activateOnePassif.js";
 import controlerBoss from "../../controler/boss/controlerBoss.js";
 const winLvl = (objectGlobal) => {
   if (objectGlobal.Briks.length === 0) {
     //destructuring
-    const {
-      Player,
-      start,
-      canvasPlay,
-      canvasMap,
-      itemMapPosition,
-      ball,
-      Commons,
-    } = objectGlobal;
+    const { Player, canvasPlay, canvasMap, itemMapPosition, Ball, Commons } =
+      objectGlobal;
     // fin de boucle
     objectGlobal.start = false;
     clearTimeout(objectGlobal.setTimeOutGame);
@@ -23,8 +16,8 @@ const winLvl = (objectGlobal) => {
     const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
     //go bonus
     if (itemMap && itemMap.bonus) {
-      activateOnePassif(Player, Commons, ball);
-      clickMenu("map", start, canvasPlay, canvasMap, Player);
+      activateOnePassif(Player, Commons, Ball);
+      routing("map", canvasPlay, canvasMap);
     }
     //go boss
     else if (itemMap && itemMap.type === "boss") {
@@ -33,7 +26,7 @@ const winLvl = (objectGlobal) => {
     // retour a la map
     else {
       // routing map
-      clickMenu("map", start, canvasPlay, canvasMap, Player);
+      routing("map", canvasPlay, canvasMap);
     }
   }
 };

@@ -6,6 +6,15 @@ import loopGaming from "./loopGaming.js";
 // view
 import drawAll from "../view/drawAll.js";
 import resize from "../view/resize.js";
+// collision
+import borderBall from "../model/collision/borderBall.js";
+import bricksBall from "../model/collision/bricksBall.js";
+import playerBall from "../model/collision/playerBall.js";
+//loopGamingModel
+import moveBall from "../model/loopGamingModel/moveBall.js";
+import restartLoseLife from "../model/loopGamingModel/restartLoseLife.js";
+import winLvl from "../model/loopGamingModel/winLvl.js";
+import loseLvl from "../model/loopGamingModel/loseLvl.js";
 
 const main = (objectGlobal) => {
   // recuperation destructuration
@@ -20,8 +29,8 @@ const main = (objectGlobal) => {
     mapImg,
   } = objectGlobal;
   // collision gerer
-  const listCollision = ["borderBall", "bricksBall", "playerBall"];
-  const listEvent = ["moveBall", "restartLoseLife", "winLvl", "loseLvl"];
+  const listCollision = [borderBall, bricksBall, playerBall];
+  const listEvent = [moveBall, restartLoseLife, winLvl, loseLvl];
   // gestion affichage
   const showAll = () => {
     //zone play no resize if i don't bricks

@@ -1,12 +1,12 @@
 import tuchBrick from "../../model/tuchBrick.js";
 const bricksBall = (
-  { Bricks, Ball, Commons },
+  { Briks, Ball, Commons },
   ballXLeft,
   ballXRight,
   ballYTop,
   ballYBottom
 ) => {
-  Bricks.forEach((brick) => {
+  Briks.forEach((brick) => {
     const birckWidth =
       (Commons.brick[brick.id - 1].width * window.innerWidth) / 100;
     const birckHeight =
@@ -18,7 +18,7 @@ const bricksBall = (
       ballYTop < brick.y + birckHeight
     ) {
       Ball.angleDirectionY = -Ball.angleDirectionY;
-      tuchBrick(Bricks, Bricks.indexOf(brick));
+      tuchBrick(Briks, Briks.indexOf(brick));
     }
   });
 };

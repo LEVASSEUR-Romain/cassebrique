@@ -5,13 +5,11 @@ const clickOnPassifMenu = () => {
   const passiveMenu = document.querySelector(".passiveMenu");
   //close modal
   const closeModal = () => {
-    console.log("close");
     deleteModalPassive();
     //modal.removeEventListener("click", closeModal);
   };
   //click
   const clickMenuPassive = (event) => {
-    console.log(event.target);
     const idClick = event.target.dataset.id;
     // not id equal 0
     if (idClick) {

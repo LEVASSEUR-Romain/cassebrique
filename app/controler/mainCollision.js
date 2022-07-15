@@ -1,6 +1,3 @@
-import borderBall from "../model/collision/borderBall.js";
-import playerBall from "../model/collision/playerBall.js";
-import bricksBall from "../model/collision/bricksBall.js";
 const mainCollision = (objectGlobal, listCollision) => {
   //destructuring
   const { Ball, Commons } = objectGlobal;
@@ -16,16 +13,9 @@ const mainCollision = (objectGlobal, listCollision) => {
   const ballXRight = Ball.x + ballRadius + goTox;
   const ballYTop = Ball.y - ballRadius + goToy;
   const ballYBottom = Ball.y + ballRadius + goToy;
-
   // list collision
   listCollision.forEach((collision) => {
-    window[collision](
-      objectGlobal,
-      ballXLeft,
-      ballXRight,
-      ballYTop,
-      ballYBottom
-    );
+    collision(objectGlobal, ballXLeft, ballXRight, ballYTop, ballYBottom);
   });
 };
 export default mainCollision;
