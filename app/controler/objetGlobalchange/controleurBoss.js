@@ -6,5 +6,5 @@ export const setBoss = (objectGlobal, nbr) => {
 };
 
 export const bossLoseLife = (Boss) => {
-  Boss.life = Boss.life - 1;
+  Boss.life -= 1;
 };

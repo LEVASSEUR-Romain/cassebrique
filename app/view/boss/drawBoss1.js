@@ -8,8 +8,8 @@ const drawBoss1 = ({ ctx, Boss, canvasPlay }) => {
   const shooterWidht = (Boss.widthShooter * canvasPlay.width) / 100;
   const shooterHeight = (Boss.heightShooter * canvasPlay.height) / 100;
   ctx.fillRect(
-    bossWidth / 2 - shooterWidht / 2,
-    bossHeight - shooterHeight,
+    Boss.x + bossWidth / 2 - shooterWidht / 2,
+    Boss.y + bossHeight - shooterHeight,
     shooterWidht,
     shooterHeight
   );

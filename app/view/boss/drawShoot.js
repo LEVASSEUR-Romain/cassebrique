@@ -5,7 +5,7 @@ const drawShoot = ({ ctx, Shoot, Boss, canvasPlay }) => {
       shoot.x,
       shoot.y,
       (shoot.width * canvasPlay.width) / 100,
-      (shoot.heigth * canvasPlay.heigth) / 100
+      (shoot.height * canvasPlay.height) / 100
     );
   });
 };

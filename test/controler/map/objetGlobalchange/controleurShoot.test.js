@@ -2,19 +2,19 @@ import { deleteShoot } from "../../../../app/controler/objetGlobalchange/control
 
 test("deleteShoot delete one Shoot", () => {
   const Shoot = [
-    { px: 2, py: 5 },
-    { px: 3, py: 5 },
-    { px: 2, py: 6 },
+    { x: 2, y: 5 },
+    { x: 3, y: 5 },
+    { x: 2, y: 6 },
   ];
   const deleteshoot = {
-    px: 3,
-    py: 5,
+    x: 3,
+    y: 5,
   };
   // retrun
   deleteShoot(deleteshoot, Shoot);
   const Shootfinal = [
-    { px: 2, py: 5 },
-    { px: 2, py: 6 },
+    { x: 2, y: 5 },
+    { x: 2, y: 6 },
   ];
   expect(Shoot).toEqual(Shootfinal);
 });

@@ -17,7 +17,7 @@ const bossBall = (
     ballYTop < Boss.y + BossHeight
   ) {
     // ball vers le haut
-    Ball.angleDirectionY = -1;
+    Ball.angleDirectionY = 1;
     bossLoseLife(Boss);
   }
 };

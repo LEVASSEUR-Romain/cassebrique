@@ -8,7 +8,7 @@ const resize = (objectGlobal) => {
   // constant tools
   const border = (Commons.borderMenu * window.innerHeight) / 100;
   //navBar menu
-  navBar.style.height = (Commons.borderMenu * window.innerHeight) / 100 + "px";
+  navBar.style.height = border + "px";
   //change canvas play
   canvasPlay.width = window.innerWidth;
   canvasPlay.height = window.innerHeight - border;

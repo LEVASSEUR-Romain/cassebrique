@@ -1,7 +1,6 @@
 import drawMapItemBonus from "./drawMapItemBonus.js";
 
 const drawMapItem = ({ ctxMap, itemMapPosition, Commons, canvasMap }) => {
-  const ratio = canvasMap.width / canvasMap.height;
   itemMapPosition.forEach((level) => {
     for (let i = 0; i < level.length; i++) {
       // change couleur si fini
@@ -30,8 +29,8 @@ const drawMapItem = ({ ctxMap, itemMapPosition, Commons, canvasMap }) => {
       ctxMap.beginPath();
       ctxMap.arc(
         (canvasMap.width * level[i].px) / 100,
-        (window.canvasMap.height * level[i].py) / 100,
-        (Commons.radiusItemMap * canvasMap.height * ratio) / 100,
+        (canvasMap.height * level[i].py) / 100,
+        (Commons.radiusItemMap * canvasMap.height) / 100,
         0,
         Math.PI * 2
       );

@@ -2,8 +2,8 @@
 // map joueur bonus Commons ball
 
 // gere le boss
-// bossBall.js / shootBall.js / affichage Boss notif
-// shoot.js / restartLoseLifeBoss.js / winBoss.js
+// affichage Boss notif
+// debug boss
 
 // rezise position not default
 // position brick describeBrick // positionInLvlBricks // tuchBricks

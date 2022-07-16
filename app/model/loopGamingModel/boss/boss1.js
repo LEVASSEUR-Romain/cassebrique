@@ -1,22 +1,19 @@
-const boss1 = ({ Player, Boss, Shoot, canvasPlay }) => {
+import { addShoot } from "../../../controler/objetGlobalchange/controleurShoot.js";
+
+const boss1 = (objectGlobal) => {
+  const { Player, Boss, canvasPlay } = objectGlobal;
+  Boss.frame = Boss.frame === undefined ? 1 : Boss.frame + 1;
   const goToPosition = (Boss.speed * canvasPlay.width) / 100;
   // move boss
   if (Player.x > Boss.x) {
     Boss.x += goToPosition;
-  } else {
+  } else if (Player.x < Boss.x) {
     Boss.x -= goToPosition;
   }
   //shoot x frame modulo
-  if (Boss.frame % Boss.frameShoot) {
-    Shoot.push({
-      px: (Boss.width * canvasPlay.width) / 100 / 2,
-      py: (Boss.height * canvasPlay.height) / 100,
-      width: Boss.shootWidth,
-      heigth: Boss.shootHeigth,
-      color: Boss.shootColor,
-      speed: shootSpeed,
-      type: "shoot1",
-    });
+  if (Boss.frame % Boss.frameShoot === 0) {
+    addShoot(objectGlobal);
   }
+  //console.log([...objectGlobal.Shoot]);
 };
 export default boss1;

@@ -2,8 +2,8 @@ import PassiveBonus from "../../model/Passive/PassiveBonus.js";
 const composantPassive = (listRandom, Commons) => {
   const newDiv = document.createElement("div");
   newDiv.setAttribute("id", "passive");
-  const heigth = "height:" + (90 - Commons.borderMenu) + "%";
-  newDiv.setAttribute("style", heigth);
+  const height = "height:" + (90 - Commons.borderMenu) + "%";
+  newDiv.setAttribute("style", height);
   //ajouter les noeuds
   listRandom.forEach((element) => {
     const pB = PassiveBonus[element];
