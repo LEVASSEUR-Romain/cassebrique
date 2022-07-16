@@ -1,5 +1,5 @@
-const moveBall = ({ Ball }) => {
-  Ball.x += ((Ball.speed * window.innerHeight) / 100) * Ball.angleDirectionX;
-  Ball.y += ((Ball.speed * window.innerHeight) / 100) * Ball.angleDirectionY;
+const moveBall = ({ Ball, canvasPlay }) => {
+  Ball.x += ((Ball.speed * canvasPlay.height) / 100) * Ball.angleDirectionX;
+  Ball.y += ((Ball.speed * canvasPlay.height) / 100) * Ball.angleDirectionY;
 };
 export default moveBall;

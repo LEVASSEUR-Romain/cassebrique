@@ -1,5 +1,5 @@
 const bossBall = (
-  { Ball, Player, Commons },
+  { Ball, Boss, Commons },
   ballXLeft,
   ballXRight,
   ballYTop,

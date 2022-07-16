@@ -1,18 +1,20 @@
 const mainCollision = (objectGlobal, listCollision) => {
   //destructuring
-  const { Ball, Commons } = objectGlobal;
-  // const
-  const border = (Commons.borderMenu * window.innerHeight) / 100;
-  const goTox =
-    ((Ball.speed * (window.innerHeight - border)) / 100) * Ball.angleDirectionX;
-  const goToy =
-    ((Ball.speed * (window.innerHeight - border)) / 100) * Ball.angleDirectionY;
-  const ratio = window.innerWidth / window.innerHeight;
-  const ballRadius = ((Ball.radius * window.innerWidth) / 100) * ratio;
+  const { Ball, canvasPlay } = objectGlobal;
+  const ratio = canvasPlay.width / canvasPlay.height;
+  const ballRadius = ((Ball.radius * canvasPlay.width) / 100) * ratio;
+  /*   
+  goTo prévisualisation
+  const goTox = ((Ball.speed * canvasPlay.height) / 100) * Ball.angleDirectionX;
+  const goToy = ((Ball.speed * canvasPlay.height) / 100) * Ball.angleDirectionY;
   const ballXLeft = Ball.x - ballRadius + goTox;
   const ballXRight = Ball.x + ballRadius + goTox;
   const ballYTop = Ball.y - ballRadius + goToy;
-  const ballYBottom = Ball.y + ballRadius + goToy;
+  const ballYBottom = Ball.y + ballRadius + goToy; */
+  const ballXLeft = Ball.x - ballRadius;
+  const ballXRight = Ball.x + ballRadius;
+  const ballYTop = Ball.y - ballRadius;
+  const ballYBottom = Ball.y + ballRadius;
   // list collision
   listCollision.forEach((collision) => {
     collision(objectGlobal, ballXLeft, ballXRight, ballYTop, ballYBottom);

@@ -1,6 +1,6 @@
 import tuchBrick from "../../model/tuchBrick.js";
 const bricksBall = (
-  { Briks, Ball, Commons },
+  { Briks, Ball, Commons, canvasPlay },
   ballXLeft,
   ballXRight,
   ballYTop,
@@ -8,9 +8,9 @@ const bricksBall = (
 ) => {
   Briks.forEach((brick) => {
     const birckWidth =
-      (Commons.brick[brick.id - 1].width * window.innerWidth) / 100;
+      (Commons.brick[brick.id - 1].width * canvasPlay.width) / 100;
     const birckHeight =
-      (Commons.brick[brick.id - 1].height * window.innerHeight) / 100;
+      (Commons.brick[brick.id - 1].height * canvasPlay.height) / 100;
     if (
       ballXRight > brick.x &&
       ballXLeft < brick.x + birckWidth &&
