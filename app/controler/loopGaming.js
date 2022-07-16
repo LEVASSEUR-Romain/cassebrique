@@ -11,6 +11,9 @@ const loopGaming = (objectGlobal, listEvent, listCollision) => {
         //reboucle
         event(objectGlobal, listEvent, listCollision);
         break;
+      case "restartLoseLifeBoss":
+        event(objectGlobal, listEvent, listCollision);
+        break;
       default:
         event(objectGlobal);
         break;

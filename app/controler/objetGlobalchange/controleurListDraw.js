@@ -33,3 +33,7 @@ export const removeListDraw = (objectGlobal, type) => {
       break;
   }
 };
+
+export const removeAllDraw = (objectGlobal) => {
+  objectGlobal.listDraw = [];
+};

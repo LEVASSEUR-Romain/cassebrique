@@ -1,12 +1,12 @@
-import loseLife from "../loseLife.js";
-
+import { playerLoseLife } from "../../controler/objetGlobalchange/controleurLife.js";
 const borderBall = (
-  { Ball, Player, Commons, canvasPlay },
+  objectGlobal,
   ballXLeft,
   ballXRight,
   ballYTop,
   ballYBottom
 ) => {
+  const { Ball, Player, Commons, canvasPlay } = objectGlobal;
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > canvasPlay.width;
   const conditionTopBorder = ballYTop < 0;
@@ -21,7 +21,7 @@ const borderBall = (
   if (conditionBottomBorder || conditionTopBorder) {
     if (conditionBottomBorder) {
       // perdu
-      return loseLife(Player, Commons);
+      return playerLoseLife(objectGlobal);
     }
     if (conditionTopBorder) Ball.angleDirectionY = 1;
   }

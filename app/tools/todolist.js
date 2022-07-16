@@ -5,6 +5,8 @@
 // bossBall.js / shootBall.js / affichage Boss notif
 // shoot.js / restartLoseLifeBoss.js / winBoss.js
 
+// rezise position not default
+// position brick describeBrick // positionInLvlBricks // tuchBricks
 //debug bonus au cas ou
 
 // en Bonus

@@ -16,21 +16,13 @@ import backgroundCanvas from "../../view/zoneplay/backgroundCanvas.js";
 import drawPlayer from "../../view/zoneplay/drawPlayer.js";
 import drawBall from "../../view/zoneplay/drawBall.js";
 import drawBricks from "../../view/zoneplay/drawBricks.js";
+
+export const ListGamingMin = [backgroundCanvas, drawPlayer, drawBall];
+
 // warning order
-export const listGameDefault = [
-  backgroundCanvas,
-  drawPlayer,
-  drawBall,
-  drawBricks,
-];
+export const listGameDefault = ListGamingMin.concat(drawBricks);
 
 // Boss draw
 import drawBoss1 from "../../view/boss/drawBoss1.js";
 import drawShoot from "../../view/boss/drawShoot.js";
-export const listBoss1 = [
-  backgroundCanvas,
-  drawPlayer,
-  drawBall,
-  drawBoss1,
-  drawShoot,
-];
+export const listBoss1 = ListGamingMin.concat(drawBoss1, drawShoot);

@@ -1,9 +1,5 @@
-import commonsBoss from "./commonsBoss.js";
-const boss1 = ({ Player, Boss, Shoot, Commons }) => {
-  const CommonsBoss = commonsBoss.boss1;
-  const goToPosition =
-    (CommonsBoss.speed * Player.speed * window.innerWidth) / 100;
-  const border = (Commons.borderMenu * window.innerHeight) / 100;
+const boss1 = ({ Player, Boss, Shoot, canvasPlay }) => {
+  const goToPosition = (Boss.speed * canvasPlay.width) / 100;
   // move boss
   if (Player.x > Boss.x) {
     Boss.x += goToPosition;
@@ -11,13 +7,14 @@ const boss1 = ({ Player, Boss, Shoot, Commons }) => {
     Boss.x -= goToPosition;
   }
   //shoot x frame modulo
-  if (Boss.frame % CommonsBoss.frameShoot) {
+  if (Boss.frame % Boss.frameShoot) {
     Shoot.push({
-      px: (CommonsBoss.width * window.innerWidth) / 100 / 2,
-      py: (CommonsBoss.height * (winndow.innerHeigth - border)) / 100,
-      width: CommonsBoss.shootWidth,
-      heigth: CommonsBoss.shootHeigth,
-      color: CommonsBoss.shootColor,
+      px: (Boss.width * canvasPlay.width) / 100 / 2,
+      py: (Boss.height * canvasPlay.height) / 100,
+      width: Boss.shootWidth,
+      heigth: Boss.shootHeigth,
+      color: Boss.shootColor,
+      speed: shootSpeed,
       type: "shoot1",
     });
   }

@@ -2,10 +2,11 @@
 import createMap from "./app/model/map/createMap.js";
 import mapLinks from "./app/model/map/mapLinks.js";
 import map1 from "./app/model/map/typeMap/map1.js";
-import Commons from "./app/model/commons.js";
+import Commons from "./app/model/commons/commons.js";
 // controller
 import main from "./app/controler/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
+
 // menu
 const navBar = document.querySelector("nav");
 const playImg = document.getElementById("play");
