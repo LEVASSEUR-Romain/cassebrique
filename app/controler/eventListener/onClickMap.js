@@ -1,7 +1,7 @@
-import clickMap from "../callBackEvent/clickMap.js";
+import clickMapCheck from "../callBackEvent/clickMapCheck.js";
 const onClickMap = (objectGlobal) => {
   objectGlobal.canvasMap.addEventListener("click", (e) => {
-    clickMap(e, objectGlobal);
+    clickMapCheck(e, objectGlobal);
   });
 };
 export default onClickMap;

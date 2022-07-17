@@ -39,7 +39,7 @@ const activateOnePassifAndSave = (objectGlobal) => {
       //add lister on new icone Menu
       clickOnPassifMenu();
       //save LOCAL
-      addAllLocalStrorage(objectGlobal);
+      //addAllLocalStrorage(objectGlobal);
     }
   };
 

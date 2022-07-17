@@ -32,15 +32,16 @@ let Player,
   map,
   commons,
   itemMapPosition = null;
-/*  debug
+// debug
 Player = { ...Commons.PlayerDefault };
 Ball = { ...Commons.BallDefault };
 lifePlayer = Commons.PlayerDefault.life;
 // default because 1 map for the moment
 map = map1;
 commons = Commons;
-itemMapPosition = createMap(map, commons); */
-if (!isLocalStorage()) {
+itemMapPosition = createMap(map, commons);
+/* if (!isLocalStorage()) {
+  console.log("ici");
   Player = getLocalStrorage("player");
   Ball = getLocalStrorage("ball");
   lifePlayer = Player.life;
@@ -60,7 +61,7 @@ if (!isLocalStorage()) {
   addLocalStrorage(commons, "communs");
   addLocalStrorage(map, "map");
   addLocalStrorage(itemMapPosition, "mapItem");
-}
+} */
 const itemMapLinks = mapLinks(itemMapPosition);
 // global
 const objectGlobal = {

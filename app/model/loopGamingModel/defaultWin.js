@@ -42,7 +42,7 @@ const defaultWin = (objectGlobal) => {
       removeAllDraw(objectGlobal);
       addListDraw(objectGlobal, "map");
       //save LOCAL
-      addAllLocalStrorage(objectGlobal);
+      //addAllLocalStrorage(objectGlobal);
       routing("map", canvasPlay, canvasMap);
     }
   }

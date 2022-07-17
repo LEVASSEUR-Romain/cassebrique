@@ -2,7 +2,7 @@ import mapClickEventMount from "../map/mapClickEventMount.js";
 import routing from "../routing.js";
 import makeCreateLvl from "./makeCreateLvl.js";
 
-const clickMap = (e, objectGlobal) => {
+const clickMapCheck = (e, objectGlobal) => {
   // destructuring
   const { canvasPlay, canvasMap } = objectGlobal;
   const elementClickDifficulty = mapClickEventMount(e, objectGlobal);
@@ -13,4 +13,4 @@ const clickMap = (e, objectGlobal) => {
   }
 };
 
-export default clickMap;
+export default clickMapCheck;
