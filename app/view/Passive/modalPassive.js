@@ -1,6 +1,6 @@
-import PassiveBonus from "../../model/Passive/PassiveBonus.js";
+import commonsPassive from "../../model/commons/commonsPassive.js";
 const modalPassive = (id) => {
-  const pB = PassiveBonus[id];
+  const pB = commonsPassive[id];
   const modal = document.createElement("div");
   modal.setAttribute("id", "modalPassive");
   // en tete

@@ -1,5 +1,5 @@
-import modalPassive from "../../view/Passive/modalPassive.js";
-import deleteModalPassive from "../../view/Passive/deleteModalPassive.js";
+import modalPassive from "../../view/passive/modalPassive.js";
+import deleteModalPassive from "../../view/passive/deleteModalPassive.js";
 
 const clickOnPassifMenu = () => {
   const passiveMenu = document.querySelector(".passiveMenu");

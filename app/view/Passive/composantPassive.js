@@ -1,4 +1,4 @@
-import PassiveBonus from "../../model/Passive/PassiveBonus.js";
+import commonsPassive from "../../model/commons/commonsPassive.js";
 const composantPassive = (listRandom, Commons) => {
   const newDiv = document.createElement("div");
   newDiv.setAttribute("id", "passive");
@@ -6,7 +6,7 @@ const composantPassive = (listRandom, Commons) => {
   newDiv.setAttribute("style", height);
   //ajouter les noeuds
   listRandom.forEach((element) => {
-    const pB = PassiveBonus[element];
+    const pB = commonsPassive[element];
     const addDiv = document.createElement("div");
     addDiv.setAttribute("class", "modulePassive");
     addDiv.setAttribute("data-id", element);

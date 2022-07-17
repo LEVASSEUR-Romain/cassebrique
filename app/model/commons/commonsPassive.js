@@ -1,4 +1,4 @@
-const PassiveBonus = [
+const commonsPassive = [
   {
     id: 1,
     name: "Bonus vie",
@@ -84,4 +84,4 @@ const PassiveBonus = [
   },
 ];
 
-export default PassiveBonus;
+export default commonsPassive;

@@ -1,4 +1,4 @@
-import PassiveBonus from "../../model/Passive/PassiveBonus.js";
+import commonsPassive from "../../model/commons/commonsPassive.js";
 const iconePassiveOnMenu = (Player) => {
   const passiveMenu = document.querySelector(".passiveMenu");
   // remove Child
@@ -8,7 +8,7 @@ const iconePassiveOnMenu = (Player) => {
 
   //passiveMenu.removeChild();
   Player.passiveBonus.forEach((passive) => {
-    const pB = PassiveBonus[passive];
+    const pB = commonsPassive[passive];
     // image
     const img = document.createElement("img");
     img.setAttribute("src", pB.image);

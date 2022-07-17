@@ -1,15 +1,15 @@
 import intRandomOnListUnique from "../../tools/intRandomOnListUnique.js";
-import PassiveBonus from "../../model/Passive/PassiveBonus.js";
-import composantPassive from "../../view/Passive/composantPassive.js";
-import deleteComposantPassive from "../../view/Passive/deleteComposantPassive.js";
-import iconePassiveOnMenu from "../../view/Passive/iconePassiveOnMenu.js";
+import commonsPassive from "../../model/commons/commonsPassive.js";
+import composantPassive from "../../view/passive/composantPassive.js";
+import deleteComposantPassive from "../../view/passive/deleteComposantPassive.js";
+import iconePassiveOnMenu from "../../view/passive/iconePassiveOnMenu.js";
 import clickOnPassifMenu from "./clickOnPassifMenu.js";
 
 const activateOnePassif = (Player, Commons, Ball) => {
   const startTbl = 0;
   const tblRandom = intRandomOnListUnique(
     startTbl,
-    PassiveBonus.length,
+    commonsPassive.length,
     Commons.choiceOfPassive
   );
   //show
@@ -23,7 +23,7 @@ const activateOnePassif = (Player, Commons, Ball) => {
     const idOnPassiveBonus = parseInt(target.dataset.id);
     // warning idOnPassiveBonus can equal 0
     if (idOnPassiveBonus !== undefined) {
-      PassiveBonus[idOnPassiveBonus].effect(Player, Ball, Commons);
+      commonsPassive[idOnPassiveBonus].effect(Player, Ball, Commons);
       // destruction ecouteur event
       const allBonusDiv = document.querySelectorAll(".modulePassive");
       allBonusDiv.forEach((elt) => {
