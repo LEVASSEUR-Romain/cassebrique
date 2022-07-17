@@ -6,7 +6,7 @@ const borderBall = (
   ballYTop,
   ballYBottom
 ) => {
-  const { Ball, Player, Commons, canvasPlay } = objectGlobal;
+  const { Ball, Commons, canvasPlay } = objectGlobal;
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > canvasPlay.width;
   const conditionTopBorder = ballYTop < 0;

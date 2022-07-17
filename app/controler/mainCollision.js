@@ -1,8 +1,8 @@
 const mainCollision = (objectGlobal, listCollision) => {
   //destructuring
-  const { Ball, canvasPlay } = objectGlobal;
+  const { Ball, canvasPlay, Player } = objectGlobal;
   const ratio = canvasPlay.width / canvasPlay.height;
-  const ballRadius = ((Ball.radius * canvasPlay.width) / 100) * ratio;
+  const ballRadius = ((Ball.radius * canvasPlay.height) / 100) * ratio;
   /*   
   goTo prévisualisation
   const goTox = ((Ball.speed * canvasPlay.height) / 100) * Ball.angleDirectionX;

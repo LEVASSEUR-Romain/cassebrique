@@ -1,24 +1,24 @@
 const moveByIsStarting = (event, objectGlobal) => {
   //destruct
-  const { Player, Ball, start } = objectGlobal;
+  const { Player, Ball, start, canvasPlay } = objectGlobal;
   switch (event.keyCode) {
     // right
     case 37:
-      const playerWidthCalcul = (Player.width * window.innerWidth) / 100;
+      const playerWidthCalcul = (Player.width * canvasPlay.width) / 100;
       const moveMin =
-        -playerWidthCalcul / 2 + (Ball.radius * window.innerWidth) / 100;
-      const speed = (Player.speed * window.innerWidth) / 100;
+        -playerWidthCalcul / 2 + (Ball.radius * canvasPlay.width) / 100;
+      const speed = (Player.speed * canvasPlay.width) / 100;
       Player.x = Player.x - speed < moveMin ? moveMin : Player.x - speed;
       if (!start) Ball.x = Player.x + playerWidthCalcul / 2;
       return false;
     //left
     case 39:
-      const playerWidthCalcul2 = (Player.width * window.innerWidth) / 100;
+      const playerWidthCalcul2 = (Player.width * canvasPlay.width) / 100;
       const moveMax =
-        window.innerWidth -
+        canvasPlay.width -
         playerWidthCalcul2 / 2 -
-        (Ball.radius * window.innerWidth) / 100;
-      const speed2 = (Player.speed * window.innerWidth) / 100;
+        (Ball.radius * canvasPlay.width) / 100;
+      const speed2 = (Player.speed * canvasPlay.width) / 100;
       Player.x = Player.x + speed2 > moveMax ? moveMax : Player.x + speed2;
       if (!start) Ball.x = Player.x + playerWidthCalcul2 / 2;
       return false;

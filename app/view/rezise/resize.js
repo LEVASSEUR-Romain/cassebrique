@@ -3,8 +3,7 @@ import setPositionDefaultPlayer from "../../controler/objetGlobalchange/setPosit
 import setPositionDefaultBall from "../../controler/objetGlobalchange/setPositionDefaultBall.js";
 const resize = (objectGlobal) => {
   // destructiration
-  const { navBar, canvasPlay, canvasMap, Player, Ball, Commons, Briks } =
-    objectGlobal;
+  const { navBar, canvasPlay, canvasMap, Commons, Briks } = objectGlobal;
   // constant tools
   const border = (Commons.borderMenu * window.innerHeight) / 100;
   //navBar menu

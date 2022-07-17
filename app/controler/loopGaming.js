@@ -3,6 +3,8 @@ import mainCollision from "./mainCollision.js";
 import drawAll from "./../view/drawAll.js";
 
 const loopGaming = (objectGlobal, listEvent, listCollision) => {
+  //collision
+  mainCollision(objectGlobal, listCollision);
   // event
   listEvent.forEach((event) => {
     //exception
@@ -19,8 +21,7 @@ const loopGaming = (objectGlobal, listEvent, listCollision) => {
         break;
     }
   });
-  //collision
-  mainCollision(objectGlobal, listCollision);
+
   //draw
   drawAll(objectGlobal);
 };

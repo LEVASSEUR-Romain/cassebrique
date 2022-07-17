@@ -10,11 +10,11 @@ const shootPlayer = (
   const { Shoot, Player, canvasPlay } = objectGlobal;
   //const
   const playerWidth = (Player.width * canvasPlay.width) / 100;
-  const playerHeight = (Player.height * canvasPlay.height) / 100;
+  //const playerHeight = (Player.height * canvasPlay.height) / 100;
   Shoot.forEach((oneShoot) => {
     //shoot
     const shootXRight = oneShoot.x;
-    const shootXLeft = (oneShoot.width * canvasPlay.width) / 100;
+    const shootXLeft = oneShoot.x + (oneShoot.width * canvasPlay.width) / 100;
     const shootYTop = oneShoot.y;
     const shootYBottom =
       oneShoot.y + (oneShoot.height * canvasPlay.height) / 100;
@@ -39,12 +39,12 @@ const shootPlayer = (
       "tP",
       Player.y + playerHeight
     ); */
-    console.log(shootXRight > Player.x, shootXLeft < Player.x + playerWidth);
+    console.log(Player.x);
     if (
       shootXRight > Player.x &&
       shootXLeft < Player.x + playerWidth &&
-      shootYBottom > Player.y &&
-      shootYTop < Player.y + playerHeight
+      shootYBottom >= Player.y &&
+      shootYTop < canvasPlay.width
     ) {
       deleteShoot(oneShoot, Shoot);
       playerLoseLife(objectGlobal);

@@ -6,9 +6,13 @@ const boss1 = (objectGlobal) => {
   const goToPosition = (Boss.speed * canvasPlay.width) / 100;
   // move boss
   if (Player.x > Boss.x) {
-    Boss.x += goToPosition;
+    const avancement = Boss.x + goToPosition;
+    Boss.x = avancement > Player.x ? Player.x : avancement;
+    //Boss.x += goToPosition;
   } else if (Player.x < Boss.x) {
-    Boss.x -= goToPosition;
+    const avancement = Boss.x - goToPosition;
+    Boss.x = avancement < Player.x ? Player.x : avancement;
+    //Boss.x -= goToPosition;
   }
   //shoot x frame modulo
   if (Boss.frame % Boss.frameShoot === 0) {

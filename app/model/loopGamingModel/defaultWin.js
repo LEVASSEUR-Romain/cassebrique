@@ -12,7 +12,8 @@ const defaultWin = (objectGlobal) => {
     //destructuring
     const { Player, canvasPlay, canvasMap, itemMapPosition, Ball, Commons } =
       objectGlobal;
-    // fin de boucle
+
+    // end strating
     setStart(objectGlobal, false);
     clearTimeout(objectGlobal.setTimeOutGame);
     // Player choose lvl

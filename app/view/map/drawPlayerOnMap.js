@@ -1,6 +1,5 @@
 const drawPlayerOnMap = ({ ctxMap, Player, Commons, canvasMap }) => {
   const ratio = canvasMap.width / canvasMap.height;
-  //console.log(Player);
   if (Player.pxMap !== 0 && Player.pyMap !== 0) {
     ctxMap.fillStyle = Commons.colorPlayerMap;
     ctxMap.beginPath();
