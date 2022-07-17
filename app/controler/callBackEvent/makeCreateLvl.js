@@ -5,15 +5,16 @@ import { addListDraw } from "../objetGlobalchange/controleurListDraw.js";
 import setPositionDefaultPlayer from "../objetGlobalchange/setPositionDefaultPlayer.js";
 import setPositionDefaultBall from "../objetGlobalchange/setPositionDefaultBall.js";
 
-const makeCreateLvl = (objectGlobal) => {
+const makeCreateLvl = (objectGlobal, difficult) => {
   // create level
-  objectGlobal.leveling = [
+  /*  deBug
+ objectGlobal.leveling = [
     {
       bricks: 1,
       numberBricks: 1,
     },
-  ];
-  //leveling = generateMapByDiffucult(elementClickDifficulty);
+  ]; */
+  objectGlobal.leveling = generateMapByDiffucult(difficult);
   objectGlobal.Briks = positionInLevelBrick(
     objectGlobal.leveling,
     objectGlobal.Commons

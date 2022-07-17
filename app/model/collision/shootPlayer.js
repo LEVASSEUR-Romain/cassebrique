@@ -18,28 +18,6 @@ const shootPlayer = (
     const shootYTop = oneShoot.y;
     const shootYBottom =
       oneShoot.y + (oneShoot.height * canvasPlay.height) / 100;
-    // if shoot touch player
-    /*     console.log(
-      "r",
-      shootXRight,
-      "l",
-      shootXLeft,
-      "b",
-      shootYBottom,
-      "top",
-      shootYTop
-    );
-    console.log(
-      "rP",
-      Player.x,
-      "lP",
-      Player.x + playerWidth,
-      "bP",
-      Player.y,
-      "tP",
-      Player.y + playerHeight
-    ); */
-    console.log(Player.x);
     if (
       shootXRight > Player.x &&
       shootXLeft < Player.x + playerWidth &&

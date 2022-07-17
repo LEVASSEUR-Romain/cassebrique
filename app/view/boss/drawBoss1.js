@@ -13,5 +13,10 @@ const drawBoss1 = ({ ctx, Boss, canvasPlay }) => {
     shooterWidht,
     shooterHeight
   );
+  // zone de vie
+  ctx.font = "20pt Calibri,Geneva,Arial";
+  ctx.strokeStyle = "rgb(0,0,0)";
+  ctx.fillStyle = "rgb(0,20,180)";
+  ctx.strokeText(Boss.life.toString(), Boss.x, 20);
 };
 export default drawBoss1;

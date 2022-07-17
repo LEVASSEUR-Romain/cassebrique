@@ -3,9 +3,16 @@ import {
   listGameDefault,
   listBoss1,
 } from "../../model/listLoop/listDraw.js";
-
+/**
+ *
+ * @param {Object} objectGlobal
+ * @param {string} type
+ * @type: map, gameDefault, boss1
+ */
 export const addListDraw = (objectGlobal, type) => {
   switch (type) {
+    case "map":
+      listMap.forEach((draw) => objectGlobal.listDraw.push(draw));
     case "gameDefault":
       listGameDefault.forEach((draw) => objectGlobal.listDraw.push(draw));
       break;

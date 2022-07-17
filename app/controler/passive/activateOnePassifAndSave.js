@@ -4,8 +4,9 @@ import composantPassive from "../../view/passive/composantPassive.js";
 import deleteComposantPassive from "../../view/passive/deleteComposantPassive.js";
 import iconePassiveOnMenu from "../../view/passive/iconePassiveOnMenu.js";
 import clickOnPassifMenu from "./clickOnPassifMenu.js";
-
-const activateOnePassif = (Player, Commons, Ball) => {
+import addAllLocalStrorage from "../localStorage/addAllLocalStrorage.js";
+const activateOnePassifAndSave = (objectGlobal) => {
+  const { Commons, Player, Ball } = objectGlobal;
   const startTbl = 0;
   const tblRandom = intRandomOnListUnique(
     startTbl,
@@ -37,6 +38,8 @@ const activateOnePassif = (Player, Commons, Ball) => {
       iconePassiveOnMenu(Player);
       //add lister on new icone Menu
       clickOnPassifMenu();
+      //save LOCAL
+      addAllLocalStrorage(objectGlobal);
     }
   };
 
@@ -46,4 +49,4 @@ const activateOnePassif = (Player, Commons, Ball) => {
     elt.addEventListener("click", clickPassive);
   });
 };
-export default activateOnePassif;
+export default activateOnePassifAndSave;

@@ -7,7 +7,7 @@ const clickMap = (e, objectGlobal) => {
   const { canvasPlay, canvasMap } = objectGlobal;
   const elementClickDifficulty = mapClickEventMount(e, objectGlobal);
   if (elementClickDifficulty != false) {
-    makeCreateLvl(objectGlobal);
+    makeCreateLvl(objectGlobal, elementClickDifficulty);
     //rooting
     routing("play", canvasPlay, canvasMap);
   }

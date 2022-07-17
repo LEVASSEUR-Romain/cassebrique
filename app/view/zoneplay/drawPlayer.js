@@ -1,10 +1,15 @@
 const drawPlayer = ({ ctx, Player, canvasPlay }) => {
   ctx.fillStyle = Player.color;
-  ctx.fillRect(
+  const playerWidth = (Player.width * canvasPlay.width) / 100;
+  const playerHeight = (Player.height * canvasPlay.height) / 100;
+  ctx.fillRect(Player.x, Player.y, playerWidth, playerHeight);
+
+  ctx.font = playerHeight + "px Calibri,Geneva,Arial";
+  ctx.strokeStyle = "#7A232B";
+  ctx.strokeText(
+    "\u2661".repeat(Player.life),
     Player.x,
-    Player.y,
-    (Player.width * canvasPlay.width) / 100,
-    (Player.height * canvasPlay.height) / 100
+    Player.y + playerHeight
   );
 };
 

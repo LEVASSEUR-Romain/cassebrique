@@ -7,7 +7,7 @@ const Commons = {
   PlayerDefault: {
     height: 2, // %
     width: 20, // %
-    color: "blue",
+    color: "black",
     life: 4,
     speed: 8, // %
     //defaut recalculer dans rezise
@@ -18,8 +18,8 @@ const Commons = {
     passiveBonus: [],
     //map controleur
     // level du boss lvly=4 currentId =10
-    lvlY: 4,
-    currentIdLvl: 10,
+    lvlY: 0,
+    currentIdLvl: 0,
     lastClickLvl: false,
   },
   // ball

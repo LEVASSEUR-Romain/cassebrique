@@ -4,8 +4,8 @@ const commonsBoss = {
     x: 0,
     y: 0,
     width: 20, //%
-    height: 10, //%
-    life: 10,
+    height: 5, //%
+    life: 20,
     color: "#2F8802", //%
     colorShooter: "black",
     widthShooter: 2, //%

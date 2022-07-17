@@ -1,12 +1,16 @@
 import routing from "../../controler/routing.js";
 import searchBrickById from "../../tools/searchBrickById.js";
-import activateOnePassif from "../../controler/passive/activateOnePassif.js";
+import activateOnePassifAndSave from "../../controler/passive/activateOnePassifAndSave.js";
 import controlerBoss from "../../controler/boss/controlerBoss.js";
 // set getter global object
 import setStart from "../../controler/objetGlobalchange/setStart.js";
 import setLastClickLvl from "../../controler/objetGlobalchange/setLastClickLvl.js";
-import { removeAllDraw } from "../../controler/objetGlobalchange/controleurListDraw.js";
-
+import {
+  removeAllDraw,
+  addListDraw,
+} from "../../controler/objetGlobalchange/controleurListDraw.js";
+// local
+import addAllLocalStrorage from "../../controler/localStorage/addAllLocalStrorage.js";
 const defaultWin = (objectGlobal) => {
   if (objectGlobal.Briks.length === 0) {
     //destructuring
@@ -22,8 +26,10 @@ const defaultWin = (objectGlobal) => {
     const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
     //go bonus
     if (itemMap && itemMap.bonus) {
-      activateOnePassif(Player, Commons, Ball);
+      activateOnePassifAndSave(objectGlobal);
+      // close and redraw
       removeAllDraw(objectGlobal);
+      addListDraw(objectGlobal, "map");
       routing("map", canvasPlay, canvasMap);
     }
     //go boss
@@ -32,7 +38,11 @@ const defaultWin = (objectGlobal) => {
     }
     // retour a la map
     else {
+      // close and redraw
       removeAllDraw(objectGlobal);
+      addListDraw(objectGlobal, "map");
+      //save LOCAL
+      addAllLocalStrorage(objectGlobal);
       routing("map", canvasPlay, canvasMap);
     }
   }

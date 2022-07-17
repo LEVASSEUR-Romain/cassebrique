@@ -6,7 +6,9 @@ import Commons from "./app/model/commons/commons.js";
 // controller
 import main from "./app/controler/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
-
+import isLocalStorage from "./app/controler/localStorage/isLocalStorage.js";
+import addLocalStrorage from "./app/controler/localStorage/addLocalStrorage.js";
+import getLocalStrorage from "./app/controler/localStorage/getLocalStrorage.js";
 // menu
 const navBar = document.querySelector("nav");
 const playImg = document.getElementById("play");
@@ -19,17 +21,47 @@ const ctxMap = canvasMap.getContext("2d");
 // variable
 let Briks = "";
 let leveling = "";
-const Player = { ...Commons.PlayerDefault };
-const Ball = { ...Commons.BallDefault };
-let lifePlayer = Commons.PlayerDefault.life;
 let setTimeOutGame = null;
 let start = false;
-// map
-const mapImage = map1;
-const itemMapPosition = createMap(mapImage, Commons);
-const itemMapLinks = mapLinks(itemMapPosition);
 // list draw default
 const listDraw = listMap;
+// localStorage
+let Player,
+  Ball,
+  lifePlayer,
+  map,
+  commons,
+  itemMapPosition = null;
+/*  debug
+Player = { ...Commons.PlayerDefault };
+Ball = { ...Commons.BallDefault };
+lifePlayer = Commons.PlayerDefault.life;
+// default because 1 map for the moment
+map = map1;
+commons = Commons;
+itemMapPosition = createMap(map, commons); */
+if (!isLocalStorage()) {
+  Player = getLocalStrorage("player");
+  Ball = getLocalStrorage("ball");
+  lifePlayer = Player.life;
+  map = getLocalStrorage("map");
+  commons = getLocalStrorage("commons");
+  itemMapPosition = getLocalStrorage("mapItem");
+} else {
+  Player = { ...Commons.PlayerDefault };
+  Ball = { ...Commons.BallDefault };
+  lifePlayer = Commons.PlayerDefault.life;
+  // default because 1 map for the moment
+  map = map1;
+  commons = Commons;
+  itemMapPosition = createMap(map, commons);
+  addLocalStrorage(Player, "player");
+  addLocalStrorage(Ball, "ball");
+  addLocalStrorage(commons, "communs");
+  addLocalStrorage(map, "map");
+  addLocalStrorage(itemMapPosition, "mapItem");
+}
+const itemMapLinks = mapLinks(itemMapPosition);
 // global
 const objectGlobal = {
   navBar: navBar,
@@ -46,10 +78,10 @@ const objectGlobal = {
   lifePlayer: lifePlayer,
   setTimeOutGame: setTimeOutGame,
   start: start,
-  mapImage: mapImage,
+  map: map,
   itemMapPosition: itemMapPosition,
   itemMapLinks: itemMapLinks,
-  Commons: Commons,
+  Commons: commons,
   listDraw: listDraw,
 };
 main(objectGlobal);
