@@ -1,6 +1,6 @@
 import reziseBricks from "./reziseBricks.js";
 import setPositionDefaultPlayer from "../../controler/objetGlobalchange/setPositionDefaultPlayer.js";
-import setPositiondefaultBall from "../../controler/objetGlobalchange/setPositiondefaultPlayerBall.js";
+import setPositionDefaultBall from "../../controler/objetGlobalchange/setPositionDefaultBall.js";
 const resize = (objectGlobal) => {
   // destructiration
   const { navBar, canvasPlay, canvasMap, Player, Ball, Commons, Briks } =
@@ -19,7 +19,7 @@ const resize = (objectGlobal) => {
   canvasMap.style.bottom = "0px";
   // new position element player default and ball
   setPositionDefaultPlayer(objectGlobal);
-  setPositiondefaultBall(objectGlobal);
+  setPositionDefaultBall(objectGlobal);
   // new position bricks
   if (Briks) {
     reziseBricks(Briks);

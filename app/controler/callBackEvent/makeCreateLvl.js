@@ -3,7 +3,7 @@ import positionInLevelBrick from "../../model/positionInLevelBrick.js";
 import generateMapByDiffucult from "./../../model/map/generateMapByDiffucult.js";
 import { addListDraw } from "../objetGlobalchange/controleurListDraw.js";
 import setPositionDefaultPlayer from "../objetGlobalchange/setPositionDefaultPlayer.js";
-import setPositiondefaultBall from "../objetGlobalchange/setPositiondefaultPlayerBall.js";
+import setPositionDefaultBall from "../objetGlobalchange/setPositionDefaultBall.js";
 
 const makeCreateLvl = (objectGlobal) => {
   // create level
@@ -22,7 +22,7 @@ const makeCreateLvl = (objectGlobal) => {
   addListDraw(objectGlobal, "gameDefault");
   // make default Ball Player
   setPositionDefaultPlayer(objectGlobal);
-  setPositiondefaultBall(objectGlobal);
+  setPositionDefaultBall(objectGlobal);
   //draw
   drawAll(objectGlobal);
 };

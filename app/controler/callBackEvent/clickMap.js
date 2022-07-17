@@ -4,7 +4,7 @@ import makeCreateLvl from "./makeCreateLvl.js";
 
 const clickMap = (e, objectGlobal) => {
   // destructuring
-  const { canvasPlay, canvasMap, Commons } = objectGlobal;
+  const { canvasPlay, canvasMap } = objectGlobal;
   const elementClickDifficulty = mapClickEventMount(e, objectGlobal);
   if (elementClickDifficulty != false) {
     makeCreateLvl(objectGlobal);

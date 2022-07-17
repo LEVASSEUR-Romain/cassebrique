@@ -1,4 +1,4 @@
-import setPositiondefaultBall from "../../controler/objetGlobalchange/setPositiondefaultPlayerBall.js";
+import setPositionDefaultBall from "../../controler/objetGlobalchange/setPositionDefaultBall.js";
 import loopGaming from "../../controler/loopGaming.js";
 import setLifePlayer from "../../controler/objetGlobalchange/setLifePlayer.js";
 import setStart from "../../controler/objetGlobalchange/setStart.js";
@@ -10,7 +10,7 @@ const restartLoseLife = (objectGlobal, listEvent, listCollision) => {
     setLifePlayer(objectGlobal);
     setStart(objectGlobal, false);
     //restart position
-    setPositiondefaultBall(objectGlobal);
+    setPositionDefaultBall(objectGlobal);
     clearTimeout(objectGlobal.setTimeOutGame);
   } else
     objectGlobal.setTimeOutGame = setTimeout(() => {

@@ -18,6 +18,6 @@ export const addShoot = (objectGlobal) => {
     height: Boss.shootHeight,
     color: Boss.shootColor,
     speed: Boss.shootSpeed,
-    type: "shoot1",
+    /*  type: "shoot1", */
   });
 };

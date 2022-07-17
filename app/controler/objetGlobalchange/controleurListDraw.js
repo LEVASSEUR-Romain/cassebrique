@@ -15,7 +15,7 @@ export const addListDraw = (objectGlobal, type) => {
   }
 };
 
-export const removeListDraw = (objectGlobal, type) => {
+/* export const removeListDraw = (objectGlobal, type) => {
   switch (type) {
     case "gameDefault":
       const filtreGame = objectGlobal.listDraw.filter((func) => {
@@ -32,7 +32,7 @@ export const removeListDraw = (objectGlobal, type) => {
       objectGlobal.listDraw = filtreBoss1;
       break;
   }
-};
+}; */
 
 export const removeAllDraw = (objectGlobal) => {
   objectGlobal.listDraw = [];
