@@ -1,8 +1,8 @@
 import {
   setBoss,
   bossLoseLife,
-} from "../../../../app/controler/objetGlobalchange/controleurBoss.js";
-import commonsBoss from "./../../../../app/model/commons/commonsBoss.js";
+} from "../../../app/controler/objetGlobalchange/controleurBoss.js";
+import commonsBoss from "../../../app/model/commons/commonsBoss.js";
 
 test("setBoss", () => {
   const obj = {

@@ -1,4 +1,4 @@
-import setPositionDefaultPlayer from "../../../../app/controler/objetGlobalchange/setPositionDefaultPlayer.js";
+import setPositionDefaultPlayer from "../../../app/controler/objetGlobalchange/setPositionDefaultPlayer.js";
 
 test("setStart", () => {
   const obj = {

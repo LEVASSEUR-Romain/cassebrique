@@ -1,4 +1,4 @@
-import { playerLoseLife } from "./../../../../app/controler/objetGlobalchange/controleurLife.js";
+import { playerLoseLife } from "../../../app/controler/objetGlobalchange/controleurLife.js";
 
 test("playerLoseLife", () => {
   const obj = {

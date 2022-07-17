@@ -2,7 +2,7 @@ import {
   deleteShoot,
   emptyShoot,
   addShoot,
-} from "../../../../app/controler/objetGlobalchange/controleurShoot.js";
+} from "../../../app/controler/objetGlobalchange/controleurShoot.js";
 
 test("deleteShoot delete one Shoot", () => {
   const Shoot = [

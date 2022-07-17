@@ -1,4 +1,4 @@
-import setStart from "../../../../app/controler/objetGlobalchange/setStart.js";
+import setStart from "../../../app/controler/objetGlobalchange/setStart.js";
 
 test("setStart", () => {
   const obj = {

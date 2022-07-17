@@ -1,4 +1,4 @@
-import setLastClickLvl from "../../../../app/controler/objetGlobalchange/setLastClickLvl.js";
+import setLastClickLvl from "../../../app/controler/objetGlobalchange/setLastClickLvl.js";
 
 test("setLastClickLvl", () => {
   const obj = {

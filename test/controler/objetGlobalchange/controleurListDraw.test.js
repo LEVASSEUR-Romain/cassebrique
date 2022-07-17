@@ -1,11 +1,11 @@
 import {
   addListDraw,
   removeAllDraw,
-} from "./../../../../app/controler/objetGlobalchange/controleurListDraw.js";
+} from "../../../app/controler/objetGlobalchange/controleurListDraw.js";
 import {
   listGameDefault,
   listBoss1,
-} from "./../../../../app//model/listLoop/listDraw.js";
+} from "../../../app//model/listLoop/listDraw.js";
 
 test("addListDraw", () => {
   const objDefault = { listDraw: [] };

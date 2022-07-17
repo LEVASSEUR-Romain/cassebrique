@@ -1,4 +1,4 @@
-import setPositionDefaultBall from "./../../../../app/controler/objetGlobalchange/setPositionDefaultBall.js";
+import setPositionDefaultBall from "../../../app/controler/objetGlobalchange/setPositionDefaultBall.js";
 test("setStart", () => {
   const obj = {
     Player: {
