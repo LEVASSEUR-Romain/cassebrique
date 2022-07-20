@@ -1,4 +1,4 @@
-import { playerLoseLife } from "../../controler/objetGlobalchange/controleurLife.js";
+import { playerLoseLife } from "../../controler/objetGlobalchange/controleurPlayer.js";
 const borderBall = (
   objectGlobal,
   ballXLeft,

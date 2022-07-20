@@ -4,7 +4,7 @@ import {
   addListDraw,
   removeAllDraw,
 } from "../objetGlobalchange/controleurListDraw.js";
-import setPositionDefaultPlayer from "../objetGlobalchange/setPositionDefaultPlayer.js";
+import { setPositionDefaultPlayer } from "../objetGlobalchange/controleurPlayer.js";
 import setPositionDefaultBall from "../objetGlobalchange/setPositionDefaultBall.js";
 import drawAll from "./../../view/drawAll.js";
 const controlerBoss1 = (objectGlobal) => {

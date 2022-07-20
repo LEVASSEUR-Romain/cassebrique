@@ -1,5 +1,4 @@
-import positionInLevelBrick from "./../../app/model/positionInLevelBrick.js";
-
+import positionInLevelBrick from "./../../../app/model/briksCreator/positionInLevelBrick.js";
 test("2 bricks creation", () => {
   const leveling = [
     {

@@ -1,6 +1,8 @@
 const borderBottomBall = ({ canvasPlay, Ball }) => {
-  const ratio = canvasPlay.width / canvasPlay.height;
-  const ballRadius = ((Ball.radius * canvasPlay.width) / 100) * ratio;
+  // ALERT ICI
+  //const ratio = canvasPlay.width / canvasPlay.height;
+  //const ballRadius = ((Ball.radius * canvasPlay.height) / 100) * ratio;
+  const ballRadius = (Ball.radiusHeight * canvasPlay.height) / 100;
   const ballYBottom = Ball.y + ballRadius;
   const conditionBottomBorder = ballYBottom > canvasPlay.height;
   if (conditionBottomBorder) {

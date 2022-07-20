@@ -24,7 +24,7 @@ const Commons = {
   },
   // ball
   BallDefault: {
-    radius: 2, // %
+    radiusHeight: 3, // %
     color: "black",
     angleDirectionX: 0,
     angleDirectionY: -1,
@@ -77,8 +77,8 @@ const Commons = {
     {
       type: "bonus",
       color: "#fa5252",
-      halo: "#efd807",
-      raidushalo: 1, //%
+      emoji: "\ud83c\udf81",
+      //raidushalo: 1, //%,
     },
     {
       type: "boss",

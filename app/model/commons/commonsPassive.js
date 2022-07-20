@@ -41,7 +41,7 @@ const commonsPassive = [
     description: "vous gagnez +5% rayon",
     image: "./img/passive/hydra.svg",
     effect: (player = 0, ball, Commons = 0) => {
-      ball.radius = ball.radius * 1.05;
+      ball.radiusHeight = ball.radiusHeight * 1.05;
     },
   },
   {
@@ -79,7 +79,7 @@ const commonsPassive = [
     image: "./img/passive/sun-spear.svg",
     effect: (player, ball, Commons = 0) => {
       player.width = player.width * 1.025;
-      ball.radius = ball.radius * 1.025;
+      ball.radiusHeight = ball.radiusHeight * 1.025;
     },
   },
 ];

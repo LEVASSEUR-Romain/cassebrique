@@ -17,9 +17,10 @@ const restartLoseLifeBoss = (objectGlobal, listEvent, listCollision) => {
     //restart position
     setPositionDefaultBall(objectGlobal);
     clearTimeout(objectGlobal.setTimeOutGame);
-  } else
+  } else {
     objectGlobal.setTimeOutGame = setTimeout(() => {
       loopGaming(objectGlobal, listEvent, listCollision);
     }, objectGlobal.Commons.gameSpeedMillisecond);
+  }
 };
 export default restartLoseLifeBoss;

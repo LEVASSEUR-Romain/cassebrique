@@ -1,4 +1,4 @@
-import tuchBrick from "../../model/tuchBrick.js";
+import tuchBrick from "./toolsCollision/tuchBrick.js";
 const bricksBall = (
   { Briks, Ball, Commons, canvasPlay },
   ballXLeft,

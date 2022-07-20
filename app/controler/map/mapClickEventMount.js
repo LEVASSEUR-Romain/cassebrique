@@ -15,8 +15,10 @@ const mapClickEventMount = (
     let elementCible = "";
     const clickX = event.layerX;
     const clickY = event.layerY;
-    const ratio = canvasMap.width / canvasMap.height;
-    const radiusElmt = (Commons.radiusItemMap * canvasMap.height * ratio) / 100;
+    // ALERT ICI
+    //const ratio = canvasMap.width / canvasMap.height;
+    //const radiusElmt = (Commons.radiusItemMap * canvasMap.height * ratio) / 100;
+    const radiusElmt = (Commons.radiusItemMap * canvasMap.height) / 100;
     itemMapPosition.forEach((ligne) => {
       ligne.forEach((elmt) => {
         const elmtRight = (canvasMap.width * elmt.px) / 100 - radiusElmt;

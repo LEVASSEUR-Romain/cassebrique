@@ -1,5 +1,5 @@
-import { playerLoseLife } from "../../controler/objetGlobalchange/controleurLife.js";
 import { deleteShoot } from "../../controler/objetGlobalchange/controleurShoot.js";
+import { playerLoseLife } from "./../../controler/objetGlobalchange/controleurPlayer.js";
 const shootPlayer = (
   objectGlobal,
   ballXLeft,

@@ -1,5 +1,4 @@
-import describeBrickForLevel from "./../../app/model/describeBrickForLevel.js";
-
+import describeBrickForLevel from "./../../../app/model/briksCreator/describeBrickForLevel.js";
 test("brickforOne LEVEL", () => {
   const leveling = [
     {

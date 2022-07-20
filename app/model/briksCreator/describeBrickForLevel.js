@@ -2,7 +2,7 @@
  *
  * @param {ArrayObjet} leveling tableau d'objet de niveau
  * @param {ObjetConstant} commons constante global
- * @returns {ArrayObjet} tableau d'objet placement de brique par leveel
+ * @returns {ArrayObjet} tableau d'objet placement de brique par level
  */
 
 const describeBrickForLevel = (leveling, commons) => {

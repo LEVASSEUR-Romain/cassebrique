@@ -11,7 +11,7 @@ test("setStart", () => {
       width: 500,
     },
     Ball: {
-      radius: 5,
+      radiusHeight: 5,
     },
   };
   setPositionDefaultBall(obj);

@@ -2,7 +2,7 @@ import moveByIsStarting from "../callBackEvent/moveByIsStarting.js";
 import drawAll from "../../view/drawAll.js";
 import goControleGame from "../callBackEvent/goControleGame.js";
 const onControleGame = (objectGlobal) => {
-  window.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", (e) => {
     if (moveByIsStarting(e, objectGlobal)) {
       goControleGame(objectGlobal);
     }
