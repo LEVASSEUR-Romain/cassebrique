@@ -84,6 +84,7 @@ const objectGlobal = {
   itemMapLinks: itemMapLinks,
   Commons: commons,
   listDraw: listDraw,
+  listEvent: [],
 };
 main(objectGlobal);
 //console.log(JSON.stringify(itemMapPosition));

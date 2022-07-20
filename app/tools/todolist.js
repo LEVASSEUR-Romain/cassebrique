@@ -1,10 +1,12 @@
 //telephone
 // touche mouvement a améliorer
-// equilibrage niveau (trop de brique)
-//click au boss
-//test units
+
+//click au boss attentions au espaces
 //feu de camps
-// nouveau boss
+// nouveau boss 2 + 3
+// equilibrage niveau (trop de brique)
+// debug local Storage
+//test units
 
 // debug au cas ou
 //ratio a revoir dans collision inutile je pense  ==> ALERT ICI

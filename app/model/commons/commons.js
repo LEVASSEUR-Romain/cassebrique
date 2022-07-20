@@ -9,7 +9,7 @@ const Commons = {
     width: 20, // %
     color: "black",
     life: 4,
-    speed: 8, // %
+    speed: 2, // %
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
