@@ -1,13 +1,12 @@
-//telephone
-// touche mouvement a améliorer
-
-//click au boss attentions au espaces
 //feu de camps
-// nouveau boss 2 + 3
-// equilibrage niveau (trop de brique)
-// debug local Storage
-//test units
 
+// nouveau boss 2 + 3
+// equilibrage niveau (trop de brique // reduire la taille)
+// debug local Storage
+// test units
+// construction de map va pas dans le fond de la carte (centrer vecticalement)
+
+// quand on perd un point de vie sur le boss on perd le controle (verifier sur tel)
 // debug au cas ou
 //ratio a revoir dans collision inutile je pense  ==> ALERT ICI
 // en Bonus

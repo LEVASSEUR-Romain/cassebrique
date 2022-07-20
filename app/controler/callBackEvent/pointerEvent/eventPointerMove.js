@@ -20,7 +20,6 @@ const eventPointerMove = (e, objectGlobal) => {
   const direction = e.clientX - playerWidthCalcul / 2; // pointer position corresponds to half of the bar
   // ->
   if (direction > Player.x) {
-    console.log(speed);
     Player.x =
       Player.x + speed > moveMax
         ? moveMax
