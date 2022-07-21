@@ -1,7 +1,6 @@
-import routing from "../../controler/routing.js";
+import routing from "../../controler/main/routing.js";
 import searchBrickById from "../../tools/searchBrickById.js";
 import activateOnePassifAndSave from "../../controler/passive/activateOnePassifAndSave.js";
-import controlerBoss from "../../controler/boss/controlerBoss.js";
 // set getter global object
 import setStart from "../../controler/objetGlobalchange/setStart.js";
 import setLastClickLvl from "../../controler/objetGlobalchange/setLastClickLvl.js";
@@ -31,10 +30,6 @@ const defaultWin = (objectGlobal) => {
       removeAllDraw(objectGlobal);
       addListDraw(objectGlobal, "map");
       routing("map", canvasPlay, canvasMap);
-    }
-    //go boss
-    else if (itemMap && itemMap.type === "boss") {
-      controlerBoss(objectGlobal);
     }
     // retour a la map
     else {

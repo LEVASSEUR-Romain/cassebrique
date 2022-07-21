@@ -7,7 +7,6 @@ const playerBall = (
 ) => {
   //const
   const playerWidth = (Player.width * canvasPlay.width) / 100;
-  const playerHeight = (Player.height * canvasPlay.height) / 100;
   if (
     ballXRight >= Player.x &&
     ballXLeft <= Player.x + playerWidth &&

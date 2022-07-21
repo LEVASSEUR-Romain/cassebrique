@@ -1,4 +1,4 @@
-import deleteComposantBoss from "../../../view/boss/deleteComposantBoss.js";
+import deleteComposantBoss from "../../../view/boss/modal/deleteComposantBoss.js";
 
 const clickModalBoss = () => {
   deleteComposantBoss();

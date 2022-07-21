@@ -8,6 +8,7 @@ import { setPositionDefaultPlayer } from "../objetGlobalchange/controleurPlayer.
 import setPositionDefaultBall from "../objetGlobalchange/setPositionDefaultBall.js";
 import drawAll from "./../../view/drawAll.js";
 const controlerBoss1 = (objectGlobal) => {
+  // BOSS SHOOTER
   // restart de la game position pret a tirer
   setPositionDefaultPlayer(objectGlobal);
   setPositionDefaultBall(objectGlobal);

@@ -108,7 +108,7 @@ test("mapClickEventMount good click", () => {
   // return
   // id 4 difficulty 1
   const difficulty = 1;
-  expect(mapClickEventMount(event, objectGlobal)).toEqual(difficulty);
+  expect(mapClickEventMount(event, objectGlobal)).toEqual(itemMap[1][0]);
   // modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(4);

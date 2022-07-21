@@ -6,6 +6,7 @@ const borderBall = (
   ballYTop,
   ballYBottom
 ) => {
+  // if change look boderAndBallAndDelete
   const { Ball, Commons, canvasPlay } = objectGlobal;
   const conditionLeftBorder = ballXLeft < 0;
   const conditionRightBorder = ballXRight > canvasPlay.width;

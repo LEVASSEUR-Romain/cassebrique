@@ -2,10 +2,10 @@ const commonsPassive = [
   {
     id: 1,
     name: "Bonus vie",
-    description: "le joueur gange +1 vie",
+    description: "le joueur gange +1 vie maximum",
     image: "./img/passive/falcon-moon.svg",
     effect: (player, ball = 0, Commons = 0) => {
-      player.life += 1;
+      Commons.PlayerDefault.life += 1;
     },
   },
   {

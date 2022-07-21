@@ -2,12 +2,13 @@ import {
   listMap,
   listGameDefault,
   listBoss1,
+  listBoss2,
 } from "../../model/listLoop/listDraw.js";
 /**
  *
  * @param {Object} objectGlobal
  * @param {string} type
- * @type: map, gameDefault, boss1
+ * @type: map, gameDefault, boss1 , boss2
  */
 export const addListDraw = (objectGlobal, type) => {
   switch (type) {
@@ -18,6 +19,9 @@ export const addListDraw = (objectGlobal, type) => {
       break;
     case "boss1":
       listBoss1.forEach((draw) => objectGlobal.listDraw.push(draw));
+      break;
+    case "boss2":
+      listBoss2.forEach((draw) => objectGlobal.listDraw.push(draw));
       break;
   }
 };

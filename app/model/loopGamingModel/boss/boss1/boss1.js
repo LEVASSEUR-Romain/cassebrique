@@ -1,4 +1,4 @@
-import { addShoot } from "../../../controler/objetGlobalchange/controleurShoot.js";
+import { addShoot } from "../../../../controler/objetGlobalchange/controleurShoot.js";
 
 const boss1 = (objectGlobal) => {
   const { Player, Boss, canvasPlay } = objectGlobal;

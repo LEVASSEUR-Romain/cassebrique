@@ -1,4 +1,4 @@
-import routing from "../routing.js";
+import routing from "../main/routing.js";
 const clickMenu = (event, start, canvasPlay, canvasMap, Player) => {
   if (start === false) {
     const target = event.target.id;

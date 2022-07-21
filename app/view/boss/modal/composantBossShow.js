@@ -1,4 +1,4 @@
-import commonsDescribeBoss from "../../model/commons/commonsDescribeBoss.js";
+import commonsDescribeBoss from "../../../model/commons/commonsDescribeBoss.js";
 
 const composantBossShow = (Commons, nbrBoss) => {
   // const commun boss

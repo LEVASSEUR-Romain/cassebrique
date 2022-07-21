@@ -18,5 +18,19 @@ const commonsBoss = {
     shootSpeed: 1, //%
     shootColor: "black",
   },
+  boss2: {
+    id: "boss2",
+    x: 0,
+    y: 0,
+    width: 15, //%
+    height: 3, //%
+    life: 10,
+    color: "#2F8802", //%
+    speed: 1, // par rapport au jouer
+    move: "left",
+    // add ball
+    frameAddBall: 150, // modulo
+    borderHeightSpamBall: 5, //%
+  },
 };
 export default commonsBoss;

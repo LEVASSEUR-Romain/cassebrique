@@ -1,6 +1,6 @@
-import initEventListenerDefault from "./eventListener/initEventListenerDefault.js";
+import initEventListenerDefault from "../eventListener/initEventListenerDefault.js";
 // view
-import drawAllRezise from "../view/drawAllRezise.js";
+import drawAllRezise from "../../view/drawAllRezise.js";
 
 const main = (objectGlobal) => {
   // ecouteur event default

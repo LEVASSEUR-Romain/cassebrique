@@ -4,7 +4,7 @@ import mapLinks from "./app/model/map/mapLinks.js";
 import map1 from "./app/model/map/typeMap/map1.js";
 import Commons from "./app/model/commons/commons.js";
 // controller
-import main from "./app/controler/main.js";
+import main from "./app/controler/main/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
 import isLocalStorage from "./app/controler/localStorage/isLocalStorage.js";
 import addLocalStrorage from "./app/controler/localStorage/addLocalStrorage.js";
@@ -19,7 +19,7 @@ const canvasMap = document.getElementById("canvasMap");
 const ctx = canvasPlay.getContext("2d");
 const ctxMap = canvasMap.getContext("2d");
 // variable
-let Briks = "";
+let Briks = [];
 let leveling = "";
 let setTimeOutGame = null;
 let start = false;

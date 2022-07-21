@@ -1,16 +1,20 @@
 import controlerBoss1 from "./controlerBoss1.js";
-import composantBossShow from "../../view/boss/composantBossShow.js";
+import composantBossShow from "../../view/boss/modal/composantBossShow.js";
 import onModalBoss from "../eventListener/modal/onModalBoss.js";
+import controlerBoss2 from "./controlerBoss2.js";
 
-const controlerBoss = (objectGlobal) => {
-  // one code for the moment change when other boss
-  const nbrBoss = 1;
-  // ici on dispatch le controle boss pour le moment il y en a qu'un seul
-  // si plusieur boss on peu utilise searchBrickById pour avoir le type du boss
+const controlerBoss = (objectGlobal, nbrOfBoss) => {
   // view title
-  composantBossShow(objectGlobal.Commons, nbrBoss);
+  composantBossShow(objectGlobal.Commons, nbrOfBoss);
   onModalBoss();
   // change when other boss
-  controlerBoss1(objectGlobal);
+  switch (nbrOfBoss) {
+    case 1:
+      controlerBoss1(objectGlobal);
+      break;
+    case 2:
+      controlerBoss2(objectGlobal);
+      break;
+  }
 };
 export default controlerBoss;

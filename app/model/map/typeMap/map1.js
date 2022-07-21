@@ -9,8 +9,8 @@ const map1 = [
     },
     {
       id: 2,
-      difficulty: 3,
-      type: "mob",
+      difficulty: 2,
+      type: "boss",
       bonus: true,
       parent: [0],
     },
@@ -84,7 +84,7 @@ const map1 = [
       parent: [8],
     },
   ],
-  [{ id: 12, difficulty: 4, type: "boss", bonus: false, parent: [9, 10, 11] }],
+  [{ id: 12, difficulty: 1, type: "boss", bonus: false, parent: [9, 10, 11] }],
 ];
 
 export default map1;

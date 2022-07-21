@@ -1,5 +1,5 @@
 import setPositionDefaultBall from "../../controler/objetGlobalchange/setPositionDefaultBall.js";
-import loopGaming from "../../controler/loopGaming.js";
+import loopGaming from "../../controler/main/loopGaming.js";
 import setLifePlayer from "../../controler/objetGlobalchange/setLifePlayer.js";
 import setStart from "../../controler/objetGlobalchange/setStart.js";
 const restartLoseLife = (objectGlobal, listEvent, listCollision) => {
