@@ -1,10 +1,11 @@
 import {
-  deleteShoot,
+  deleteOneShoot,
   emptyShoot,
   addShoot,
+  deleteAllShoot,
 } from "../../../app/controler/objetGlobalchange/controleurShoot.js";
 
-test("deleteShoot delete one Shoot", () => {
+test("deleteOneShoot delete one Shoot", () => {
   const Shoot = [
     { x: 2, y: 5 },
     { x: 3, y: 5 },
@@ -15,7 +16,7 @@ test("deleteShoot delete one Shoot", () => {
     y: 5,
   };
   // retrun
-  deleteShoot(deleteshoot, Shoot);
+  deleteOneShoot(deleteshoot, Shoot);
   const Shootfinal = [
     { x: 2, y: 5 },
     { x: 2, y: 6 },
@@ -84,4 +85,44 @@ test("addShoot", () => {
     },
   };
   expect(obj).toEqual(final);
+});
+
+test("deleteAllShoot all perfect", () => {
+  const obj = {
+    Shoot: [
+      { x: 2, y: 5 },
+      { x: 3, y: 5 },
+      { x: 2, y: 6 },
+    ],
+    test: "hello",
+  };
+  deleteAllShoot(obj);
+  // retrun
+  const finish = {
+    test: "hello",
+  };
+  expect(obj).toEqual(finish);
+});
+test("deleteAllShoot not existe", () => {
+  const obj = {
+    test: "hello",
+  };
+  deleteAllShoot(obj);
+  // retrun
+  const finish = {
+    test: "hello",
+  };
+  expect(obj).toEqual(finish);
+});
+test("deleteAllShoot array empty", () => {
+  const obj = {
+    Shoot: [],
+    test: "hello",
+  };
+  deleteAllShoot(obj);
+  // retrun
+  const finish = {
+    test: "hello",
+  };
+  expect(obj).toEqual(finish);
 });

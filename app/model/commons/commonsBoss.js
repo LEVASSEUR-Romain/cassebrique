@@ -26,10 +26,10 @@ const commonsBoss = {
     height: 3, //%
     life: 10,
     color: "#2F8802", //%
-    speed: 1, // par rapport au jouer
+    speed: 0.8, // %
     move: "left",
     // add ball
-    frameAddBall: 150, // modulo
+    frameAddBall: 125, // modulo
     borderHeightSpamBall: 5, //%
   },
 };

@@ -1,6 +1,6 @@
 import { playerLoseLife } from "../../../controler/objetGlobalchange/controleurPlayer.js";
 import objectUpBottomLeftRightBall from "../toolsCollision/objectUpBottomLeftRightBall.js";
-import { deleteBallOnarray } from "../../../controler/objetGlobalchange/constroleurBall.js";
+import { deleteBallOnArray } from "../../../controler/objetGlobalchange/constroleurBall.js";
 const boderAllBallAndDelete = (objectGlobal) => {
   //destructuring
   const { Ball, canvasPlay, Commons, Player } = objectGlobal;
@@ -21,7 +21,7 @@ const boderAllBallAndDelete = (objectGlobal) => {
     if (conditionBottomBorder || conditionTopBorder) {
       if (conditionBottomBorder) {
         // delete la boule
-        deleteBallOnarray(objectGlobal, element);
+        deleteBallOnArray(objectGlobal, element);
         // perdu
         return playerLoseLife(objectGlobal);
       }

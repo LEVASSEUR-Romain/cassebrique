@@ -26,12 +26,12 @@ export const listeEventBoss1 = [
 ];
 // boss 2
 import boss2 from "../loopGamingModel/boss/boss2/boss2.js";
-import restartLoopLoselifeDeleteBall from "../loopGamingModel/boss/boss2/restartLoopLoselifeDeleteBall.js";
+import restartLoopExceptBossDied from "../loopGamingModel/boss/boss2/restartLoopExceptBossDied.js";
 import moveAllBall from "../loopGamingModel/boss/boss2/moveAllBall.js";
 export const listeEventBoss2 = [
   moveAllBall,
   boss2,
   loseLvl,
   winBoss,
-  restartLoopLoselifeDeleteBall,
+  restartLoopExceptBossDied,
 ];

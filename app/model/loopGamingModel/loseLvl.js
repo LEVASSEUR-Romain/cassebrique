@@ -1,7 +1,8 @@
+import stopLoopGame from "./tools/stopLoopGame.js";
 const loseLvl = (objectGlobal) => {
   if (objectGlobal.Player.life === 0) {
     objectGlobal.start = false;
-    clearTimeout(objectGlobal.setTimeOutGame);
+    stopLoopGame(objectGlobal);
     alert("Perdu recommencer");
   }
 };

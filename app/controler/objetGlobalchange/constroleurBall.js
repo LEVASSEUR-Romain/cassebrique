@@ -2,7 +2,7 @@ export const transformBallToArray = (objectGlobal) => {
   objectGlobal.Ball = [objectGlobal.Ball];
 };
 
-export const addBallOnarray = (
+export const addBallOnArray = (
   objectGlobal,
   x,
   y,
@@ -17,7 +17,7 @@ export const addBallOnarray = (
   objectGlobal.Ball.push(copy);
 };
 
-export const deleteBallOnarray = (objectGlobal, Ball) => {
+export const deleteBallOnArray = (objectGlobal, Ball) => {
   const index = objectGlobal.Ball.findIndex(
     (find) =>
       find.x === Ball.x &&
@@ -26,4 +26,10 @@ export const deleteBallOnarray = (objectGlobal, Ball) => {
       find.angleDirectionY === Ball.angleDirectionY
   );
   objectGlobal.Ball.splice(index, 1);
+};
+
+export const ballOnArrayDefault = (objectGlobal) => {
+  if (Array.isArray(objectGlobal.Ball)) {
+    objectGlobal.Ball = objectGlobal.Commons.BallDefault;
+  }
 };

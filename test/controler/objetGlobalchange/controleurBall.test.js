@@ -1,7 +1,8 @@
 import {
   transformBallToArray,
-  addBallOnarray,
-  deleteBallOnarray,
+  addBallOnArray,
+  deleteBallOnArray,
+  ballOnArrayDefault,
 } from "./../../../app/controler/objetGlobalchange/constroleurBall.js";
 
 test("transformBallToArray", () => {
@@ -32,7 +33,7 @@ test("transformBallToArray", () => {
   expect(obj.Ball).toEqual(finish);
 });
 
-test("addBallOnarray", () => {
+test("addBallOnArray", () => {
   const obj = {
     Commons: {
       BallDefault: {
@@ -49,7 +50,7 @@ test("addBallOnarray", () => {
   };
   const x = 10;
   const y = 20;
-  addBallOnarray(obj, x, y, 0, 1);
+  addBallOnArray(obj, x, y, 0, 1);
   // return
   const finish = [
     {
@@ -65,7 +66,7 @@ test("addBallOnarray", () => {
   expect(obj.Ball).toEqual(finish);
 });
 
-test("deleteBallOnarray", () => {
+test("deleteBallOnArray", () => {
   const obj = {
     Ball: [
       {
@@ -89,7 +90,7 @@ test("deleteBallOnarray", () => {
     ],
   };
   //delete 1
-  deleteBallOnarray(obj, obj.Ball[1]);
+  deleteBallOnArray(obj, obj.Ball[1]);
   // return
   const finish = {
     Ball: [
@@ -105,4 +106,68 @@ test("deleteBallOnarray", () => {
     ],
   };
   expect(obj).toEqual(finish);
+});
+// delete All and remake default
+test("ballOnArrayDefault", () => {
+  const obj = {
+    Commons: {
+      BallDefault: {
+        radiusHeight: 3,
+        color: "black",
+        angleDirectionX: 0,
+        angleDirectionY: -1,
+        speed: 2,
+        x: 0,
+        y: 0,
+      },
+    },
+    Ball: [
+      {
+        radiusHeight: 3, // %
+        color: "black",
+        angleDirectionX: 0,
+        angleDirectionY: -1,
+        speed: 2,
+        x: 10,
+        y: 20,
+      },
+      {
+        radiusHeight: 3, // %
+        color: "black",
+        angleDirectionX: 1,
+        angleDirectionY: -1,
+        speed: 2,
+        x: 10,
+        y: 20,
+      },
+    ],
+  };
+  ballOnArrayDefault(obj);
+  // return
+  const finish = {
+    Ball: {
+      radiusHeight: 3, // %
+      color: "black",
+      angleDirectionX: 0,
+      angleDirectionY: -1,
+      speed: 2,
+      x: 0,
+      y: 0,
+    },
+  };
+  expect(obj.Ball).toEqual(finish.Ball);
+  // if not array no change
+  const finish2 = {
+    Ball: {
+      radiusHeight: 3, // %
+      color: "black",
+      angleDirectionX: 0,
+      angleDirectionY: -1,
+      speed: 2,
+      x: 0,
+      y: 0,
+    },
+  };
+  ballOnArrayDefault(finish);
+  expect(finish).toEqual(finish2);
 });

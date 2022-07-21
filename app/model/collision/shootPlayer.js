@@ -1,4 +1,4 @@
-import { deleteShoot } from "../../controler/objetGlobalchange/controleurShoot.js";
+import { deleteOneShoot } from "../../controler/objetGlobalchange/controleurShoot.js";
 import { playerLoseLife } from "./../../controler/objetGlobalchange/controleurPlayer.js";
 const shootPlayer = (
   objectGlobal,
@@ -24,12 +24,12 @@ const shootPlayer = (
       shootYBottom >= Player.y &&
       shootYTop < canvasPlay.width
     ) {
-      deleteShoot(oneShoot, Shoot);
+      deleteOneShoot(oneShoot, Shoot);
       playerLoseLife(objectGlobal);
     }
     // if shoot not in canvas
     if (shootYBottom > canvasPlay.height) {
-      deleteShoot(oneShoot, Shoot);
+      deleteOneShoot(oneShoot, Shoot);
     }
   });
 };

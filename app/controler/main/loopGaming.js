@@ -3,6 +3,7 @@ import mainCollision from "./mainCollision.js";
 import drawAll from "../../view/drawAll.js";
 
 const loopGaming = (objectGlobal, listEvent, listCollision) => {
+  console.log("loop");
   //collision
   mainCollision(objectGlobal, listCollision);
   // event
@@ -23,19 +24,3 @@ const loopGaming = (objectGlobal, listEvent, listCollision) => {
   drawAll(objectGlobal);
 };
 export default loopGaming;
-
-/*     switch (event.name) {
-      case "restartLoseLife":
-        //reboucle
-        event(objectGlobal, listEvent, listCollision);
-        break;
-      case "restartLoseLifeBoss":
-        event(objectGlobal, listEvent, listCollision);
-        break;
-      case "restartLoopLoselifeDeleteBall":
-        event(objectGlobal, listEvent, listCollision);
-        break;
-      default:
-        event(objectGlobal);
-        break;
-    } */

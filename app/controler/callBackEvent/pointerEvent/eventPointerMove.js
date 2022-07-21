@@ -4,16 +4,17 @@ const eventPointerMove = (e, objectGlobal) => {
   // removelister , deleteStart
   //destruct
   const { Player, Ball, start, canvasPlay } = objectGlobal;
-
+  // boss 2 multiBall
+  const ball = Array.isArray(Ball) ? Ball[0] : Ball;
   const playerWidthCalcul = (Player.width * canvasPlay.width) / 100;
   // <- move min
   const moveMin =
-    -playerWidthCalcul / 2 + (Ball.radiusHeight * canvasPlay.height) / 100;
+    -playerWidthCalcul / 2 + (ball.radiusHeight * canvasPlay.height) / 100;
   // -> move max
   const moveMax =
     canvasPlay.width -
     playerWidthCalcul / 2 -
-    (Ball.radiusHeight * canvasPlay.height) / 100;
+    (ball.radiusHeight * canvasPlay.height) / 100;
   //speed
   const speed = (Player.speed * canvasPlay.width) / 100;
   // move Player
@@ -38,7 +39,7 @@ const eventPointerMove = (e, objectGlobal) => {
   } // else nothing
 
   // move ball
-  if (!start) Ball.x = Player.x + playerWidthCalcul / 2;
+  if (!start) ball.x = Player.x + playerWidthCalcul / 2;
   // draw
   if (!start) drawAll(objectGlobal);
 };

@@ -6,7 +6,7 @@
 //revoir les passives
 // test units
 // quand on perd un point de vie sur le boss on perd le controle (verifier sur tel)
-// improve looping game
+//boss 2 multiBall
 // en Bonus
 // faire autre boss attention de précise le type du boss
 // mettre image dans la map pour la rendre plus ludique

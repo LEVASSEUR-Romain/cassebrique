@@ -1,4 +1,4 @@
-export const deleteShoot = (shootToDelete, ListShoot) => {
+export const deleteOneShoot = (shootToDelete, ListShoot) => {
   const index = ListShoot.findIndex(
     (element) => element.x === shootToDelete.x && element.y === shootToDelete.y
   );
@@ -20,4 +20,10 @@ export const addShoot = (objectGlobal) => {
     speed: Boss.shootSpeed,
     /*  type: "shoot1", */
   });
+};
+
+export const deleteAllShoot = (objectGlobal) => {
+  if (objectGlobal.Shoot) {
+    delete objectGlobal.Shoot;
+  }
 };
