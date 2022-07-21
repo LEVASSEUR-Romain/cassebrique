@@ -1,0 +1,22 @@
+.modulePassive {
+    display: flex;
+    flex: 1;
+    z-index: 10;
+    gap: 5px;
+    border: solid black 3px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+}
+
+.modulePassive h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modulePassive img {
+    width: 42%;
+    height: 50%;
+}

@@ -15,9 +15,6 @@ const mapClickEventMount = (
     let elementCible = "";
     const clickX = event.layerX;
     const clickY = event.layerY;
-    // ALERT ICI
-    //const ratio = canvasMap.width / canvasMap.height;
-    //const radiusElmt = (Commons.radiusItemMap * canvasMap.height * ratio) / 100;
     const radiusElmt = (Commons.radiusItemMap * canvasMap.height) / 100;
     itemMapPosition.forEach((ligne) => {
       ligne.forEach((elmt) => {
@@ -44,7 +41,7 @@ const mapClickEventMount = (
             finishItemMap(afterId, itemMapPosition);
             Player.pxMap = elmt.px;
             Player.pyMap = elmt.py;
-            elementCible = elmt.difficulty;
+            elementCible = elmt;
           }
         }
       });

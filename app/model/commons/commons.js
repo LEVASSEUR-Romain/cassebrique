@@ -9,7 +9,7 @@ const Commons = {
     width: 20, // %
     color: "black",
     life: 4,
-    speed: 2, // %
+    speed: 5, // %
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
@@ -18,8 +18,8 @@ const Commons = {
     passiveBonus: [],
     //map controleur
     // level du boss lvly=4 currentId =10
-    lvlY: 4,
-    currentIdLvl: 10,
+    lvlY: 0,
+    currentIdLvl: 0,
     lastClickLvl: false,
   },
   // ball
@@ -67,26 +67,9 @@ const Commons = {
   radiusPlayer: 1.5, //%
   colorPlayerMap: "black",
   colorLinksMap: "black",
-  colorFinishRound: "blue",
   widthLinksMap: 2,
-  mapColorDifficulty: [
-    {
-      type: "easy",
-      color: "#ffc9c9",
-    },
-    {
-      type: "bonus",
-      color: "#fa5252",
-      emoji: "\ud83c\udf81",
-      //raidushalo: 1, //%,
-    },
-    {
-      type: "boss",
-      color: "#c92a2a",
-    },
-  ],
-  // affichage passif choix
   choiceOfPassive: 3,
+  // you can change color on view map
 };
 
 export default Commons;

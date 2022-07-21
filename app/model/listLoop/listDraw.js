@@ -1,5 +1,6 @@
 // map
-import drawMapItem from "../../view/map/drawMapItem.js";
+// traitement in model for all draw map item
+import drawAllMapItem from "../map/drawAllMapItem.js";
 import drawLinksItem from "../../view/map/drawLinksItem.js";
 import drawBackgroundMap from "../../view/map/drawBackgroundMap.js";
 import drawPlayerOnMap from "../../view/map/drawPlayerOnMap.js";
@@ -7,7 +8,7 @@ import drawPlayerOnMap from "../../view/map/drawPlayerOnMap.js";
 export const listMap = [
   drawBackgroundMap,
   drawLinksItem,
-  drawMapItem,
+  drawAllMapItem,
   drawPlayerOnMap,
 ];
 

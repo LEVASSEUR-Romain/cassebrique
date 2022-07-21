@@ -1,3 +1,10 @@
+@import "canvas.css";
+@import "finger.css";
+@import "modalBoss.css";
+@import "modalPassive.css";
+@import "passiveOnmenu.css";
+@import "modalCampFire.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -13,19 +20,7 @@ body {
     height: 100%;
 }
 
-#canvasMap {
-    z-index: 2;
-    position: absolute;
-}
 
-#canvasPlay {
-    z-index: 1;
-    position: absolute;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 nav {
     display: flex;
@@ -60,85 +55,4 @@ nav {
 
 .passiveMenu img {
     height: 100%;
-}
-
-/* modal Passive */
-#modalPassive {
-    position: fixed;
-    z-index: 5;
-    width: 100%;
-    height: 80%;
-    background-color: white;
-    gap: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* padding: 5px; */
-    border: 1px solid black;
-}
-
-#modalPassive img {
-    object-fit: contain;
-    height: 50%;
-    width: 50%;
-}
-
-/* Gere l'affiche des passive quand on choisi */
-#passive {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 10px;
-    /*  modifier dans View passive composantPassive */
-    height: 50%;
-
-}
-
-.modulePassive {
-    display: flex;
-    flex: 1;
-    z-index: 10;
-    gap: 5px;
-    border: solid black 3px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: white;
-}
-
-.modulePassive h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modulePassive img {
-    width: 42%;
-    height: 50%;
-}
-
-/* Boss affichage */
-#boss {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
-    background-color: white;
-    gap: 20px;
-    width: 100%;
-}
-
-#boss h1 {
-    font-size: 4rem;
-}
-
-#boss p {
-    font-size: 2rem;
-}
-
-#boss>p:nth-child(3) {
-    font-size: 1rem;
 }

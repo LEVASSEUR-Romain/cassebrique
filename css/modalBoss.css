@@ -1,0 +1,24 @@
+/* Boss affichage */
+#boss {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    background-color: white;
+    gap: 20px;
+    width: 100%;
+}
+
+#boss h1 {
+    font-size: 4rem;
+}
+
+#boss p {
+    font-size: 2rem;
+}
+
+#boss>p:nth-child(3) {
+    font-size: 1rem;
+}
