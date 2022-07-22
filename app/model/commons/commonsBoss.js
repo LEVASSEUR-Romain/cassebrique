@@ -32,5 +32,22 @@ const commonsBoss = {
     frameAddBall: 125, // modulo
     borderHeightSpamBall: 5, //%
   },
+  boss3: {
+    id: "boss3",
+    x: 0,
+    y: 0, // defaut start
+    width: 5, //%
+    height: 10, //%
+    life: 15,
+    color: "#2F8802", //%
+    borderMaxBottom: 30, //%
+    speed: 0.8, // %
+    move: "upRight",
+    // add ball
+    previewBomb: 100,
+    frameBomb: 125, // modulo
+    borderWitdhBomb: 20, //%
+    mapTierTarget: 1,
+  },
 };
 export default commonsBoss;

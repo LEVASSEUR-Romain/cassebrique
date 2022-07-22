@@ -19,23 +19,23 @@ const canvasMap = document.getElementById("canvasMap");
 const ctx = canvasPlay.getContext("2d");
 const ctxMap = canvasMap.getContext("2d");
 // variable
-let Briks = [];
-let leveling = "";
-let setTimeOutGame = null;
-let start = false;
+const Briks = [];
+const leveling = "";
+const setTimeOutGame = null;
+const start = false;
+const loseBall = false;
 // list draw default
 const listDraw = listMap;
 // localStorage
 let Player,
   Ball,
-  lifePlayer,
   map,
   commons,
   itemMapPosition = null;
 // debug
 Player = { ...Commons.PlayerDefault };
 Ball = { ...Commons.BallDefault };
-lifePlayer = Commons.PlayerDefault.life;
+
 // default because 1 map for the moment
 map = map1;
 commons = Commons;
@@ -44,14 +44,12 @@ itemMapPosition = createMap(map, commons);
   console.log("ici");
   Player = getLocalStrorage("player");
   Ball = getLocalStrorage("ball");
-  lifePlayer = Player.life;
   map = getLocalStrorage("map");
   commons = getLocalStrorage("commons");
   itemMapPosition = getLocalStrorage("mapItem");
 } else {
   Player = { ...Commons.PlayerDefault };
   Ball = { ...Commons.BallDefault };
-  lifePlayer = Commons.PlayerDefault.life;
   // default because 1 map for the moment
   map = map1;
   commons = Commons;
@@ -76,7 +74,7 @@ const objectGlobal = {
   Briks: Briks,
   leveling: leveling,
   Player: Player,
-  lifePlayer: lifePlayer,
+  loseBall: loseBall,
   setTimeOutGame: setTimeOutGame,
   start: start,
   map: map,

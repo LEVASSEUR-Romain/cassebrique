@@ -16,7 +16,7 @@ const boss2 = (objectGlobal) => {
       Boss.move = "left";
     }
   }
-  // create briks
+  // create Ball
   Boss.frame = Boss.frame === undefined ? 1 : Boss.frame + 1;
   if (Boss.frame % Boss.frameAddBall === 0) {
     // add Ball

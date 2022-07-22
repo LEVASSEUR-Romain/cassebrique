@@ -1,4 +1,5 @@
 import { playerLoseLife } from "../../controler/objetGlobalchange/controleurPlayer.js";
+import setLoseBall from "../../controler/objetGlobalchange/setLoseBall.js";
 const borderBall = (
   objectGlobal,
   ballXLeft,
@@ -22,6 +23,7 @@ const borderBall = (
   if (conditionBottomBorder || conditionTopBorder) {
     if (conditionBottomBorder) {
       // perdu
+      setLoseBall(objectGlobal, true);
       return playerLoseLife(objectGlobal);
     }
     if (conditionTopBorder) Ball.angleDirectionY = 1;

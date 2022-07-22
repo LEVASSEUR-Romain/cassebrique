@@ -1,17 +1,16 @@
 import setPositionDefaultBall from "../../controler/objetGlobalchange/setPositionDefaultBall.js";
-import setLifePlayer from "../../controler/objetGlobalchange/setLifePlayer.js";
+import setLoseBall from "../../controler/objetGlobalchange/setLoseBall.js";
 import setStart from "../../controler/objetGlobalchange/setStart.js";
 import reGoLoopGame from "./tools/reGoLoopGame.js";
+import stopLoopGame from "./tools/stopLoopGame.js";
 const restartLoseLife = (objectGlobal, listEvent, listCollision) => {
-  //destructuring
-  const { Player, Ball, Commons } = objectGlobal;
-  if (objectGlobal.lifePlayer !== Player.life) {
+  if (objectGlobal.loseBall) {
     // refrech life start stop
-    setLifePlayer(objectGlobal);
+    setLoseBall(objectGlobal, false);
     setStart(objectGlobal, false);
     //restart position
     setPositionDefaultBall(objectGlobal);
-    clearTimeout(objectGlobal.setTimeOutGame);
+    stopLoopGame(objectGlobal);
   } else reGoLoopGame(objectGlobal, listEvent, listCollision);
 };
 export default restartLoseLife;

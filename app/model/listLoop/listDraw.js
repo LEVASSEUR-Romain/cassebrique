@@ -23,7 +23,7 @@ export const ListGamingMin = [backgroundCanvas, drawPlayer, drawBall];
 // warning order
 export const listGameDefault = ListGamingMin.concat(drawBricks);
 
-// Boss 1 draw shooter boss
+// Boss 1 => shooter boss
 import drawBoss1 from "../../view/boss/boss1/drawBoss1.js";
 import drawShoot from "../../view/boss/boss1/drawShoot.js";
 export const listBoss1 = ListGamingMin.concat(drawBoss1, drawShoot);
@@ -36,4 +36,14 @@ export const listBoss2 = [
   drawPlayer,
   drawBoss2,
   drawMultiBall,
+];
+
+//boss 3 => bomb boss
+import backgroundCanvasDynamique from "../../view/boss/boss3/backgroundCanvasDynamique.js";
+import drawBoss3 from "../../view/boss/boss3/drawBoss3.js";
+export const listBoss3 = [
+  backgroundCanvasDynamique,
+  drawPlayer,
+  drawBoss3,
+  drawBall,
 ];

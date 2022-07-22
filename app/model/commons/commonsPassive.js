@@ -6,6 +6,7 @@ const commonsPassive = [
     image: "./img/passive/falcon-moon.svg",
     effect: (player, ball = 0, Commons = 0) => {
       Commons.PlayerDefault.life += 1;
+      player.life += 1;
     },
   },
   {
