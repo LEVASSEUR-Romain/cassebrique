@@ -9,5 +9,10 @@ const commonsDescribeBoss = {
     describe:
       "Tire sur le boss avec ta boule, periodiquement il créer une boule et perd un point de vie, si une boule tombe vous perdez de la vie",
   },
+  boss3: {
+    title: "Boss qui pause de bomb",
+    describe:
+      "Eviter le zone de bomb, quand la couleur change vous perder un point de vie si vous etes sur le lieu de la bombe",
+  },
 };
 export default commonsDescribeBoss;

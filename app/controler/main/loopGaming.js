@@ -3,7 +3,6 @@ import mainCollision from "./mainCollision.js";
 import drawAll from "../../view/drawAll.js";
 
 const loopGaming = (objectGlobal, listEvent, listCollision) => {
-  console.log("loop");
   //collision
   mainCollision(objectGlobal, listCollision);
   // event

@@ -3,6 +3,7 @@ import {
   listGameDefault,
   listBoss1,
   listBoss2,
+  listBoss3,
 } from "../../model/listLoop/listDraw.js";
 /**
  *
@@ -22,6 +23,9 @@ export const addListDraw = (objectGlobal, type) => {
       break;
     case "boss2":
       listBoss2.forEach((draw) => objectGlobal.listDraw.push(draw));
+      break;
+    case "boss3":
+      listBoss3.forEach((draw) => objectGlobal.listDraw.push(draw));
       break;
   }
 };

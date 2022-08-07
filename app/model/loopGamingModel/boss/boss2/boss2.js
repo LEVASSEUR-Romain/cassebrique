@@ -1,5 +1,5 @@
 import { addBallOnArray } from "../../../../controler/objetGlobalchange/constroleurBall.js";
-
+import { bossLoseLife } from "../../../../controler/objetGlobalchange/controleurBoss.js";
 const boss2 = (objectGlobal) => {
   // go left and right
   const { Boss, canvasPlay, Commons } = objectGlobal;
@@ -26,8 +26,7 @@ const boss2 = (objectGlobal) => {
       (Boss.height * canvasPlay.height) / 100 +
       (Boss.borderHeightSpamBall * canvasPlay.height) / 100 +
       (Commons.BallDefault.radiusHeight * canvasPlay.height) / 100;
-    // boss lose life
-    Boss.life -= 1;
+    bossLoseLife(Boss);
     addBallOnArray(objectGlobal, Boss.x, heightBoss, 0, 1);
   }
 };

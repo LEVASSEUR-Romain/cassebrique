@@ -22,3 +22,11 @@ export const deleteAllUpdateBoss = (objectGlobal) => {
   //delete boss
   delete objectGlobal.Boss;
 };
+
+//add Tier map Bomb
+export const updateMapTierBomb = (objectGlobal) => {
+  objectGlobal.Boss.mapTierTarget += 1;
+  const tierMax = 3;
+  if (objectGlobal.Boss.mapTierTarget > tierMax)
+    objectGlobal.Boss.mapTierTarget = 1;
+};

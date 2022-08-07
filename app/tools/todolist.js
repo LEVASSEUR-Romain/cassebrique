@@ -1,8 +1,6 @@
-// backGroundCanvasDynamique
-// BombPlayer
-// boss 3 Bomb
-// controleurBomb?
-//draw Boss 3 ?
+// changement tier pour les bombes
+// controleListdraw update ??
+// modification collision avec boss?
 
 // equilibrage niveau (trop de brique // reduire la taille)
 // debug local Storage

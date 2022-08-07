@@ -42,6 +42,7 @@ export const listBoss2 = [
 import backgroundCanvasDynamique from "../../view/boss/boss3/backgroundCanvasDynamique.js";
 import drawBoss3 from "../../view/boss/boss3/drawBoss3.js";
 export const listBoss3 = [
+  backgroundCanvas,
   backgroundCanvasDynamique,
   drawPlayer,
   drawBoss3,

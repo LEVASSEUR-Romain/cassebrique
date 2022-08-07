@@ -42,11 +42,13 @@ const commonsBoss = {
     color: "#2F8802", //%
     borderMaxBottom: 30, //%
     speed: 0.8, // %
-    move: "upRight",
+    move: "downRight",
     // add ball
-    previewBomb: 100,
+    previewBomb: 50, //frame view
+    colorAnimation: "red",
     frameBomb: 125, // modulo
-    borderWitdhBomb: 20, //%
+    bombFire: 2, // number frame Fire
+    colorAnimationFire: "yellow",
     mapTierTarget: 1,
   },
 };

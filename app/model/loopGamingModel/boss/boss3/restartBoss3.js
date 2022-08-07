@@ -3,7 +3,7 @@ import setStart from "../../../../controler/objetGlobalchange/setStart.js";
 import setPositionDefaultBall from "../../../../controler/objetGlobalchange/setPositionDefaultBall.js";
 import stopLoopGame from "../../tools/stopLoopGame.js";
 import reGoLoopGame from "../../tools/reGoLoopGame.js";
-import { emptyBomb } from "../../../../controler/objetGlobalchange/controleurBomb.js";
+import { addBomb } from "../../../../controler/objetGlobalchange/controleurBomb.js";
 const restartBoss3 = (objectGlobal, listEvent, listCollision) => {
   //ball left zonePlay
   if (objectGlobal.loseBall) {
@@ -12,7 +12,7 @@ const restartBoss3 = (objectGlobal, listEvent, listCollision) => {
     setStart(objectGlobal, false);
     // stop bomb
     if (objectGlobal.Bomb) {
-      emptyBomb(objectGlobal);
+      addBomb(objectGlobal);
     }
     //restart position
     setPositionDefaultBall(objectGlobal);

@@ -1,7 +1,10 @@
-import { addBallOnArray } from "../../../../controler/objetGlobalchange/constroleurBall.js";
-
+import {
+  fireBomb,
+  setPreviewframe,
+  isBombFire,
+} from "../../../../controler/objetGlobalchange/controleurBomb.js";
 const boss3 = (objectGlobal) => {
-  const { Boss, canvasPlay, Commons } = objectGlobal;
+  const { Boss, canvasPlay } = objectGlobal;
   const speedBoss = (Boss.speed * canvasPlay.width) / 100;
   const bossWidth = (Boss.width * canvasPlay.width) / 100;
   const bossHeight = (Boss.height * canvasPlay.height) / 100;
@@ -9,9 +12,8 @@ const boss3 = (objectGlobal) => {
     canvasPlay.height - (Boss.borderMaxBottom * canvasPlay.height) / 100;
   const positionPlayerMaxBottom = maxBottom - bossHeight;
   const borderTop = 0;
-  const positionXLeft = canvasPlay.height - bossWidth;
+  const positionXLeft = canvasPlay.width - bossWidth;
   const positionXRight = 0;
-  if (Boss.y === 0) Boss.y = positionPlayerMaxBottom;
 
   // move boss
   switch (Boss.move) {
@@ -44,19 +46,22 @@ const boss3 = (objectGlobal) => {
       }
       break;
   }
-  // create Bomb
-  /*   Boss.frame = Boss.frame === undefined ? 1 : Boss.frame + 1;
-  if (Boss.frame % Boss.frameAddBall === 0) {
-    // add Ball
-    // create ball no lose life
-    const heightBoss =
-      Boss.y +
-      (Boss.height * canvasPlay.height) / 100 +
-      (Boss.borderHeightSpamBall * canvasPlay.height) / 100 +
-      (Commons.BallDefault.radiusHeight * canvasPlay.height) / 100;
-    // boss lose life
-    Boss.life -= 1;
-    addBallOnArray(objectGlobal, Boss.x, heightBoss, 0, 1);
-  } */
+  Boss.frame = Boss.frame === undefined ? 1 : Boss.frame + 1;
+  // -------------------------- Bomb activate animation -----------
+  // show bomb is comming
+  if (Boss.frame % Boss.previewBomb === 0) {
+    setPreviewframe(objectGlobal, true);
+  }
+  // ------------------------- Bomb fire --------------------
+  if (isBombFire(objectGlobal)) {
+    fireBomb(objectGlobal);
+    console.log(objectGlobal);
+  }
+  if (Boss.frame % Boss.frameBomb === 0) {
+    //reset animation
+    setPreviewframe(objectGlobal, false);
+    // add boss activate Bomb
+    fireBomb(objectGlobal);
+  }
 };
 export default boss3;
