@@ -1,3 +1,4 @@
+// changement de niveau bug camp fire et boss
 // debug local Storage
 
 //revoir les passives le mettre dans commons ? aussi
@@ -8,6 +9,8 @@
 // Win final fin de la carte
 // visuel
 // bomb boss , ma position sur la carte, campfire
+
+// map dans objet global utilité??
 
 // en Bonus
 // test unitss

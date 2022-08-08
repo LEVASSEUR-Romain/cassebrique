@@ -18,6 +18,5 @@ const boss1 = (objectGlobal) => {
   if (Boss.frame % Boss.frameShoot === 0) {
     addShoot(objectGlobal);
   }
-  //console.log([...objectGlobal.Shoot]);
 };
 export default boss1;

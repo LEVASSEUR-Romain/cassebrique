@@ -7,14 +7,15 @@ const generateMapByDiffucult = (difficult) => {
       },
     ];
   } else if (2 < difficult && difficult <= 4) {
+    const retarded = difficult - 1;
     return [
       {
         bricks: 1,
-        numberBricks: 3 * difficult,
+        numberBricks: 3 * retarded,
       },
       {
         bricks: 2,
-        numberBricks: 4 * difficult,
+        numberBricks: 4 * retarded,
       },
     ];
   } else if (4 < difficult && difficult <= 6) {

@@ -5,15 +5,18 @@ import {
   addListDraw,
 } from "../../../controler/objetGlobalchange/controleurListDraw.js";
 import routing from "../../../controler/main/routing.js";
+import drawAll from "../../../view/drawAll.js";
 
 const rebootAllAndRouting = (objectGlobal) => {
   //stop start
   setStart(objectGlobal, false);
   // Player choose lvl
   setLastClickLvl(objectGlobal, false);
-  //redraw only map
+  //add only map
   removeAllDraw(objectGlobal);
   addListDraw(objectGlobal, "map");
+  // redraw
+  drawAll(objectGlobal);
   //go map
   routing("map", canvasPlay, canvasMap);
 };

@@ -25,18 +25,13 @@ const activateOnePassifAndSave = (objectGlobal) => {
     // warning idOnPassiveBonus can equal 0
     if (idOnPassiveBonus !== undefined) {
       commonsPassive[idOnPassiveBonus].effect(Player, Ball, Commons);
-      // destruction ecouteur event
       const allBonusDiv = document.querySelectorAll(".modulePassive");
       allBonusDiv.forEach((elt) => {
         elt.removeEventListener("click", clickPassive);
       });
-      // delete show
       deleteComposantPassive();
-      // add To Player passive
       Player.passiveBonus.push(idOnPassiveBonus);
-      // add on passive menu
       iconePassiveOnMenu(Player);
-      //add lister on new icone Menu
       clickOnPassifMenu();
       //save LOCAL
       //addAllLocalStrorage(objectGlobal);
