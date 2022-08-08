@@ -16,6 +16,7 @@ const restartBoss3 = (objectGlobal, listEvent, listCollision) => {
     }
     //restart position
     setPositionDefaultBall(objectGlobal);
+    objectGlobal.Boss.frame = 0;
     stopLoopGame(objectGlobal);
   } else {
     reGoLoopGame(objectGlobal, listEvent, listCollision);

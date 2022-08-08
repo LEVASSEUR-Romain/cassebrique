@@ -4,6 +4,7 @@
 @import "modalPassive.css";
 @import "passiveOnmenu.css";
 @import "modalCampFire.css";
+@import "lose.css";
 
 * {
     margin: 0;

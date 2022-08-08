@@ -52,3 +52,7 @@ export const addListDraw = (objectGlobal, type) => {
 export const removeAllDraw = (objectGlobal) => {
   objectGlobal.listDraw = [];
 };
+
+export const isEmptyDraw = (objectGlobal) => {
+  return objectGlobal.listDraw.length === 0;
+};

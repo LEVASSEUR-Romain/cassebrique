@@ -37,7 +37,7 @@ export const addBomb = (objectGlobal) => {
     x: x,
     y: y,
     width: width,
-    active: 0,
+    active: false,
     previewframe: false,
   };
 };
@@ -47,9 +47,11 @@ export const setPreviewframe = (objectGlobal, bool) => {
 };
 
 export const fireBomb = (objectGlobal) => {
-  objectGlobal.Bomb.active += 1;
-  if (objectGlobal.Bomb.active > objectGlobal.Boss.bombFire)
-    objectGlobal.Bomb.active = 0;
+  objectGlobal.Bomb.active = true;
+};
+
+export const stopFireBomb = (objectGlobal) => {
+  objectGlobal.Bomb.active = false;
 };
 
 export const isBombFire = (objectGlobal) => {

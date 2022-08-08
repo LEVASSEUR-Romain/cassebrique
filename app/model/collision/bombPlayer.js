@@ -1,3 +1,4 @@
+import { playerLoseLife } from "../../controler/objetGlobalchange/controleurPlayer.js";
 const bombPlayer = (
   objectGlobal,
   ballXLeft,
@@ -6,16 +7,16 @@ const bombPlayer = (
   ballYBottom
 ) => {
   //destructiring
-  const { Player, Bomb } = objectGlobal;
+  const { Player, Bomb, canvasPlay } = objectGlobal;
   //const
   const playerWidth = (Player.width * canvasPlay.width) / 100;
   const rightBomb = Bomb.x;
-  const leftBomb = Bomb.x + (Bomb.width * canvasPlay.width) / 100;
-  if (
-    rightBomb >= Player.x &&
-    leftBomb <= Player.x + playerWidth &&
-    Bomb.active
-  ) {
+  const leftBomb = Bomb.x + Bomb.width;
+  const xinit = Player.x >= rightBomb && Player.x <= leftBomb;
+  const xfinal =
+    Player.x + playerWidth >= rightBomb && Player.x + playerWidth <= leftBomb;
+  const xOr = xinit || xfinal;
+  if (Bomb.active >= 1 && xOr) {
     //lose 1 pv
     return playerLoseLife(objectGlobal);
   }

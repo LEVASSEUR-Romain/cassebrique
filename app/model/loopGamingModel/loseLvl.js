@@ -1,9 +1,13 @@
 import stopLoopGame from "./tools/stopLoopGame.js";
+import loseAllGame from "../../controler/lose/loseAllGame.js";
+import setStart from "../../controler/objetGlobalchange/setStart.js";
+import rebootAllAndRouting from "./tools/rebootAllAndRouting.js";
 const loseLvl = (objectGlobal) => {
   if (objectGlobal.Player.life === 0) {
-    objectGlobal.start = false;
+    setStart(objectGlobal, false);
     stopLoopGame(objectGlobal);
-    alert("Perdu recommencer");
+    rebootAllAndRouting(objectGlobal);
+    loseAllGame(objectGlobal);
   }
 };
 export default loseLvl;

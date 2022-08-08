@@ -24,7 +24,7 @@ const commonsBoss = {
     y: 0,
     width: 15, //%
     height: 3, //%
-    life: 10,
+    life: 9,
     color: "#2F8802", //%
     speed: 0.8, // %
     move: "left",
@@ -36,18 +36,17 @@ const commonsBoss = {
     id: "boss3",
     x: 0,
     y: 0, // defaut start
-    width: 5, //%
-    height: 10, //%
-    life: 15,
+    width: 2, //%
+    height: 15, //%
+    life: 1, // 7 par default
     color: "#2F8802", //%
     borderMaxBottom: 30, //%
-    speed: 0.8, // %
+    speed: 0.5, // %
     move: "downRight",
     // add ball
     previewBomb: 50, //frame view
     colorAnimation: "red",
     frameBomb: 125, // modulo
-    bombFire: 2, // number frame Fire
     colorAnimationFire: "yellow",
     mapTierTarget: 1,
   },

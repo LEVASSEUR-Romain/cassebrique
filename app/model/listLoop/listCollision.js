@@ -23,9 +23,10 @@ export const listCollisionBoss2 = [
 ];
 //boss 3
 import bombPlayer from "../collision/bombPlayer.js";
+import bossBallType2 from "../collision/bossBallType2.js";
 export const listCollisionBoss3 = [
   borderBall,
   playerBall,
-  bossBall,
+  bossBallType2,
   bombPlayer,
 ];

@@ -1,11 +1,14 @@
 import {
   fireBomb,
+  addBomb,
   setPreviewframe,
   isBombFire,
+  stopFireBomb,
 } from "../../../../controler/objetGlobalchange/controleurBomb.js";
+import { updateMapTierBomb } from "../../../../controler/objetGlobalchange/controleurBoss.js";
 const boss3 = (objectGlobal) => {
   const { Boss, canvasPlay } = objectGlobal;
-  const speedBoss = (Boss.speed * canvasPlay.width) / 100;
+  const speedBoss = (Boss.speed * canvasPlay.height) / 100;
   const bossWidth = (Boss.width * canvasPlay.width) / 100;
   const bossHeight = (Boss.height * canvasPlay.height) / 100;
   const maxBottom =
@@ -54,14 +57,14 @@ const boss3 = (objectGlobal) => {
   }
   // ------------------------- Bomb fire --------------------
   if (isBombFire(objectGlobal)) {
-    fireBomb(objectGlobal);
-    console.log(objectGlobal);
+    stopFireBomb(objectGlobal);
+    addBomb(objectGlobal);
   }
   if (Boss.frame % Boss.frameBomb === 0) {
     //reset animation
     setPreviewframe(objectGlobal, false);
-    // add boss activate Bomb
     fireBomb(objectGlobal);
+    updateMapTierBomb(objectGlobal);
   }
 };
 export default boss3;

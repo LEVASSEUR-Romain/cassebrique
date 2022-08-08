@@ -11,11 +11,9 @@ const defaultWin = (objectGlobal) => {
     stopLoopGame(objectGlobal);
     // search if bonus lvl
     const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
-    //go bonus
     if (itemMap && itemMap.bonus) {
       activateOnePassifAndSave(objectGlobal);
     }
-    // close and redraw
     rebootAllAndRouting(objectGlobal);
   }
 };
