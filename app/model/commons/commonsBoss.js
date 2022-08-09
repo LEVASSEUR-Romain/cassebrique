@@ -1,5 +1,6 @@
 const commonsBoss = {
   boss1: {
+    //tire man
     id: "boss1",
     x: 0,
     y: 0,
@@ -19,12 +20,13 @@ const commonsBoss = {
     shootColor: "black",
   },
   boss2: {
+    // boule man
     id: "boss2",
     x: 0,
     y: 0,
     width: 15, //%
     height: 3, //%
-    life: 8,
+    life: 8, // default 8
     color: "#2F8802", //%
     speed: 0.8, // %
     move: "left",
@@ -33,6 +35,7 @@ const commonsBoss = {
     borderHeightSpamBall: 5, //%
   },
   boss3: {
+    // bomb man
     id: "boss3",
     x: 0,
     y: 0, // defaut start

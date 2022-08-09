@@ -64,7 +64,7 @@ const Commons = {
   backgroundMap: "white",
   borderMapTopBottom: 5, //%
   radiusItemMap: 3, //%
-  radiusPlayer: 1.5, //%
+  radiusPlayer: 3, //%
   colorPlayerMap: "black",
   colorLinksMap: "black",
   widthLinksMap: 2,

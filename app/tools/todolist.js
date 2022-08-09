@@ -1,10 +1,11 @@
-// changement de niveau bug camp fire et boss
 // debug local Storage
 
+// tuto d'entrer , Montrer quand vous tuer un boss, Boss tuto au lieu de phrase , UI designe
+// glisser sur pc ou enter
+// visuel de la ou on commence
 //revoir les passives le mettre dans commons ? aussi
 
-// quand on perd un point de vie sur le boss on perd le controle (verifier sur tel)
-// boss 2 multiBall rezise and pointermove
+// bug sur tel
 
 // Win final fin de la carte
 // visuel
