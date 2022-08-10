@@ -26,7 +26,7 @@ const commonsBoss = {
     y: 0,
     width: 15, //%
     height: 3, //%
-    life: 8, // default 8
+    life: 1, // default 8
     color: "#2F8802", //%
     speed: 0.8, // %
     move: "left",
@@ -41,7 +41,7 @@ const commonsBoss = {
     y: 0, // defaut start
     width: 2, //%
     height: 15, //%
-    life: 7, // 7 par default
+    life: 1, // 7 par default
     color: "#2F8802", //%
     borderMaxBottom: 30, //%
     speed: 0.5, // %

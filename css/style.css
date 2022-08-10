@@ -31,7 +31,7 @@ nav {
     box-sizing: border-box;
     border-bottom: 1px solid black;
     gap: 5px;
-    width: 100%;
+    width: 100vw;
 }
 
 .logoMenu {
@@ -40,8 +40,16 @@ nav {
     gap: 5px;
 }
 
+#play {
+    padding: 6px
+}
+
 #play, #map {
     flex: 1;
+}
+
+#play, #map:hover {
+    cursor: grab;
 }
 
 /* Passive dans menu */

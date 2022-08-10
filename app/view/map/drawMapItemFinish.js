@@ -1,6 +1,7 @@
-import loaderImageIconeSvg from "../loaderimage/loaderImageIconeSvg.js";
+import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 
-const drawMapItemFinish = ({ ctxMap, Commons, canvasMap }, item) => {
+const drawMapItemFinish = (objectGlobal, item) => {
+  const { ctxMap, Commons, canvasMap } = objectGlobal;
   ctxMap.beginPath();
   ctxMap.fillStyle = "black";
   ctxMap.arc(
@@ -18,8 +19,12 @@ const drawMapItemFinish = ({ ctxMap, Commons, canvasMap }, item) => {
   // icone
   const imgPositionX = positionX - radius;
   const imgPositionY = positionY - radius;
-  loaderImageIconeSvg("close").then((rep) => {
-    ctxMap.drawImage(rep, imgPositionX, imgPositionY, radius * 2, radius * 2);
-  });
+  ctxMap.drawImage(
+    getHtmlCollectionImg(objectGlobal, "close"),
+    imgPositionX,
+    imgPositionY,
+    radius * 2,
+    radius * 2
+  );
 };
 export default drawMapItemFinish;

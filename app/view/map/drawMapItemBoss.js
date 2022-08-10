@@ -1,6 +1,7 @@
-import loaderImageIconeSvg from "../loaderimage/loaderImageIconeSvg.js";
+import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 
-const drawMapItemBoss = ({ ctxMap, Commons, canvasMap }, item) => {
+const drawMapItemBoss = (objectGlobal, item) => {
+  const { ctxMap, Commons, canvasMap } = objectGlobal;
   const positionX = (canvasMap.width * item.px) / 100;
   const positionY = (canvasMap.height * item.py) / 100;
   const radius = (Commons.radiusItemMap * canvasMap.height) / 100;
@@ -13,17 +14,12 @@ const drawMapItemBoss = ({ ctxMap, Commons, canvasMap }, item) => {
   // icone
   const imgPositionX = positionX - radius;
   const imgPositionY = positionY - radius;
-  loaderImageIconeSvg("lvlboss").then((rep) => {
-    ctxMap.drawImage(rep, imgPositionX, imgPositionY, radius * 2, radius * 2);
-  });
-
-  // emoji bonus
-  /*   const lenghtEmoji = (Commons.radiusItemMap * canvasMap.height) / 100;
-  ctxMap.font = lenghtEmoji + "px Arial";
-  ctxMap.strokeText(
-    "🎁",
-    positionX - lenghtEmoji / 2,
-    positionY + lenghtEmoji / 4
-  ); */
+  ctxMap.drawImage(
+    getHtmlCollectionImg(objectGlobal, "lvlboss"),
+    imgPositionX,
+    imgPositionY,
+    radius * 2,
+    radius * 2
+  );
 };
 export default drawMapItemBoss;

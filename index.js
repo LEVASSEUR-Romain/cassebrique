@@ -6,6 +6,7 @@ import Commons from "./app/model/commons/commons.js";
 // controller
 import main from "./app/controler/main/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
+import loadAllImg from "./app/controler/load/loadAllImg.js";
 import isLocalStorage from "./app/controler/localStorage/isLocalStorage.js";
 import addLocalStrorage from "./app/controler/localStorage/addLocalStrorage.js";
 import getLocalStrorage from "./app/controler/localStorage/getLocalStrorage.js";
@@ -26,6 +27,7 @@ const start = false;
 const loseBall = false;
 // list draw default
 const listDraw = listMap;
+
 // localStorage
 let Player,
   Ball,
@@ -61,29 +63,34 @@ itemMapPosition = createMap(map, commons);
   addLocalStrorage(itemMapPosition, "mapItem");
 } */
 const itemMapLinks = mapLinks(itemMapPosition);
-// global
-const objectGlobal = {
-  navBar: navBar,
-  canvasPlay: canvasPlay,
-  canvasMap: canvasMap,
-  playImg: playImg,
-  mapImg: mapImg,
-  Ball: Ball,
-  ctx: ctx,
-  ctxMap: ctxMap,
-  Briks: Briks,
-  leveling: leveling,
-  Player: Player,
-  loseBall: loseBall,
-  setTimeOutGame: setTimeOutGame,
-  start: start,
-  map: map,
-  itemMapPosition: itemMapPosition,
-  itemMapLinks: itemMapLinks,
-  Commons: commons,
-  listDraw: listDraw,
-  listEvent: [],
-};
-main(objectGlobal);
+// load all image
+loadAllImg().then((rep) => {
+  // global
+  const objectGlobal = {
+    navBar: navBar,
+    canvasPlay: canvasPlay,
+    canvasMap: canvasMap,
+    playImg: playImg,
+    mapImg: mapImg,
+    Ball: Ball,
+    ctx: ctx,
+    ctxMap: ctxMap,
+    Briks: Briks,
+    leveling: leveling,
+    Player: Player,
+    loseBall: loseBall,
+    setTimeOutGame: setTimeOutGame,
+    start: start,
+    map: map,
+    itemMapPosition: itemMapPosition,
+    itemMapLinks: itemMapLinks,
+    Commons: commons,
+    listDraw: listDraw,
+    listEvent: [],
+    htmlCollectionImg: rep,
+  };
+  console.log(objectGlobal);
+  main(objectGlobal);
+});
 //console.log(JSON.stringify(itemMapPosition));
 //console.log(itemMapLinks);

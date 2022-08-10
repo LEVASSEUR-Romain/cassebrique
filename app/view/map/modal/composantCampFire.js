@@ -1,4 +1,7 @@
-const composantCampFire = ({ Commons }) => {
+import getHtmlCollectionImg from "../../../controler/objetGlobalchange/getHtmlCollectionImg.js";
+
+const composantCampFire = (objectGlobal) => {
+  const { Commons } = objectGlobal;
   const newDiv = document.createElement("div");
   newDiv.setAttribute("id", "campFire");
   const height = "height:" + (100 - Commons.borderMenu) + "%";
@@ -14,8 +17,7 @@ const composantCampFire = ({ Commons }) => {
   headerRegen.append(headerContent);
   regenDiv.append(headerRegen);
   // img
-  const img = document.createElement("img");
-  img.setAttribute("src", "./img/campFire/campfire.svg");
+  const img = getHtmlCollectionImg(objectGlobal, "campfiresleep");
   img.setAttribute("alt", "recuperer la vie");
   regenDiv.appendChild(img);
   //paragraph
@@ -39,8 +41,7 @@ const composantCampFire = ({ Commons }) => {
   headerBonus.append(headerBonusContent);
   BonusDiv.append(headerBonus);
   // img
-  const imgBonus = document.createElement("img");
-  imgBonus.setAttribute("src", "./img/campFire/open-chest.svg");
+  const imgBonus = getHtmlCollectionImg(objectGlobal, "open-chest");
   imgBonus.setAttribute("alt", "recuperer un bonus");
   BonusDiv.appendChild(imgBonus);
   //paragraph

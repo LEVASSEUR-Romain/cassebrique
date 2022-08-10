@@ -1,5 +1,3 @@
-import loaderImageIconeSvg from "../loaderimage/loaderImageIconeSvg.js";
-
 const drawPlayerOnMap = ({ ctxMap, Player, Commons, canvasMap }) => {
   if (Player.pxMap !== 0 && Player.pyMap !== 0) {
     ctxMap.fillStyle = Commons.colorPlayerMap;
