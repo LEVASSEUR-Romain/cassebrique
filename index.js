@@ -3,6 +3,7 @@ import createMap from "./app/model/map/createMap.js";
 import mapLinks from "./app/model/map/mapLinks.js";
 import map1 from "./app/model/map/typeMap/map1.js";
 import Commons from "./app/model/commons/commons.js";
+import initInterrogationMap from "./app/model/map/initInterrogationMap.js";
 // controller
 import main from "./app/controler/main/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
@@ -41,7 +42,8 @@ Ball = { ...Commons.BallDefault };
 // default because 1 map for the moment
 map = map1;
 commons = Commons;
-itemMapPosition = createMap(map, commons);
+itemMapPosition = createMap(map, commons, canvasMap);
+const itemMapInterrogation = initInterrogationMap(Commons, canvasMap);
 /* if (!isLocalStorage()) {
   console.log("ici");
   Player = getLocalStrorage("player");
@@ -83,6 +85,7 @@ loadAllImg().then((rep) => {
     start: start,
     map: map,
     itemMapPosition: itemMapPosition,
+    itemMapInterrogation: itemMapInterrogation,
     itemMapLinks: itemMapLinks,
     Commons: commons,
     listDraw: listDraw,

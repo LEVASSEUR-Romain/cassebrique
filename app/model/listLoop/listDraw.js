@@ -4,11 +4,13 @@ import drawAllMapItem from "../map/drawAllMapItem.js";
 import drawLinksItem from "../../view/map/drawLinksItem.js";
 import drawBackgroundMap from "../../view/map/drawBackgroundMap.js";
 import drawPlayerOnMap from "../../view/map/drawPlayerOnMap.js";
+import drawInterrogationPoint from "../../view/map/drawInterrogationPoint.js";
 // warning order
 export const listMap = [
   drawBackgroundMap,
   drawLinksItem,
   drawAllMapItem,
+  drawInterrogationPoint,
   drawPlayerOnMap,
 ];
 

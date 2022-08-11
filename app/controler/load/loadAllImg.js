@@ -12,6 +12,7 @@ const loadAllImg = async () => {
       "lvlboss.svg",
       "lvlmob.svg",
       "positiononmap.svg",
+      "interrogation.svg",
     ],
     passive: [],
   };

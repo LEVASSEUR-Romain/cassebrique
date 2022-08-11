@@ -69,6 +69,8 @@ const Commons = {
   colorLinksMap: "black",
   widthLinksMap: 2,
   choiceOfPassive: 3,
+  interrogationBorder: 2, // %
+  interrogationRadius: 5, //%
   // you can change color on view map
 };
 
