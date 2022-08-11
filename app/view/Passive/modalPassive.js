@@ -1,31 +1,20 @@
 import commonsPassive from "../../model/commons/commonsPassive.js";
+import component from "../tools/component.js";
 const modalPassive = (id) => {
   const pB = commonsPassive[id];
-  const modal = document.createElement("div");
-  modal.setAttribute("id", "modalPassive");
-  // en tete
-  const header = document.createElement("header");
-  const headerContent = document.createTextNode(
+  const modal = component("div", { id: "modalPassive" }, document.body);
+  const header = component(
+    "header",
+    {},
+    modal,
     "Description , click pour fermer"
   );
-  header.appendChild(headerContent);
-  modal.appendChild(header);
-  // image
-  const img = document.createElement("img");
-  img.setAttribute("src", pB.image);
-  img.setAttribute("alt", "bonus " + pB.name);
-  modal.appendChild(img);
-  //name
-  const name = document.createElement("h2");
-  const nameContent = document.createTextNode(pB.name);
-  name.appendChild(nameContent);
-  modal.appendChild(name);
-  //description
-  const description = document.createElement("p");
-  const descriptionContent = document.createTextNode(pB.description);
-  description.appendChild(descriptionContent);
-  modal.appendChild(description);
-  //ajouter dans la div
-  document.body.appendChild(modal);
+  const img = component(
+    "img",
+    { src: pB.image, alt: "bonus " + pB.name },
+    modal
+  );
+  const name = component("h2", {}, modal, pB.name);
+  const describe = component("p", {}, modal, pB.description);
 };
 export default modalPassive;

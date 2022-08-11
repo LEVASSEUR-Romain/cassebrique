@@ -1,25 +1,15 @@
-const composantLose = () => {
-  const addDiv = document.createElement("div");
-  addDiv.setAttribute("id", "lose");
+import component from "../tools/component.js";
 
-  // en tete
-  const header = document.createElement("header");
-  const headerContent = document.createTextNode("Vous avez perdu");
-  header.appendChild(headerContent);
-  addDiv.appendChild(header);
-  // logo
-  const logoLose = document.createElement("h2");
-  const logoContent = document.createTextNode("😒");
-  logoLose.appendChild(logoContent);
-  addDiv.appendChild(logoLose);
-  //describe
-  const p = document.createElement("p");
-  const pContent = document.createTextNode(
+const composantLose = () => {
+  const addDiv = component("div", { id: lose }, document.body);
+
+  const header = component("header", {}, addDiv, "Vous avez perdu");
+  const logo = component("h2", {}, addDiv, "😒");
+  const describe = component(
+    "p",
+    {},
+    addDiv,
     "Pour recommencer rafraichir la page (F5)"
   );
-  p.appendChild(pContent);
-  addDiv.appendChild(p);
-  //add div final
-  document.body.appendChild(addDiv);
 };
 export default composantLose;

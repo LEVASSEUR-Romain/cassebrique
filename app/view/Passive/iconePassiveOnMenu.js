@@ -1,4 +1,5 @@
 import commonsPassive from "../../model/commons/commonsPassive.js";
+import component from "../tools/component.js";
 const iconePassiveOnMenu = (Player) => {
   const passiveMenu = document.querySelector(".passiveMenu");
   // remove Child
@@ -9,13 +10,16 @@ const iconePassiveOnMenu = (Player) => {
   //passiveMenu.removeChild();
   Player.passiveBonus.forEach((passive) => {
     const pB = commonsPassive[passive];
-    // image
-    const img = document.createElement("img");
-    img.setAttribute("src", pB.image);
-    img.setAttribute("alt", "bonus " + pB.name);
-    img.setAttribute("title", pB.description);
-    img.setAttribute("data-id", passive);
-    passiveMenu.appendChild(img);
+    const img = component(
+      "img",
+      {
+        src: pB.image,
+        alt: "bonus " + pB.name,
+        title: pB.description,
+        "data-id": passive,
+      },
+      passiveMenu
+    );
   });
 };
 export default iconePassiveOnMenu;

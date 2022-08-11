@@ -1,13 +1,9 @@
+import component from "../tools/component.js";
 const drawCurseurUp = () => {
   let element = document.querySelector(".finger");
   if (element === null) {
-    const newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "finger");
-    const descriptionContent = document.createTextNode("👆");
-    newDiv.appendChild(descriptionContent);
-    document.body.appendChild(newDiv);
-
-    element = document.querySelector(".finger");
+    const newDiv = component("div", { class: "finger" }, document.body, "👆");
+    element = newDiv;
     element.addEventListener("animationend", () => {
       element.remove();
     });
