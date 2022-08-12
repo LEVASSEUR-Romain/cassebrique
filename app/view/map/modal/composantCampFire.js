@@ -5,7 +5,7 @@ const composantCampFire = (objectGlobal) => {
   const height = "height:" + (100 - Commons.borderMenu) + "%";
   const newDiv = component(
     "div",
-    { id: "campFire", style: "height" },
+    { id: "campFire", style: height },
     document.body
   );
   //                    modal regen

@@ -1,6 +1,7 @@
 import setLastClickLvl from "../../objetGlobalchange/setLastClickLvl.js";
 import deleteComposantCampFire from "../../../view/map/modal/deleteComposantCampFire.js";
-
+import finishItemMap from "../../map/finishItemMap.js";
+import drawAllMap from "../../../view/drawAllMap.js";
 const clickModalCampFireRegen = (objectGlobal) => {
   const { Player, Commons } = objectGlobal;
   if (Player.life === Commons.PlayerDefault.life) {
@@ -9,6 +10,8 @@ const clickModalCampFireRegen = (objectGlobal) => {
     Player.life = Commons.PlayerDefault.life;
     //end chose
     setLastClickLvl(objectGlobal, false);
+    finishItemMap(objectGlobal);
+    drawAllMap(objectGlobal);
     deleteComposantCampFire();
   }
 };

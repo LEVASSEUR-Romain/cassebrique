@@ -112,8 +112,6 @@ test("mapClickEventMount good click", () => {
   // modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(4);
-  // modification for map for id : 1
-  expect(itemMap[0][0].finish).toEqual(true);
 });
 
 test("mapClickEventMount bad click", () => {
@@ -155,8 +153,6 @@ test("mapClickEventMount bad click", () => {
   expect(Player.currentIdLvl).toEqual(1);
   expect(Player.pxMap).toEqual(undefined);
   expect(Player.pyMap).toEqual(undefined);
-  // modification for map for id : 1
-  expect(itemMap[0][0].finish).toEqual(false);
 });
 
 test("mapClickEventMount lastClickLvl true", () => {
@@ -198,6 +194,4 @@ test("mapClickEventMount lastClickLvl true", () => {
   expect(Player.currentIdLvl).toEqual(1);
   expect(Player.pxMap).toEqual(undefined);
   expect(Player.pyMap).toEqual(undefined);
-  // modification for map for id : 1
-  expect(itemMap[0][0].finish).toEqual(false);
 });

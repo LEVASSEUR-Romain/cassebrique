@@ -1,5 +1,4 @@
 import mapControleAccesChangePlayer from "./mapControleAccesChangePlayer.js";
-import finishItemMap from "./finishItemMap.js";
 import { setPositioMapPlayer } from "../objetGlobalchange/controleurPlayer.js";
 // there is test for this function
 // manipulation for all map controleur
@@ -37,7 +36,6 @@ const mapClickEventMount = (event, objectGlobal) => {
         ) {
           const afterId = Player.currentIdLvl;
           if (mapControleAccesChangePlayer(elmt, Player)) {
-            finishItemMap(afterId, itemMapPosition);
             setPositioMapPlayer(objectGlobal, elmt);
             elementCible = elmt;
           }

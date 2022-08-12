@@ -1,7 +1,9 @@
-const finishItemMap = (id, itemMap) => {
+const finishItemMap = (objectGlobal) => {
+  const id = objectGlobal.Player.currentIdLvl;
+  const itemMapPosition = objectGlobal.itemMapPosition;
   let findId = "";
-  for (let i = 0; i < itemMap.length; i++) {
-    findId = itemMap[i].find((elmt) => elmt.id === id);
+  for (let i = 0; i < itemMapPosition.length; i++) {
+    findId = itemMapPosition[i].find((elmt) => elmt.id === id);
     if (findId !== undefined) break;
   }
   if (findId !== undefined) {
