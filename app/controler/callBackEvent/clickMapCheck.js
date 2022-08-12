@@ -6,7 +6,7 @@ import onModalCampFire from "../eventListener/modal/onModalCampFire.js";
 import onModalInterrogation from "../eventListener/modal/onModalInterrogation.js";
 import controlerBoss from "./../boss/controlerBoss.js";
 import isMapClickEventInterrogation from "../map/isMapClickEventInterrogation.js";
-import drawAll from "../../view/drawAll.js";
+import drawAllMap from "../../view/drawAllMap.js";
 import composantInterrogation from "../../view/map/modal/composantInterrogation.js";
 const clickMapCheck = (e, objectGlobal) => {
   const { canvasPlay, canvasMap, itemMapInterrogation } = objectGlobal;
@@ -24,8 +24,8 @@ const clickMapCheck = (e, objectGlobal) => {
         makeCreateLvl(objectGlobal, elementClick.difficulty);
         routing("play", canvasPlay, canvasMap);
       }
-      // redraw map for refrech
-      //drawAll(objectGlobal);
+      // redraw map for change position player
+      drawAllMap(objectGlobal);
     }
   } else {
     composantInterrogation(objectGlobal);

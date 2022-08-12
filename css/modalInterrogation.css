@@ -38,6 +38,7 @@
 #helper ul li {
     display: flex;
     flex: 1;
+    gap: 20px;
 }
 
 #helper ul li p {

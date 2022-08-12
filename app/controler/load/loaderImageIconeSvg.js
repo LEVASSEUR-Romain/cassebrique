@@ -4,7 +4,12 @@ const loaderImageIconeSvg = (dir, imageWithExtend) => {
     img.onload = () => resolve(img);
     img.src = "./img/" + dir + "/" + imageWithExtend;
     img.onerror = () => {
-      console.error("add image to list loadAllImg , or in /img");
+      console.error(
+        "add image to list loadAllImg , or in /img , bug in : " +
+          dir +
+          " " +
+          imageWithExtend
+      );
     };
   });
 };

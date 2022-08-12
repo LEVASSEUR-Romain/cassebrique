@@ -1,16 +1,15 @@
 import mapControleAccesChangePlayer from "./mapControleAccesChangePlayer.js";
 import finishItemMap from "./finishItemMap.js";
+import { setPositioMapPlayer } from "../objetGlobalchange/controleurPlayer.js";
 // there is test for this function
 // manipulation for all map controleur
-const mapClickEventMount = (
-  event,
-  {
+const mapClickEventMount = (event, objectGlobal) => {
+  const {
     itemMapPosition,
     Commons,
     Player,
     canvasMap, //ctxMap
-  }
-) => {
+  } = objectGlobal;
   if (!Player.lastClickLvl) {
     let elementCible = "";
     const clickX = event.layerX;
@@ -39,8 +38,7 @@ const mapClickEventMount = (
           const afterId = Player.currentIdLvl;
           if (mapControleAccesChangePlayer(elmt, Player)) {
             finishItemMap(afterId, itemMapPosition);
-            Player.pxMap = elmt.px;
-            Player.pyMap = elmt.py;
+            setPositioMapPlayer(objectGlobal, elmt);
             elementCible = elmt;
           }
         }

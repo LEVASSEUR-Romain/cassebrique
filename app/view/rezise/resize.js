@@ -4,7 +4,7 @@ const resize = (objectGlobal) => {
   // destructiration
   const { navBar, canvasPlay, canvasMap, Commons, Briks } = objectGlobal;
   // constant tools
-  const border = (Commons.borderMenu * window.innerHeight) / 100;
+  const border = Math.ceil((Commons.borderMenu * window.innerHeight) / 100);
   //navBar menu
   navBar.style.height = border + "px";
   //change canvas play

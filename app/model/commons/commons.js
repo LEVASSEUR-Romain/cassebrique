@@ -13,8 +13,9 @@ const Commons = {
     //defaut recalculer dans rezise
     x: 0,
     y: 0,
-    pxMap: 0,
-    pyMap: 0,
+    // position on map default
+    pxMap: 47.5,
+    pyMap: 90,
     passiveBonus: [],
     //map controleur
     // level du boss lvly=4 currentId =10
@@ -64,7 +65,8 @@ const Commons = {
   backgroundMap: "white",
   borderMapTopBottom: 5, //%
   radiusItemMap: 3, //%
-  radiusPlayer: 3, //%
+  widthPlayerMap: 5, //%
+  heightPlayerMap: 5, //%
   colorPlayerMap: "black",
   colorLinksMap: "black",
   widthLinksMap: 2,

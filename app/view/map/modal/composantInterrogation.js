@@ -93,11 +93,12 @@ const composantInterrogation = (objectGlobal) => {
   );
   const ctxPlayer = canvasPlayer.getContext("2d");
   drawPlayerOnMap(objectGlobal, {
-    px: 50,
-    py: 50,
+    px: 0,
+    py: 0,
     ctx: ctxPlayer,
     canvas: canvasPlayer,
-    radius: widthCanvas / 2,
+    height: 100,
+    width: 100,
   });
   component("p", {}, liPlayer, "Votre position sur la carte");
 };
