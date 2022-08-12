@@ -1,3 +1,4 @@
+@import "variable.css";
 @import "canvas.css";
 @import "finger.css";
 @import "modalBoss.css";
@@ -6,10 +7,13 @@
 @import "modalCampFire.css";
 @import "lose.css";
 @import "modalInterrogation.css";
+@import "nav.css";
 
 * {
     margin: 0;
     padding: 0;
+    /*     delete scroll barre */
+    overflow: hidden;
 }
 
 html {
@@ -24,22 +28,6 @@ body {
 
 
 
-nav {
-    display: flex;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
-    gap: 5px;
-    width: 100vw;
-}
-
-.logoMenu {
-    flex: 3;
-    display: flex;
-    gap: 5px;
-}
 
 #play {
     padding: 6px

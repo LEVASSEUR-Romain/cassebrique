@@ -1,22 +1,25 @@
 import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 
-const drawMapItemFinish = (objectGlobal, item) => {
-  const { ctxMap, Commons, canvasMap } = objectGlobal;
-  ctxMap.beginPath();
-  ctxMap.fillStyle = "black";
-  ctxMap.arc(
-    (canvasMap.width * item.px) / 100,
-    (canvasMap.height * item.py) / 100,
-    (Commons.radiusItemMap * canvasMap.height) / 100,
-    0,
-    Math.PI * 2
-  );
-
-  ctxMap.fill();
+const drawMapItemFinish = (objectGlobal, item, otherCanvas = null) => {
+  let ctxMap, canvasMap, radiusItemMap;
+  if (otherCanvas === null) {
+    ctxMap = objectGlobal.ctxMap;
+    canvasMap = objectGlobal.canvasMap;
+    radiusItemMap = objectGlobal.Commons.radiusItemMap;
+  } else {
+    ctxMap = otherCanvas.ctx;
+    canvasMap = otherCanvas.canvas;
+    radiusItemMap = otherCanvas.radius;
+  }
   const positionX = (canvasMap.width * item.px) / 100;
   const positionY = (canvasMap.height * item.py) / 100;
-  const radius = (Commons.radiusItemMap * canvasMap.height) / 100;
-  // icone
+  const radius = (radiusItemMap * canvasMap.height) / 100;
+  //cercle
+  ctxMap.beginPath();
+  ctxMap.fillStyle = "black";
+  ctxMap.arc(positionX, positionY, radius, 0, Math.PI * 2);
+  ctxMap.fill();
+  // img
   const imgPositionX = positionX - radius;
   const imgPositionY = positionY - radius;
   ctxMap.drawImage(

@@ -6,7 +6,7 @@
     align-items: center;
     z-index: 10;
     position: absolute;
-    background-color: white;
+    background-color: var(--main-backgroundcolor);
     gap: 20px;
     width: 100%;
 }

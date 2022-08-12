@@ -1,35 +1,39 @@
-const drawPlayerOnMap = ({ ctxMap, Player, Commons, canvasMap }) => {
-  if (Player.pxMap !== 0 && Player.pyMap !== 0) {
-    ctxMap.fillStyle = Commons.colorPlayerMap;
-    ctxMap.beginPath();
-    ctxMap.arc(
-      (canvasMap.width * Player.pxMap) / 100,
-      (canvasMap.height * Player.pyMap) / 100,
-      (Commons.radiusPlayer * canvasMap.height) / 100,
-      //(Commons.radiusPlayer * canvasMap.height * ratio) / 100,
-      0,
-      Math.PI * 2
-    );
-    ctxMap.fill();
-    /*   // test
-  Player.pxMap = 0;
-  Player.pyMap = 0;
-  const positionX = (canvasMap.width * Player.pxMap) / 100;
-  const positionY = (canvasMap.height * Player.pyMap) / 100;
-  const radius = (Commons.radiusPlayer * canvasMap.height) / 100;
-  console.log(positionX, positionY);
-  // icone
-  const angle = -Math.PI / 4;
-  const imgPositionX = positionX;
-  const imgPositionY = positionY;
-  loaderImageIconeSvg("positiononmap").then((rep) => {
-    ctxMap.save();
-    ctxMap.rotate(angle);
-    ctxMap.translate(positionX, positionY);
-    ctxMap.drawImage(rep, imgPositionX, imgPositionY, radius * 2, radius * 2);
-    ctxMap.restore();
-  }); */
+import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
+
+const drawPlayerOnMap = (objectGlobal, otherCanvas = null) => {
+  let playerPx, playerPy, ctxMap, canvasMap, radiusPlayer;
+  if (otherCanvas === null) {
+    playerPx = objectGlobal.Player.pxMap;
+    playerPy = objectGlobal.Player.pyMap;
+    canvasMap = objectGlobal.canvasMap;
+    ctxMap = objectGlobal.ctxMap;
+    radiusPlayer = objectGlobal.Player.radiusPlayer;
+  } else {
+    playerPx = otherCanvas.px;
+    playerPy = otherCanvas.py;
+    canvasMap = otherCanvas.canvas;
+    ctxMap = otherCanvas.ctx;
+    radiusPlayer = otherCanvas.radius;
   }
+
+  const positionX = (canvasMap.width * playerPx) / 100;
+  const positionY = (canvasMap.height * playerPy) / 100;
+  const radius = (radiusPlayer * canvasMap.height) / 100;
+  // draw cercle
+  /*   ctxMap.fillStyle = objectGlobal.Commons.colorPlayerMap;
+  ctxMap.beginPath();
+  ctxMap.arc(positionX, positionY, radius, 0, Math.PI * 2);
+  ctxMap.fill(); */
+  // icone
+  const imgPositionX = positionX - radius;
+  const imgPositionY = positionY - radius;
+  ctxMap.drawImage(
+    getHtmlCollectionImg(objectGlobal, "positiononmap"),
+    imgPositionX,
+    imgPositionY,
+    radius * 2,
+    radius * 2
+  );
 };
 
 export default drawPlayerOnMap;

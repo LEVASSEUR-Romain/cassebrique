@@ -6,7 +6,7 @@ const loadAllImg = async () => {
   // list load image
   const listImage = {
     campFire: ["campfiresleep.svg", "open-chest.svg"],
-    iconesvg: [
+    mapIcone: [
       "campfire.svg",
       "close.svg",
       "lvlboss.svg",
@@ -14,7 +14,9 @@ const loadAllImg = async () => {
       "positiononmap.svg",
       "interrogation.svg",
     ],
+    toolIcone: ["pointerclick.svg"],
     passive: [],
+    font: ["fontmenu.svg"],
   };
   const listImgHtml = [];
   const nbImage = Object.values(listImage).reduce((a, b) =>
