@@ -1,4 +1,4 @@
-import searchBrickById from "../../tools/searchBrickById.js";
+import searchBrickById from "../../tools/searchLvlById.js";
 import activateOnePassifAndSave from "../../controler/passive/activateOnePassifAndSave.js";
 import rebootAllAndRouting from "./tools/rebootAllAndRouting.js";
 import stopLoopGame from "./tools/stopLoopGame.js";
@@ -10,7 +10,7 @@ const defaultWin = (objectGlobal) => {
     const { Player, itemMapPosition } = objectGlobal;
     stopLoopGame(objectGlobal);
     // search if bonus lvl
-    const itemMap = searchBrickById(itemMapPosition, Player.currentIdLvl);
+    const itemMap = searchLvlById(itemMapPosition, Player.currentIdLvl);
     if (itemMap && itemMap.bonus) {
       activateOnePassifAndSave(objectGlobal);
     }

@@ -1,4 +1,4 @@
-import searchBrickById from "../../app/tools/searchBrickById.js";
+import searchLvlById from "../../app/tools/searchLvlById.js";
 const listLvl = [
   [
     {
@@ -158,12 +158,12 @@ const listLvl = [
 
 test("searchBrickById search id good", () => {
   // test 1 => id = 1 in listLvl [0][0]
-  expect(searchBrickById(listLvl, 1)).toEqual(listLvl[0][0]);
+  expect(searchLvlById(listLvl, 1)).toEqual(listLvl[0][0]);
   // test 2 => id = 8 in listLvl [2][1]
-  expect(searchBrickById(listLvl, 8)).toEqual(listLvl[2][1]);
+  expect(searchLvlById(listLvl, 8)).toEqual(listLvl[2][1]);
 });
 
 test("searchBrickById search id not good", () => {
   // test 1 => id = 15 not exist
-  expect(searchBrickById(listLvl, 15)).toEqual(false);
+  expect(searchLvlById(listLvl, 15)).toEqual(false);
 });

@@ -11,8 +11,7 @@ export const setPositionDefaultPlayer = ({ Player, canvasPlay }) => {
 };
 
 export const setPositioMapPlayer = (objectGlobal, elementCible) => {
-  const { Player, Commons, canvasMap } = objectGlobal;
-  const radiusItem = (Commons.radiusItemMap * canvasMap.height) / 100;
+  const { Player, Commons } = objectGlobal;
   // margin
   const marginX = elementCible.px - 3 * Commons.radiusItemMap;
   const marginY = elementCible.py - Commons.radiusItemMap;

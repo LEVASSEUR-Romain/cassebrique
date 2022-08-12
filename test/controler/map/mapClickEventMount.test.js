@@ -1,5 +1,5 @@
 import mapClickEventMount from "../../../app/controler/map/mapClickEventMount.js";
-
+// change pxMap pyMap check controleurPlayerTest
 const map = [
   [
     {
@@ -112,9 +112,6 @@ test("mapClickEventMount good click", () => {
   // modification for player
   expect(Player.lastClickLvl).toEqual(true);
   expect(Player.currentIdLvl).toEqual(4);
-  //dans le test id : 4 px: 17, py: 50,
-  expect(Player.pxMap).toEqual(17);
-  expect(Player.pyMap).toEqual(50);
   // modification for map for id : 1
   expect(itemMap[0][0].finish).toEqual(true);
 });

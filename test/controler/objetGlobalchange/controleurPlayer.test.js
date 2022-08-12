@@ -1,6 +1,7 @@
 import {
   setPositionDefaultPlayer,
   playerLoseLife,
+  setPositioMapPlayer,
 } from "./../../../app/controler/objetGlobalchange/controleurPlayer.js";
 
 test("setPositionDefaultPlayer", () => {
@@ -41,4 +42,23 @@ test("playerLoseLife", () => {
     },
   };
   expect(obj).toEqual(final);
+});
+
+test("setPositioMapPlayer", () => {
+  const obj = {
+    Player: {
+      pxMap: 10,
+      pyMap: 10,
+    },
+    Commons: {
+      radiusItemMap: 3,
+    },
+  };
+  const elementCible = {
+    px: 10,
+    py: 10,
+  };
+  setPositioMapPlayer(obj, elementCible);
+  expect(obj.Player.pxMap).toEqual(10 - 3 * obj.Commons.radiusItemMap);
+  expect(obj.Player.pyMap).toEqual(10 - obj.Commons.radiusItemMap);
 });

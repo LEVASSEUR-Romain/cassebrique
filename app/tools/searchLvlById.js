@@ -1,4 +1,4 @@
-const searchBrickById = (listLvl, id) => {
+const searchLvlById = (listLvl, id) => {
   let object = {};
   for (let i = 0; i < listLvl.length; i++) {
     const testFind = listLvl[i].find((lvl) => lvl.id === id);
@@ -9,4 +9,4 @@ const searchBrickById = (listLvl, id) => {
   }
   return Object.keys(object).length === 0 ? false : object;
 };
-export default searchBrickById;
+export default searchLvlById;
