@@ -20,14 +20,12 @@ const clickMapCheck = (e, objectGlobal) => {
       } else if (elementClick.type === "boss") {
         controlerBoss(objectGlobal, elementClick.difficulty);
         routing("play", canvasPlay, canvasMap);
-      } else if (elementClick.type === "interrogation") {
-        console.log("compo interrogation");
       } else {
         makeCreateLvl(objectGlobal, elementClick.difficulty);
         routing("play", canvasPlay, canvasMap);
       }
       // redraw map for refrech
-      drawAll(objectGlobal);
+      //drawAll(objectGlobal);
     }
   } else {
     composantInterrogation(objectGlobal);

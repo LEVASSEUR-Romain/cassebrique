@@ -19,11 +19,6 @@ const drawPlayerOnMap = (objectGlobal, otherCanvas = null) => {
   const positionX = (canvasMap.width * playerPx) / 100;
   const positionY = (canvasMap.height * playerPy) / 100;
   const radius = (radiusPlayer * canvasMap.height) / 100;
-  // draw cercle
-  /*   ctxMap.fillStyle = objectGlobal.Commons.colorPlayerMap;
-  ctxMap.beginPath();
-  ctxMap.arc(positionX, positionY, radius, 0, Math.PI * 2);
-  ctxMap.fill(); */
   // icone
   const imgPositionX = positionX - radius;
   const imgPositionY = positionY - radius;
