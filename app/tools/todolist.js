@@ -1,8 +1,8 @@
 // debug local Storage
 
-// tuto d'entrer , Montrer quand vous tuer un boss, Boss tuto au lieu de phrase , UI designe
+// Montrer quand vous tuer un boss animatio,
+// Boss tuto au lieu de phrase
 // glisser sur pc ou enter
-// visuel de la ou on commence
 //revoir les passives le mettre dans commons ? aussi
 
 // bug sur tel

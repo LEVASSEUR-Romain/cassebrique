@@ -39,7 +39,7 @@ const drawPlayerOnMap = (objectGlobal, otherCanvas = null) => {
     ctxMap.fillText(
       "Choisir un chemin",
       positionX + wP,
-      positionY + hP - 5,
+      positionY + hP - 10,
       maxLenght
     );
   }

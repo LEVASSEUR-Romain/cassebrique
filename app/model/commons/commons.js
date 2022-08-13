@@ -68,9 +68,13 @@ const Commons = {
   widthPlayerMap: 5, //%
   heightPlayerMap: 5, //%
   colorPlayerMap: "black",
-  colorLinksMap: "black",
-  widthLinksMap: 2,
+  // links
+  colorLinksMap: "#9b9b9b",
+  colorLinksMapBorder: "#2e1009",
+  widthLinksMap: 3,
+  //passive
   choiceOfPassive: 3,
+  // healper
   interrogationBorder: 2, // %
   interrogationRadius: 5, //%
   // you can change color on view map
