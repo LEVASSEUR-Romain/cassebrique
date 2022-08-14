@@ -8,6 +8,7 @@
 @import "lose.css";
 @import "modalInterrogation.css";
 @import "nav.css";
+@import "landingLoader.css";
 
 * {
     margin: 0;

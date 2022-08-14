@@ -1,0 +1,31 @@
+.load {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 0%;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(black, var(--main-colorMap));
+    z-index: 2;
+}
+
+.loader {
+    padding: 30px;
+    border: 10px solid black;
+    box-shadow: 0 0 5px 1px #09162e;
+    border-right-color: #2c5fbd;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

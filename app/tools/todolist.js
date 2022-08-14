@@ -1,5 +1,5 @@
-// debug local Storage
-
+// loader
+// passive , zone de jeu
 // Montrer quand vous tuer un boss animatio,
 // Boss tuto au lieu de phrase
 // glisser sur pc ou enter
@@ -10,7 +10,7 @@
 // Win final fin de la carte
 // visuel
 // bomb boss , ma position sur la carte, campfire
-
+// debug local Storage
 // map dans objet global utilité??
 
 // en Bonus
