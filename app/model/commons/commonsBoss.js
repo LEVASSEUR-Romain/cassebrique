@@ -4,7 +4,7 @@ const commonsBoss = {
     id: "boss1",
     x: 0,
     y: 0,
-    width: 20, //%
+    width: 15, //%
     height: 5, //%
     life: 20,
     color: "#2F8802", //%
@@ -14,10 +14,9 @@ const commonsBoss = {
     speed: 1, // par rapport au jouer
     frameShoot: 60, // modulo
     //shoot
-    shootWidth: 1, //%
+    shootWidth: 2, //%
     shootHeight: 3, //%
     shootSpeed: 1, //%
-    shootColor: "black",
   },
   boss2: {
     // boule man
@@ -25,9 +24,9 @@ const commonsBoss = {
     x: 0,
     y: 0,
     width: 15, //%
-    height: 3, //%
-    life: 1, // default 8
-    color: "#2F8802", //%
+    height: 5, //%
+    life: 8, // default 8
+    color: "#ae8781",
     speed: 0.8, // %
     move: "left",
     // add ball
@@ -42,15 +41,15 @@ const commonsBoss = {
     width: 3, //%
     height: 20, //%
     life: 1, // 5 par default
-    color: "#2F8802", //%
+    color: "#FFD300",
     borderMaxBottom: 30, //%
     speed: 0.5, // %
     move: "downRight",
     // add ball
     previewBomb: 50, //frame view
-    colorAnimation: "red",
+    colorAnimation: "rgba(244, 198, 0, 0.5)",
     frameBomb: 125, // modulo
-    colorAnimationFire: "yellow",
+    colorAnimationFire: "red",
     mapTierTarget: 1,
   },
 };

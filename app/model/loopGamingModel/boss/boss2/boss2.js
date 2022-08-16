@@ -26,7 +26,7 @@ const boss2 = (objectGlobal) => {
       (Boss.height * canvasPlay.height) / 100 +
       (Boss.borderHeightSpamBall * canvasPlay.height) / 100 +
       (Commons.BallDefault.radiusHeight * canvasPlay.height) / 100;
-    bossLoseLife(Boss);
+    //bossLoseLife(Boss);
     addBallOnArray(objectGlobal, Boss.x, heightBoss, 0, 1);
   }
 };

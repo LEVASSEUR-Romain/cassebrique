@@ -5,8 +5,10 @@ export const setBoss = (objectGlobal, nbr) => {
   objectGlobal.Boss = add;
 };
 
+import controlerBossLife from "../boss/controlerBossLife.js";
 export const bossLoseLife = (Boss) => {
   Boss.life -= 1;
+  controlerBossLife(Boss);
 };
 
 import { ballOnArrayDefault } from "./constroleurBall.js";

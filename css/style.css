@@ -9,6 +9,7 @@
 @import "modalInterrogation.css";
 @import "nav.css";
 @import "landingLoader.css";
+@import "bossLife.css";
 
 * {
     margin: 0;

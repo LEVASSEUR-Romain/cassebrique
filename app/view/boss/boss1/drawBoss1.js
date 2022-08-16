@@ -1,21 +1,35 @@
-const drawBoss1 = ({ ctx, Boss, canvasPlay }) => {
-  ctx.fillStyle = Boss.color;
+import getHtmlCollectionImg from "../../../controler/objetGlobalchange/getHtmlCollectionImg.js";
+const drawBoss1 = (objectGlobal) => {
+  const { ctx, Boss, canvasPlay } = objectGlobal;
   const bossWidth = (Boss.width * canvasPlay.width) / 100;
   const bossHeight = (Boss.height * canvasPlay.height) / 100;
-  ctx.fillRect(Boss.x, Boss.y, bossWidth, bossHeight);
-  // zone mitrailler
-  ctx.fillStyle = Boss.colorShooter;
-  const shooterWidht = (Boss.widthShooter * canvasPlay.width) / 100;
-  const shooterHeight = (Boss.heightShooter * canvasPlay.height) / 100;
-  ctx.fillRect(
-    Boss.x + bossWidth / 2 - shooterWidht / 2,
-    Boss.y + bossHeight - shooterHeight,
-    shooterWidht,
-    shooterHeight
+  const witdhEyes = (10 * bossWidth) / 100;
+  const borderEyes = (8 * bossWidth) / 100;
+  const witdhFusil = (20 * bossWidth) / 100;
+  // font
+  const ptrn = ctx.createPattern(
+    getHtmlCollectionImg(objectGlobal, "camouflage"),
+    "repeat"
   );
-  // zone de vie
-  ctx.font = shooterHeight + "px Calibri,Geneva,Arial";
-  ctx.strokeStyle = "rgb(0,0,0)";
-  ctx.strokeText(Boss.life.toString(), Boss.x, Boss.y + shooterHeight);
+  ctx.fillStyle = ptrn;
+  ctx.fillRect(Boss.x, Boss.y, bossWidth, bossHeight);
+  //eyes
+  const imgEyes = getHtmlCollectionImg(objectGlobal, "eyes2");
+  ctx.drawImage(imgEyes, Boss.x + borderEyes, Boss.y, witdhEyes, bossHeight);
+  ctx.drawImage(
+    imgEyes,
+    Boss.x + bossWidth - witdhEyes - borderEyes,
+    Boss.y,
+    witdhEyes,
+    bossHeight
+  );
+  // zone mitrailler
+  ctx.drawImage(
+    getHtmlCollectionImg(objectGlobal, "fusil"),
+    Boss.x + bossWidth / 2 - witdhFusil / 2,
+    Boss.y,
+    witdhFusil,
+    bossHeight
+  );
 };
 export default drawBoss1;

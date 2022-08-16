@@ -16,8 +16,21 @@ const loadAllImg = async () => {
     ],
     toolIcone: ["pointerclick.svg"],
     passive: [],
-    font: ["fontmenu.svg", "fontplay.svg"],
-    play: ["playlego.svg", "playerlife.svg", "ball.svg", "spaceBar.jpg"],
+    font: ["fontmenu.svg", "fontplay.svg", "camouflage.jpg"],
+    play: [
+      "playlego.svg",
+      "playerlife.svg",
+      "ball.svg",
+      "spaceBar.jpg",
+      "eyes1.svg",
+      "eyes2.svg",
+      "eyes3.svg",
+      "fusil.svg",
+      "moustache.svg",
+      "bouche.svg",
+      "shoot.svg",
+      "bomb.svg",
+    ],
   };
   const listImgHtml = [];
   const nbImage = Object.values(listImage).reduce((a, b) =>
