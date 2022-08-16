@@ -10,6 +10,7 @@ const commonsPassive = [
     },
   },
   {
+    //enlever
     id: 2,
     name: "Bonus vitesse",
     description: "vous gagnez +5% vitesse",
@@ -64,6 +65,7 @@ const commonsPassive = [
     },
   },
   {
+    // erreur ici je pense
     id: 8,
     name: "Bonus personnage vitesse, ball vitesse",
     description: "vous gagnez +10% vitesse ainsi que la balle",

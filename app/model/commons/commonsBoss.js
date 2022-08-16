@@ -39,9 +39,9 @@ const commonsBoss = {
     id: "boss3",
     x: 0,
     y: 0, // defaut start
-    width: 2, //%
-    height: 15, //%
-    life: 1, // 7 par default
+    width: 3, //%
+    height: 20, //%
+    life: 1, // 5 par default
     color: "#2F8802", //%
     borderMaxBottom: 30, //%
     speed: 0.5, // %

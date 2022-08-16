@@ -1,4 +1,3 @@
-// loader
 // passive , zone de jeu
 // Montrer quand vous tuer un boss animatio,
 // Boss tuto au lieu de phrase

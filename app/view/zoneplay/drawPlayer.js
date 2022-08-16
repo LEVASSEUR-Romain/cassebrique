@@ -1,17 +1,30 @@
-const drawPlayer = ({ ctx, Player, canvasPlay }) => {
-  ctx.fillStyle = Player.color;
+import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
+
+const drawPlayer = (objectGlobal) => {
+  const { ctx, Player, canvasPlay } = objectGlobal;
+  //
   const playerWidth = (Player.width * canvasPlay.width) / 100;
   const playerHeight = (Player.height * canvasPlay.height) / 100;
+  const playerlife = Player.life;
   //player
-  ctx.fillRect(Player.x, Player.y, playerWidth, playerHeight);
+  ctx.strokeStyle = "black";
+  ctx.strokeRect(Player.x, Player.y, playerWidth, playerHeight);
   // life
-  ctx.font = playerHeight + "px Calibri,Geneva,Arial";
-  ctx.strokeStyle = "#7A232B";
-  ctx.strokeText(
-    "\u2661".repeat(Player.life),
-    Player.x,
-    Player.y + playerHeight
-  );
+  const widthImg = playerWidth / playerlife;
+  const img = getHtmlCollectionImg(objectGlobal, "playerlife");
+  img.width = widthImg;
+  img.height = playerHeight;
+  //ctx.drawImage(img, Player.x, Player.y, playerWidth, playerHeight);
+  for (let i = 0; i < playerlife; i++) {
+    const positionX = Player.x + i * widthImg;
+    ctx.drawImage(
+      img,
+      positionX,
+      Player.y,
+      playerWidth / playerlife,
+      playerHeight
+    );
+  }
 };
 
 export default drawPlayer;

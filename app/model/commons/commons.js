@@ -5,9 +5,8 @@ const Commons = {
   // joueur
   playerLoseLifeWitdh: 2,
   PlayerDefault: {
-    height: 2, // %
-    width: 20, // %
-    color: "black",
+    height: 4, // %
+    width: 15, // %
     life: 4,
     speed: 5, // %
     //defaut recalculer dans rezise
@@ -25,7 +24,7 @@ const Commons = {
   },
   // ball
   BallDefault: {
-    radiusHeight: 3, // %
+    radiusHeight: 2, // %
     color: "black",
     angleDirectionX: 0,
     angleDirectionY: -1,
@@ -41,20 +40,20 @@ const Commons = {
     {
       width: 10, //%
       height: 10, //%
-      color: ["red"],
+      color: ["#F45C40"],
       life: 1,
     },
 
     {
       width: 10, //%
       height: 10, //%
-      color: ["red", "green"],
+      color: ["#F45C40", "#F47B30"],
       life: 2,
     },
     {
       width: 20, //%
       height: 10, //%
-      color: ["red", "green", "yellow"],
+      color: ["#F45C40", "#F47B30", "#CE1D9B"],
       life: 3,
     },
   ],

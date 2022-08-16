@@ -1,15 +1,8 @@
-const drawMultiBall = ({ ctx, Ball, canvasPlay }) => {
+import drawBall from "../../zoneplay/drawBall.js";
+const drawMultiBall = (objectGlobal) => {
+  const { Ball } = objectGlobal;
   Ball.forEach((element) => {
-    ctx.fillStyle = element.color;
-    ctx.beginPath();
-    ctx.arc(
-      element.x,
-      element.y,
-      (element.radiusHeight * canvasPlay.height) / 100,
-      0,
-      Math.PI * 2
-    );
-    ctx.fill();
+    drawBall(objectGlobal, element);
   });
 };
 export default drawMultiBall;

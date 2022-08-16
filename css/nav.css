@@ -9,6 +9,10 @@ nav {
     background: linear-gradient(black, var(--main-colorMap));
 }
 
+.navplay {
+    background: linear-gradient(black, var(--main-colorPlay) 70%);
+}
+
 .logoMenu {
     flex: 3;
     display: flex;
