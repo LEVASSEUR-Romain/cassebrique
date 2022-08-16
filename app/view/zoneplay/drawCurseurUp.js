@@ -1,11 +1,15 @@
 import component from "../tools/component.js";
-const drawCurseurUp = () => {
+import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
+const drawCurseurUp = (objectGlobal) => {
   let element = document.querySelector(".finger");
   if (element === null) {
-    const newDiv = component("div", { class: "finger" }, document.body, "👆");
-    element = newDiv;
-    element.addEventListener("animationend", () => {
-      element.remove();
+    const divHelper = component("div", {}, document.body);
+    component("div", { class: "finger" }, divHelper, "👆");
+    const space = component("div", { class: "spaceBar" }, divHelper, "ou");
+    const imgSpaceBar = getHtmlCollectionImg(objectGlobal, "spaceBar");
+    space.appendChild(imgSpaceBar);
+    divHelper.addEventListener("animationend", () => {
+      divHelper.remove();
     });
   }
 };

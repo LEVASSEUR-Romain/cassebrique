@@ -2,8 +2,8 @@ const map1 = [
   [
     {
       id: 1,
-      difficulty: 3,
-      type: "mob",
+      difficulty: 2,
+      type: "boss",
       bonus: false,
       parent: [0],
     },

@@ -17,7 +17,7 @@ const loadAllImg = async () => {
     toolIcone: ["pointerclick.svg"],
     passive: [],
     font: ["fontmenu.svg", "fontplay.svg"],
-    play: ["playlego.svg", "playerlife.svg", "ball.svg"],
+    play: ["playlego.svg", "playerlife.svg", "ball.svg", "spaceBar.jpg"],
   };
   const listImgHtml = [];
   const nbImage = Object.values(listImage).reduce((a, b) =>

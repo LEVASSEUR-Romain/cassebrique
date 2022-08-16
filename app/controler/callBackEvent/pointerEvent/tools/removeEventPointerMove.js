@@ -7,5 +7,6 @@ const removeEventPointerMove = (objectGlobal) => {
     objectGlobal.listEvent[index]
   );
   objectGlobal.listEvent.splice(index, 1);
+  console.log(objectGlobal.listEvent);
 };
 export default removeEventPointerMove;
