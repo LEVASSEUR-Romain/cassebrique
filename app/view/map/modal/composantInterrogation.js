@@ -36,7 +36,7 @@ const composantInterrogation = (objectGlobal) => {
     { px: 50, py: 50 },
     { ctx: ctxBoss, canvas: canvasBoss, radius: widthCanvas / 2 }
   );
-  component("p", {}, liBoss, "un combat de boss");
+  component("p", {}, liBoss, "Un combat de boss");
   // mob
   const liMob = component("li", {}, ul);
   const canvasMob = component(
@@ -50,7 +50,7 @@ const composantInterrogation = (objectGlobal) => {
     { px: 50, py: 50 },
     { ctx: ctxMob, canvas: canvasMob, radius: widthCanvas / 2 }
   );
-  component("p", {}, liMob, "niveau casse brique");
+  component("p", {}, liMob, "Niveau casse brique");
   //campfire
   const liCamp = component("li", {}, ul);
   const canvasCamp = component(
@@ -68,7 +68,7 @@ const composantInterrogation = (objectGlobal) => {
     "p",
     {},
     liCamp,
-    "niveau bonus : vous pouvez vous soigner (pas de combat)"
+    "Niveau bonus : vous pouvez vous soigner (pas de combat)"
   );
   // finish
   const lifinish = component("li", {}, ul);
@@ -101,5 +101,21 @@ const composantInterrogation = (objectGlobal) => {
     width: 100,
   });
   component("p", {}, liPlayer, "Votre position sur la carte");
+  // player live
+  const liLife = component("li", {}, ul);
+  const canvasLife = component(
+    "canvas",
+    { height: heightCanvas + "px", width: widthCanvas + "px" },
+    liLife
+  );
+  const ctxLife = canvasLife.getContext("2d");
+  ctxLife.drawImage(
+    getHtmlCollectionImg(objectGlobal, "playerlife"),
+    0,
+    0,
+    widthCanvas,
+    heightCanvas
+  );
+  component("p", {}, liLife, "Votre nombre de point de vie");
 };
 export default composantInterrogation;
