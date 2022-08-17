@@ -1,7 +1,7 @@
 import getHtmlCollectionImg from "../../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 
-const drawBoss2 = (objectGlobal) => {
-  const { ctx, Boss, canvasPlay } = objectGlobal;
+const drawBoss2 = (objectGlobal, other = null) => {
+  const { ctx, Boss, canvasPlay } = other === null ? objectGlobal : other;
   ctx.fillStyle = Boss.color;
   const bossWidth = (Boss.width * canvasPlay.width) / 100;
   const bossHeight = (Boss.height * canvasPlay.height) / 100;

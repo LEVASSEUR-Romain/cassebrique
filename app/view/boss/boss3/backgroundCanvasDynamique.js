@@ -25,7 +25,7 @@ const backgroundCanvasDynamique = (objectGlobal) => {
         bossFrameMin -= Boss.frameBomb;
       }
       const time = 10 - Math.round((bossFrameMin / Boss.frameBomb) * 10);
-      ctx.font = "48px serif";
+      ctx.font = "30px serif";
       ctx.fillStyle = "black";
       ctx.fillText(
         time,

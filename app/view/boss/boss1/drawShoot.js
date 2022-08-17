@@ -1,6 +1,6 @@
 import getHtmlCollectionImg from "../../../controler/objetGlobalchange/getHtmlCollectionImg.js";
-const drawShoot = (objectGlobal) => {
-  const { ctx, Shoot, Boss, canvasPlay } = objectGlobal;
+const drawShoot = (objectGlobal, other = null) => {
+  const { ctx, Shoot, canvasPlay } = other === null ? objectGlobal : other;
   const imgShoot = getHtmlCollectionImg(objectGlobal, "shoot");
   const deltaBall = (1 * canvasPlay.height) / 100;
   Shoot.forEach((shoot) => {

@@ -6,12 +6,61 @@
     align-items: center;
     z-index: 10;
     position: absolute;
-    background-color: var(--main-backgroundcolor);
-    gap: 20px;
+    top: 0%;
+    background: linear-gradient(black, var(--main-colorMap));
+    gap: 5px;
     width: 100%;
+    height: 100%;
+    color: white;
 }
 
-#boss h1 {
+#boss h1, #boss h2 {
+    flex: 1;
+}
+
+#boss h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+}
+
+
+#boss h2 img {
+    height: 30px;
+    width: 30px;
+}
+
+.describeBoss {
+    flex: 3;
+    display: flex;
+    gap: 10px;
+    width: 90%;
+}
+
+.describeBoss canvas {
+    flex: 1;
+}
+
+#goBoss {
+    width: 90%;
+    flex: 1;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: .375rem;
+    background-color: var(--main-colorButton);
+    margin-bottom: 10px;
+    font-family: var(--main-font);
+    color: white;
+    font-size: 1rem;
+}
+
+#goBoss:hover {
+    color: var(--main-colorButton);
+    background-color: white;
+}
+
+/* #boss h1 {
     font-size: 4rem;
 }
 
@@ -21,4 +70,4 @@
 
 #boss>p:nth-child(3) {
     font-size: 1rem;
-}
+} */

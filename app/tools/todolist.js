@@ -1,4 +1,3 @@
-// boss view and tuto boss remake
 // camp fire view
 // passive :revoir view
 // animation : boss brick

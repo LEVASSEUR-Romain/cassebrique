@@ -1,7 +1,16 @@
 import getHtmlCollectionImg from "../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 
-const drawPlayer = (objectGlobal) => {
-  const { ctx, Player, canvasPlay } = objectGlobal;
+const drawPlayer = (objectGlobal, other = null) => {
+  let ctx, Player, canvasPlay;
+  if (other === null) {
+    ctx = objectGlobal.ctx;
+    Player = objectGlobal.Player;
+    canvasPlay = objectGlobal.canvasPlay;
+  } else {
+    ctx = other.ctx;
+    Player = other.Player;
+    canvasPlay = other.canvasPlay;
+  }
   //
   const playerWidth = (Player.width * canvasPlay.width) / 100;
   const playerHeight = (Player.height * canvasPlay.height) / 100;
