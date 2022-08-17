@@ -1,10 +1,12 @@
+import playSound from "../../controler/sound/playSound.js";
 const playerBall = (
-  { Ball, Player, canvasPlay },
+  objectGlobal,
   ballXLeft,
   ballXRight,
   ballYTop,
   ballYBottom
 ) => {
+  const { Ball, Player, canvasPlay } = objectGlobal;
   //const
   const playerWidth = (Player.width * canvasPlay.width) / 100;
   if (
@@ -13,6 +15,7 @@ const playerBall = (
     ballYBottom >= Player.y &&
     ballYTop < canvasPlay.height
   ) {
+    playSound(objectGlobal, "ballPlayer");
     // ball vers le haut
     Ball.angleDirectionY = -1;
     const centerPlayerX = Player.x + playerWidth / 2;

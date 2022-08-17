@@ -1,6 +1,7 @@
 import { playerLoseLife } from "../../../controler/objetGlobalchange/controleurPlayer.js";
 import objectUpBottomLeftRightBall from "../toolsCollision/objectUpBottomLeftRightBall.js";
 import { deleteBallOnArray } from "../../../controler/objetGlobalchange/constroleurBall.js";
+import playSound from "../../../controler/sound/playSound.js";
 const boderAllBallAndDelete = (objectGlobal) => {
   //destructuring
   const { Ball, canvasPlay, Commons, Player } = objectGlobal;
@@ -17,6 +18,7 @@ const boderAllBallAndDelete = (objectGlobal) => {
         element.angleDirectionX = Commons.gameSpeedCollisionBorder;
       if (conditionRightBorder)
         element.angleDirectionX = -Commons.gameSpeedCollisionBorder;
+      playSound(objectGlobal, "ballWall");
     }
     if (conditionBottomBorder || conditionTopBorder) {
       if (conditionBottomBorder) {

@@ -1,13 +1,14 @@
 import { bossLoseLife } from "../../controler/objetGlobalchange/controleurBoss.js";
-
+import playSound from "../../controler/sound/playSound.js";
 const bossBallType2 = (
-  { Ball, Boss, canvasPlay, Commons },
+  objectGlobal,
   ballXLeft,
   ballXRight,
   ballYTop,
   ballYBottom
 ) => {
   //const
+  const { Ball, Boss, canvasPlay, Commons } = objectGlobal;
   const BossWidth = (Boss.width * canvasPlay.width) / 100;
   const BossHeight = (Boss.height * canvasPlay.height) / 100;
   if (
@@ -16,6 +17,7 @@ const bossBallType2 = (
     ballYBottom > Boss.y &&
     ballYTop < Boss.y + BossHeight
   ) {
+    playSound(objectGlobal, "ballBoss");
     // ball up
     Ball.angleDirectionY = -Ball.angleDirectionY;
     // axe

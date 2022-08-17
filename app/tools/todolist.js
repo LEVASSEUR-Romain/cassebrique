@@ -1,6 +1,5 @@
-// passive :revoir view
-// animation : boss brick
 //son
+// animation : boss brick
 
 // bug sur tel
 // Win final fin de la carte

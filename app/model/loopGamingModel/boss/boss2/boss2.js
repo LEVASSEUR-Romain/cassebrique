@@ -1,5 +1,5 @@
 import { addBallOnArray } from "../../../../controler/objetGlobalchange/constroleurBall.js";
-import { bossLoseLife } from "../../../../controler/objetGlobalchange/controleurBoss.js";
+import playSound from "../../../../controler/sound/playSound.js";
 const boss2 = (objectGlobal) => {
   // go left and right
   const { Boss, canvasPlay, Commons } = objectGlobal;
@@ -27,6 +27,7 @@ const boss2 = (objectGlobal) => {
       (Boss.borderHeightSpamBall * canvasPlay.height) / 100 +
       (Commons.BallDefault.radiusHeight * canvasPlay.height) / 100;
     //bossLoseLife(Boss);
+    playSound(objectGlobal, "boss2Ball");
     addBallOnArray(objectGlobal, Boss.x + bossWidth / 2, heightBoss, 0, 1);
   }
 };

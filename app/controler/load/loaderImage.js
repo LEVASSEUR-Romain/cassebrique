@@ -1,4 +1,4 @@
-const loaderImageIconeSvg = (dir, imageWithExtend) => {
+const loaderImage = (dir, imageWithExtend) => {
   return new Promise((resolve) => {
     const img = new Image();
     img.onload = () => resolve(img);
@@ -13,4 +13,4 @@ const loaderImageIconeSvg = (dir, imageWithExtend) => {
     };
   });
 };
-export default loaderImageIconeSvg;
+export default loaderImage;

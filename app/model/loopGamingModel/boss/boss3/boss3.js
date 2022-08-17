@@ -6,6 +6,7 @@ import {
   stopFireBomb,
 } from "../../../../controler/objetGlobalchange/controleurBomb.js";
 import { updateMapTierBomb } from "../../../../controler/objetGlobalchange/controleurBoss.js";
+import playSound from "../../../../controler/sound/playSound.js";
 const boss3 = (objectGlobal) => {
   const { Boss, canvasPlay } = objectGlobal;
   const speedBoss = (Boss.speed * canvasPlay.height) / 100;
@@ -63,6 +64,7 @@ const boss3 = (objectGlobal) => {
   if (Boss.frame % Boss.frameBomb === 0) {
     //reset animation
     setPreviewframe(objectGlobal, false);
+    playSound(objectGlobal, "boss3Boom");
     fireBomb(objectGlobal);
     updateMapTierBomb(objectGlobal);
   }

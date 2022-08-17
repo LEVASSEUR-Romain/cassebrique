@@ -8,6 +8,7 @@ import initInterrogationMap from "./app/model/map/initInterrogationMap.js";
 import main from "./app/controler/main/main.js";
 import { listMap } from "./app/model/listLoop/listDraw.js";
 import loadAllImg from "./app/controler/load/loadAllImg.js";
+import loadAllSound from "./app/controler/load/loadAllSound.js";
 import isLocalStorage from "./app/controler/localStorage/isLocalStorage.js";
 import addLocalStrorage from "./app/controler/localStorage/addLocalStrorage.js";
 import getLocalStrorage from "./app/controler/localStorage/getLocalStrorage.js";
@@ -66,34 +67,37 @@ const itemMapInterrogation = initInterrogationMap(Commons, canvasMap);
 } */
 const itemMapLinks = mapLinks(itemMapPosition);
 // load all image
-loadAllImg().then((rep) => {
-  // global
-  const objectGlobal = {
-    navBar: navBar,
-    canvasPlay: canvasPlay,
-    canvasMap: canvasMap,
-    playImg: playImg,
-    mapImg: mapImg,
-    Ball: Ball,
-    ctx: ctx,
-    ctxMap: ctxMap,
-    Briks: Briks,
-    leveling: leveling,
-    Player: Player,
-    loseBall: loseBall,
-    setTimeOutGame: setTimeOutGame,
-    start: start,
-    map: map,
-    itemMapPosition: itemMapPosition,
-    itemMapInterrogation: itemMapInterrogation,
-    itemMapLinks: itemMapLinks,
-    Commons: commons,
-    listDraw: listDraw,
-    listEvent: [],
-    htmlCollectionImg: rep,
-  };
-  console.log(objectGlobal);
-  main(objectGlobal);
-});
+const listSound = await loadAllSound();
+const listImg = await loadAllImg();
+
+// global
+const objectGlobal = {
+  navBar: navBar,
+  canvasPlay: canvasPlay,
+  canvasMap: canvasMap,
+  playImg: playImg,
+  mapImg: mapImg,
+  Ball: Ball,
+  ctx: ctx,
+  ctxMap: ctxMap,
+  Briks: Briks,
+  leveling: leveling,
+  Player: Player,
+  loseBall: loseBall,
+  setTimeOutGame: setTimeOutGame,
+  start: start,
+  map: map,
+  itemMapPosition: itemMapPosition,
+  itemMapInterrogation: itemMapInterrogation,
+  itemMapLinks: itemMapLinks,
+  Commons: commons,
+  listDraw: listDraw,
+  listEvent: [],
+  htmlCollectionImg: listImg,
+  htmlCollectionSound: listSound,
+};
+console.log(objectGlobal);
+main(objectGlobal);
+
 //console.log(JSON.stringify(itemMapPosition));
 //console.log(itemMapLinks);

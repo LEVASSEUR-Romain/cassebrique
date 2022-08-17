@@ -1,5 +1,6 @@
 import { playerLoseLife } from "../../controler/objetGlobalchange/controleurPlayer.js";
 import setLoseBall from "../../controler/objetGlobalchange/setLoseBall.js";
+import playSound from "../../controler/sound/playSound.js";
 const borderBall = (
   objectGlobal,
   ballXLeft,
@@ -19,6 +20,7 @@ const borderBall = (
       Ball.angleDirectionX = Commons.gameSpeedCollisionBorder;
     if (conditionRightBorder)
       Ball.angleDirectionX = -Commons.gameSpeedCollisionBorder;
+    playSound(objectGlobal, "ballWall");
   }
   if (conditionBottomBorder || conditionTopBorder) {
     if (conditionBottomBorder) {

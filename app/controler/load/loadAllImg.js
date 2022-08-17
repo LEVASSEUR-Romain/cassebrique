@@ -1,7 +1,7 @@
 /**
  * return list image
  */
-import loaderImageIconeSvg from "./loaderImageIconeSvg.js";
+import loaderImage from "./loaderImage.js";
 const loadAllImg = async () => {
   // list load image
   const listImage = {
@@ -48,7 +48,7 @@ const loadAllImg = async () => {
     return new Promise((resolve) => {
       for (const i in listImage) {
         listImage[i].forEach((img) => {
-          loaderImageIconeSvg(i, img).then((rep) => {
+          loaderImage(i, img).then((rep) => {
             listImgHtml.push({
               name: img.match(/.+(?=\.)/)[0],
               html: rep,

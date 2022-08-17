@@ -1,11 +1,13 @@
 import tuchBrick from "./toolsCollision/tuchBrick.js";
+import playSound from "../../controler/sound/playSound.js";
 const bricksBall = (
-  { Briks, Ball, Commons, canvasPlay },
+  objectGlobal,
   ballXLeft,
   ballXRight,
   ballYTop,
   ballYBottom
 ) => {
+  const { Briks, Ball, Commons, canvasPlay } = objectGlobal;
   Briks.forEach((brick) => {
     const birckWidth =
       (Commons.brick[brick.id - 1].width * canvasPlay.width) / 100;
@@ -17,6 +19,7 @@ const bricksBall = (
       ballYBottom > brick.y &&
       ballYTop < brick.y + birckHeight
     ) {
+      playSound(objectGlobal, "ballBrik");
       Ball.angleDirectionY = -Ball.angleDirectionY;
       tuchBrick(Briks, Briks.indexOf(brick));
     }
