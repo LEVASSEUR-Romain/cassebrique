@@ -18,3 +18,7 @@ export const setPositioMapPlayer = (objectGlobal, elementCible) => {
   Player.pxMap = marginX;
   Player.pyMap = marginY;
 };
+
+export const pushPassiveBonus = (objectGlobal, id) => {
+  objectGlobal.Player.passiveBonus.push(id);
+};

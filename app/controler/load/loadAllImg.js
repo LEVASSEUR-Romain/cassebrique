@@ -5,7 +5,7 @@ import loaderImageIconeSvg from "./loaderImageIconeSvg.js";
 const loadAllImg = async () => {
   // list load image
   const listImage = {
-    campFire: ["campfiresleep.svg", "open-chest.svg"],
+    campFire: ["campfiresleep.svg", "chest.svg"],
     mapIcone: [
       "campfire.svg",
       "close.svg",
@@ -15,7 +15,14 @@ const loadAllImg = async () => {
       "interrogation.svg",
     ],
     toolIcone: ["pointerclick.svg"],
-    passive: [],
+    passive: [
+      "passifballslow.svg",
+      "passifhauteur.svg",
+      "passiflargeur.svg",
+      "passifradius.svg",
+      "passifslow.svg",
+      "passifupall.svg",
+    ],
     font: ["fontmenu.svg", "fontplay.svg", "camouflage.jpg"],
     play: [
       "playlego.svg",

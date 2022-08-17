@@ -4,6 +4,7 @@ import composantPassive from "../../view/passive/composantPassive.js";
 import deleteComposantPassive from "../../view/passive/deleteComposantPassive.js";
 import iconePassiveOnMenu from "../../view/passive/iconePassiveOnMenu.js";
 import clickOnPassifMenu from "./clickOnPassifMenu.js";
+import { pushPassiveBonus } from "../objetGlobalchange/controleurPlayer.js";
 import addAllLocalStrorage from "../localStorage/addAllLocalStrorage.js";
 const activateOnePassifAndSave = (objectGlobal) => {
   const { Commons, Player, Ball } = objectGlobal;
@@ -14,14 +15,10 @@ const activateOnePassifAndSave = (objectGlobal) => {
     Commons.choiceOfPassive
   );
   //show
-  composantPassive(tblRandom, Commons);
+  composantPassive(tblRandom, objectGlobal);
   // listen Click
   const clickPassive = (event) => {
-    let target = "";
-    if (event.target.className !== "modulePassive")
-      target = event.target.parentElement;
-    else target = event.target;
-    const idOnPassiveBonus = parseInt(target.dataset.id);
+    const idOnPassiveBonus = parseInt(event.target.dataset.id);
     // warning idOnPassiveBonus can equal 0
     if (idOnPassiveBonus !== undefined) {
       commonsPassive[idOnPassiveBonus].effect(Player, Ball, Commons);
@@ -30,16 +27,16 @@ const activateOnePassifAndSave = (objectGlobal) => {
         elt.removeEventListener("click", clickPassive);
       });
       deleteComposantPassive();
-      Player.passiveBonus.push(idOnPassiveBonus);
-      iconePassiveOnMenu(Player);
-      clickOnPassifMenu();
+      pushPassiveBonus(objectGlobal, idOnPassiveBonus);
+      iconePassiveOnMenu(objectGlobal);
+      clickOnPassifMenu(objectGlobal);
       //save LOCAL
       //addAllLocalStrorage(objectGlobal);
     }
   };
 
   //event listener
-  const allBonusDiv = document.querySelectorAll(".modulePassive");
+  const allBonusDiv = document.querySelectorAll(".btnChoosePassif");
   allBonusDiv.forEach((elt) => {
     elt.addEventListener("click", clickPassive);
   });

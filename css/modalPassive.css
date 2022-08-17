@@ -3,30 +3,56 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 10px;
-    /*  modifier dans View passive composantPassive */
-    height: 50%;
-
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(var(--main-colorMap), black);
+    /* height calculate js*/
 }
 
-/* modal Passive */
-#modalPassive {
-    position: fixed;
-    z-index: 5;
-    width: 100%;
-    height: 80%;
-    background-color: var(--main-backgroundcolor);
-    gap: 10px;
+.modulePassive {
     display: flex;
+    flex: 1;
+    gap: 5px;
+    border: solid black 3px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* padding: 5px; */
-    border: 1px solid black;
 }
 
-#modalPassive img {
-    object-fit: contain;
-    height: 50%;
-    width: 50%;
+.modulePassive h2, .modulePassive button, .modulePassive p {
+    flex: 1;
+}
+
+.modulePassive img {
+    flex: 2;
+    width: 70%;
+    height: 70%;
+}
+
+
+.modulePassive h2, .modulePassive p {
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    font-size: 1rem;
+}
+
+
+.modulePassive button {
+    width: 90%;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: .375rem;
+    background-color: var(--main-colorButton);
+    margin-bottom: 10px;
+    font-family: var(--main-font);
+    color: white;
+    font-size: 1rem;
+}
+
+.modulePassive button:hover {
+    color: var(--main-colorButton);
+    background-color: white;
 }

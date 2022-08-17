@@ -21,7 +21,7 @@ const composantCampFire = (objectGlobal) => {
   const BonusDiv = component("div", { id: "bonus" }, newDiv);
   component("header", {}, BonusDiv, "Cliquer pour recuperer votre récompense");
   // img
-  const imgBonus = getHtmlCollectionImg(objectGlobal, "open-chest");
+  const imgBonus = getHtmlCollectionImg(objectGlobal, "chest");
   imgBonus.setAttribute("alt", "recuperer un bonus");
   BonusDiv.appendChild(imgBonus);
   //paragraph

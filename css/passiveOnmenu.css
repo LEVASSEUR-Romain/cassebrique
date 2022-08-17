@@ -1,22 +1,52 @@
-.modulePassive {
+/* modal Passive */
+#modalPassive {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    /* height: on js */
+    height: 80%;
+    background: linear-gradient(var(--main-colorMap), black);
+    gap: 10px;
     display: flex;
-    flex: 1;
-    z-index: 10;
-    gap: 5px;
-    border: solid black 3px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: var(--main-backgroundcolor);
 }
 
-.modulePassive h2 {
+#modalPassive img, #modalPassive div, #modalPassive p, #modalPassive h2 {
+    flex: 1;
+}
+
+#modalPassive p, #modalPassive h2 {
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    font-size: 1rem;
+
+}
+
+
+#modalPassive div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modulePassive img {
-    width: 42%;
+#modalPassive div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalPassive div p {
+    display: flex;
+    align-items: center;
+}
+
+#modalPassive img {
+    flex: 2;
+    object-fit: contain;
     height: 50%;
+    width: 50%;
 }

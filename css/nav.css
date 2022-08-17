@@ -13,8 +13,38 @@ nav {
     background: linear-gradient(black, var(--main-colorPlay) 70%);
 }
 
+/* link dans menu */
 .logoMenu {
     flex: 3;
     display: flex;
     gap: 5px;
+}
+
+#play {
+    padding: 6px
+}
+
+#play, #map {
+    flex: 1;
+}
+
+#play, #map:hover {
+    cursor: grab;
+}
+
+
+/* Passive dans menu */
+.passiveMenu {
+    flex: 7;
+    display: flex;
+    margin-right: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.passiveMenu img {
+    height: 50%;
+    width: 10%;
 }
