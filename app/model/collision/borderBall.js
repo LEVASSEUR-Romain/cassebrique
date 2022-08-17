@@ -28,7 +28,10 @@ const borderBall = (
       setLoseBall(objectGlobal, true);
       return playerLoseLife(objectGlobal);
     }
-    if (conditionTopBorder) Ball.angleDirectionY = 1;
+    if (conditionTopBorder) {
+      Ball.angleDirectionY = 1;
+      playSound(objectGlobal, "ballWall");
+    }
   }
 };
 export default borderBall;

@@ -2,7 +2,7 @@ import bossBall from "../bossBall.js";
 import objectUpBottomLeftRightBall from "../toolsCollision/objectUpBottomLeftRightBall.js";
 const bossAllBall = (objectGlobal) => {
   //destructuring
-  const { Ball, canvasPlay, Boss } = objectGlobal;
+  const { Ball, canvasPlay, Boss, htmlCollectionSound } = objectGlobal;
   Ball.forEach((element) => {
     // tchek other borderBottomBall
     const { ballXLeft, ballXRight, ballYTop, ballYBottom } =
@@ -12,6 +12,7 @@ const bossAllBall = (objectGlobal) => {
       Boss: Boss,
       canvasPlay: canvasPlay,
       Ball: element,
+      htmlCollectionSound: htmlCollectionSound,
     };
     bossBall(send, ballXLeft, ballXRight, ballYTop, ballYBottom);
   });

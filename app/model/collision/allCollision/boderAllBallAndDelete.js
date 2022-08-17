@@ -27,7 +27,10 @@ const boderAllBallAndDelete = (objectGlobal) => {
         // perdu
         return playerLoseLife(objectGlobal);
       }
-      if (conditionTopBorder) element.angleDirectionY = 1;
+      if (conditionTopBorder) {
+        playSound(objectGlobal, "ballWall");
+        element.angleDirectionY = 1;
+      }
     }
   });
 };

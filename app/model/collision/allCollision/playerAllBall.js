@@ -2,7 +2,7 @@ import playerBall from "./../playerBall.js";
 import objectUpBottomLeftRightBall from "../toolsCollision/objectUpBottomLeftRightBall.js";
 const playerAllBall = (objectGlobal) => {
   //destructuring
-  const { Ball, canvasPlay, Player } = objectGlobal;
+  const { Ball, canvasPlay, Player, htmlCollectionSound } = objectGlobal;
   Ball.forEach((element) => {
     // tchek other borderBottomBall
     const { ballXLeft, ballXRight, ballYTop, ballYBottom } =
@@ -12,6 +12,7 @@ const playerAllBall = (objectGlobal) => {
       Player: Player,
       canvasPlay: canvasPlay,
       Ball: element,
+      htmlCollectionSound: htmlCollectionSound,
     };
     playerBall(send, ballXLeft, ballXRight, ballYTop, ballYBottom);
   });
