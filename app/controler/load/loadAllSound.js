@@ -9,6 +9,7 @@ const loadAllSound = async () => {
     "boss2Ball.mp3",
     "boss3Boom.mp3",
     "ballBrik.mp3",
+    "victoire.mp3",
   ];
   const listSoundHtml = [];
   const nbSound = listSound.length;

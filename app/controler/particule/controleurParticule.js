@@ -8,11 +8,7 @@
 import littleParticule from "../../model/particule/littleParticule.js";
 import bigParticule from "../../model/particule/bigParticule.js";
 const controleurParticule = (objectGlobal, objectCollision, type) => {
-  console.log(objectGlobal, objectCollision, type);
   if (type === "boss") {
-    /*     if (objectCollision.life === 1) {
-      //grosse explosision fenetre?
-    } */
     if (objectCollision.life > 1) {
       littleParticule(objectGlobal, objectCollision, type);
     }

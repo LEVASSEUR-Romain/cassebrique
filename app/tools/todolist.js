@@ -1,5 +1,3 @@
-// animation : boss brick
-
 // bug sur tel
 // Win final fin de la carte
 // debug local Storage

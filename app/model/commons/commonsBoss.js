@@ -6,7 +6,7 @@ const commonsBoss = {
     y: 0,
     width: 15, //%
     height: 5, //%
-    life: 20,
+    life: 15,
     color: "#2F8802", //%
     colorShooter: "black",
     widthShooter: 2, //%
@@ -25,12 +25,12 @@ const commonsBoss = {
     y: 0,
     width: 15, //%
     height: 5, //%
-    life: 4, // default 8
+    life: 5, // default 6
     color: "#ae8781",
     speed: 0.8, // %
     move: "left",
     // add ball
-    frameAddBall: 125, // modulo
+    frameAddBall: 200, // modulo
     borderHeightSpamBall: 5, //%
   },
   boss3: {
@@ -40,7 +40,7 @@ const commonsBoss = {
     y: 0, // defaut start
     width: 3, //%
     height: 20, //%
-    life: 1, // 5 par default
+    life: 5, // 5 par default
     color: "#FFD300",
     borderMaxBottom: 30, //%
     speed: 0.5, // %

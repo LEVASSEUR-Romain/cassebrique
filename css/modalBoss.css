@@ -14,6 +14,10 @@
     color: white;
 }
 
+#boss canvas {
+    max-width: 300px;
+}
+
 #boss h1, #boss h2 {
     flex: 1;
 }
@@ -36,6 +40,7 @@
     display: flex;
     gap: 10px;
     width: 90%;
+    justify-content: center;
 }
 
 .describeBoss canvas {
