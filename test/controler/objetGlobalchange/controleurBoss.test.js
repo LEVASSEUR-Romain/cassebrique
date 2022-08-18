@@ -17,6 +17,10 @@ test("setBoss", () => {
 });
 
 test("bossLoseLife", () => {
+  const createElement = document.createElement("div");
+  createElement.setAttribute("id", "bossLifeText");
+  document.body.appendChild(createElement);
+  // change affichage
   const boss = {
     life: 5,
   };

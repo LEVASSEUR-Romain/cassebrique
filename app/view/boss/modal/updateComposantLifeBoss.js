@@ -14,7 +14,6 @@ const updateComposantLifeBoss = (life) => {
     content += "💗";
     lifeTotal -= 1;
   }
-
   divLife.textContent = content;
 };
 export default updateComposantLifeBoss;

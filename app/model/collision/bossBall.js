@@ -1,14 +1,22 @@
 import { bossLoseLife } from "../../controler/objetGlobalchange/controleurBoss.js";
 import playSound from "../../controler/sound/playSound.js";
+import controleurParticule from "../../controler/particule/controleurParticule.js";
 const bossBall = (
   objectGlobal,
   ballXLeft,
   ballXRight,
   ballYTop,
-  ballYBottom
+  ballYBottom,
+  itemBall = null
 ) => {
   //const
-  const { Ball, Boss, canvasPlay } = objectGlobal;
+  let Ball = {};
+  if (itemBall === null) {
+    Ball = objectGlobal.Ball;
+  } else {
+    Ball = itemBall;
+  }
+  const { Boss, canvasPlay } = objectGlobal;
   const BossWidth = (Boss.width * canvasPlay.width) / 100;
   const BossHeight = (Boss.height * canvasPlay.height) / 100;
   if (
@@ -19,6 +27,7 @@ const bossBall = (
   ) {
     // ball vers le haut
     Ball.angleDirectionY = 1;
+    controleurParticule(objectGlobal, Boss, "boss");
     playSound(objectGlobal, "ballBoss");
     bossLoseLife(Boss);
   }

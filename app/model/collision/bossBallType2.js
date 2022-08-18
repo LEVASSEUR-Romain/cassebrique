@@ -1,5 +1,6 @@
 import { bossLoseLife } from "../../controler/objetGlobalchange/controleurBoss.js";
 import playSound from "../../controler/sound/playSound.js";
+import controleurParticule from "../../controler/particule/controleurParticule.js";
 const bossBallType2 = (
   objectGlobal,
   ballXLeft,
@@ -18,6 +19,7 @@ const bossBallType2 = (
     ballYTop < Boss.y + BossHeight
   ) {
     playSound(objectGlobal, "ballBoss");
+    controleurParticule(objectGlobal, Boss, "boss");
     // ball up
     Ball.angleDirectionY = -Ball.angleDirectionY;
     // axe

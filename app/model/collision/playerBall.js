@@ -4,9 +4,16 @@ const playerBall = (
   ballXLeft,
   ballXRight,
   ballYTop,
-  ballYBottom
+  ballYBottom,
+  itemBall = null
 ) => {
-  const { Ball, Player, canvasPlay } = objectGlobal;
+  let Ball = {};
+  if (itemBall === null) {
+    Ball = objectGlobal.Ball;
+  } else {
+    Ball = itemBall;
+  }
+  const { Player, canvasPlay } = objectGlobal;
   //const
   const playerWidth = (Player.width * canvasPlay.width) / 100;
   if (

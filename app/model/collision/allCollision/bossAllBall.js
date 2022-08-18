@@ -8,13 +8,20 @@ const bossAllBall = (objectGlobal) => {
     const { ballXLeft, ballXRight, ballYTop, ballYBottom } =
       objectUpBottomLeftRightBall(element, canvasPlay);
     // send pointer
-    const send = {
+    /*     const send = {
       Boss: Boss,
       canvasPlay: canvasPlay,
       Ball: element,
       htmlCollectionSound: htmlCollectionSound,
-    };
-    bossBall(send, ballXLeft, ballXRight, ballYTop, ballYBottom);
+    }; */
+    bossBall(
+      objectGlobal,
+      ballXLeft,
+      ballXRight,
+      ballYTop,
+      ballYBottom,
+      element
+    );
   });
 };
 export default bossAllBall;

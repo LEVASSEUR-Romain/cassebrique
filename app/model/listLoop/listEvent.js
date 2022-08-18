@@ -3,12 +3,13 @@ import moveBall from "../loopGamingModel/moveBall.js";
 import restartLoseLife from "../loopGamingModel/restartLoseLife.js";
 import defaultWin from "../loopGamingModel/defaultWin.js";
 import loseLvl from "../loopGamingModel/loseLvl.js";
-
+import particule from "../loopGamingModel/particule.js";
 export const listEventDefault = [
   moveBall,
   restartLoseLife,
   defaultWin,
   loseLvl,
+  particule,
 ];
 //tools boss
 import winBoss from "../loopGamingModel/boss/winBoss.js";
@@ -23,6 +24,7 @@ export const listeEventBoss1 = [
   loseLvl,
   winBoss,
   restartBoss1,
+  particule,
 ];
 // boss 2
 import boss2 from "../loopGamingModel/boss/boss2/boss2.js";
@@ -34,6 +36,7 @@ export const listeEventBoss2 = [
   loseLvl,
   winBoss,
   restartBoss2,
+  particule,
 ];
 
 //boss 3
@@ -45,4 +48,5 @@ export const listeEventBoss3 = [
   loseLvl,
   winBoss,
   restartBoss3,
+  particule,
 ];

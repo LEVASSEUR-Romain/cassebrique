@@ -8,13 +8,20 @@ const playerAllBall = (objectGlobal) => {
     const { ballXLeft, ballXRight, ballYTop, ballYBottom } =
       objectUpBottomLeftRightBall(element, canvasPlay);
     // send pointer
-    const send = {
+    /*     const send = {
       Player: Player,
       canvasPlay: canvasPlay,
       Ball: element,
       htmlCollectionSound: htmlCollectionSound,
-    };
-    playerBall(send, ballXLeft, ballXRight, ballYTop, ballYBottom);
+    }; */
+    playerBall(
+      objectGlobal,
+      ballXLeft,
+      ballXRight,
+      ballYTop,
+      ballYBottom,
+      element
+    );
   });
 };
 export default playerAllBall;

@@ -60,6 +60,9 @@ const Commons = {
   // game
   gameSpeedMillisecond: 30,
   gameSpeedCollisionBorder: 0.5,
+  // particumle
+  widthParticule: 2, //%
+  heightParticule: 2, //%
   // map
   backgroundMap: "white",
   borderMapTopBottom: 5, //%

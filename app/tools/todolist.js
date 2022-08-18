@@ -1,4 +1,3 @@
-//son
 // animation : boss brick
 
 // bug sur tel

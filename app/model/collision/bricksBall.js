@@ -1,5 +1,6 @@
 import tuchBrick from "./toolsCollision/tuchBrick.js";
 import playSound from "../../controler/sound/playSound.js";
+import controleurParticule from "../../controler/particule/controleurParticule.js";
 const bricksBall = (
   objectGlobal,
   ballXLeft,
@@ -20,6 +21,7 @@ const bricksBall = (
       ballYTop < brick.y + birckHeight
     ) {
       playSound(objectGlobal, "ballBrik");
+      controleurParticule(objectGlobal, brick, "brik");
       Ball.angleDirectionY = -Ball.angleDirectionY;
       tuchBrick(Briks, Briks.indexOf(brick));
     }
