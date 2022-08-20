@@ -8,13 +8,13 @@ import { removeAllDraw } from "../objetGlobalchange/controleurListDraw.js";
 const makeCreateLvl = (objectGlobal, difficult) => {
   // create level
   //deBug
-  objectGlobal.leveling = [
+  /*   objectGlobal.leveling = [
     {
       bricks: 1,
       numberBricks: 1,
     },
-  ];
-  //objectGlobal.leveling = generateMapByDiffucult(difficult);
+  ]; */
+  objectGlobal.leveling = generateMapByDiffucult(difficult);
   objectGlobal.Briks = positionInLevelBrick(
     objectGlobal.leveling,
     objectGlobal.Commons

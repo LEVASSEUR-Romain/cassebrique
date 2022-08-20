@@ -92,11 +92,9 @@ const objectGlobal = {
   itemMapLinks: itemMapLinks,
   Commons: commons,
   listDraw: listDraw,
-  listEvent: [],
   htmlCollectionImg: listImg,
   htmlCollectionSound: listSound,
 };
-
 main(objectGlobal);
 
 //console.log(JSON.stringify(itemMapPosition));

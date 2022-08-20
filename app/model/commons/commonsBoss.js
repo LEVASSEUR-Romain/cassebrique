@@ -25,7 +25,7 @@ const commonsBoss = {
     y: 0,
     width: 15, //%
     height: 5, //%
-    life: 1, // default 5
+    life: 5, // default 5
     color: "#ae8781",
     speed: 0.8, // %
     move: "left",

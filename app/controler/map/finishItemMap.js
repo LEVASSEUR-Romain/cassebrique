@@ -1,3 +1,5 @@
+import isFinishMap from "./isFinishMap.js";
+import componantWinFinal from "../../view/winFinal/componantWinFinal.js";
 const finishItemMap = (objectGlobal) => {
   const id = objectGlobal.Player.currentIdLvl;
   const itemMapPosition = objectGlobal.itemMapPosition;
@@ -8,6 +10,7 @@ const finishItemMap = (objectGlobal) => {
   }
   if (findId !== undefined) {
     findId.finish = true;
+    if (isFinishMap(objectGlobal)) componantWinFinal(objectGlobal);
   }
 };
 export default finishItemMap;

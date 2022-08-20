@@ -3,7 +3,12 @@ const eventPointerDown = (e, objectGlobal) => {
   // add Event move
   addEventPointerMove(objectGlobal);
   //add start in global
-  objectGlobal.postionInitX = e.clientX;
-  objectGlobal.positionInitY = e.clientY;
+  if (e.type === "mousedown") {
+    objectGlobal.postionInitX = e.clientX;
+    objectGlobal.positionInitY = e.clientY;
+  } else {
+    objectGlobal.postionInitX = e.touches[0].clientX;
+    objectGlobal.positionInitY = e.touches[0].clientY;
+  }
 };
 export default eventPointerDown;

@@ -3,6 +3,12 @@ const eventPointerMove = (e, objectGlobal) => {
   // if event goes out of the map
   // removelister , deleteStart
   //destruct
+  let eventX;
+  if (e.type === "mousemove") {
+    eventX = e.clientX;
+  } else {
+    eventX = e.touches[0].clientX;
+  }
   const { Player, Ball, start, canvasPlay, Commons } = objectGlobal;
   let ball;
   // boss 2 multiBall
@@ -25,7 +31,7 @@ const eventPointerMove = (e, objectGlobal) => {
   //speed
   const speed = (Player.speed * canvasPlay.width) / 100;
   // move Player
-  const direction = e.clientX - playerWidthCalcul / 2; // pointer position corresponds to half of the bar
+  const direction = eventX - playerWidthCalcul / 2; // pointer position corresponds to half of the bar
   // ->
   if (direction > Player.x) {
     Player.x =
