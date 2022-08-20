@@ -8,6 +8,7 @@ import controlerBoss from "./../boss/controlerBoss.js";
 import isMapClickEventInterrogation from "../map/isMapClickEventInterrogation.js";
 import drawAllMap from "../../view/drawAllMap.js";
 import composantInterrogation from "../../view/map/modal/composantInterrogation.js";
+import setLastClickLvl from "./../objetGlobalchange/setLastClickLvl.js";
 const clickMapCheck = (e, objectGlobal) => {
   const { canvasPlay, canvasMap, itemMapInterrogation } = objectGlobal;
 
@@ -15,6 +16,8 @@ const clickMapCheck = (e, objectGlobal) => {
     const elementClick = mapClickEventMount(e, objectGlobal);
     if (elementClick !== false) {
       if (elementClick.type === "camp") {
+        // no combat
+        setLastClickLvl(objectGlobal, false);
         composantCampFire(objectGlobal);
         onModalCampFire(objectGlobal);
       } else if (elementClick.type === "boss") {

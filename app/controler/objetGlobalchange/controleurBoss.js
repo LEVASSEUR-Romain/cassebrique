@@ -2,7 +2,7 @@ import commonsBoss from "../../model/commons/commonsBoss.js";
 
 export const setBoss = (objectGlobal, nbr) => {
   const add = commonsBoss["boss" + nbr];
-  objectGlobal.Boss = add;
+  objectGlobal.Boss = { ...add };
 };
 
 import controlerBossLife from "../boss/controlerBossLife.js";

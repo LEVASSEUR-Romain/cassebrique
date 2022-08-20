@@ -3,9 +3,16 @@ const eventPointerMove = (e, objectGlobal) => {
   // if event goes out of the map
   // removelister , deleteStart
   //destruct
-  const { Player, Ball, start, canvasPlay } = objectGlobal;
+  const { Player, Ball, start, canvasPlay, Commons } = objectGlobal;
+  let ball;
   // boss 2 multiBall
-  const ball = Array.isArray(Ball) ? Ball[0] : Ball;
+  if (Array.isArray(Ball) && Ball.length !== 0) {
+    ball = Ball[0];
+  } else if (Array.isArray(Ball) && Ball.length !== 0) {
+    ball = { ...Commons.BallDefault };
+  } else {
+    ball = Ball;
+  }
   const playerWidthCalcul = (Player.width * canvasPlay.width) / 100;
   // <- move min
   const moveMin =

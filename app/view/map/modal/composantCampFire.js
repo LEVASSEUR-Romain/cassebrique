@@ -1,7 +1,7 @@
 import getHtmlCollectionImg from "../../../controler/objetGlobalchange/getHtmlCollectionImg.js";
 import component from "../../tools/component.js";
 const composantCampFire = (objectGlobal) => {
-  const { Commons } = objectGlobal;
+  const { Commons, Player } = objectGlobal;
   const height = "height:" + (100 - Commons.borderMenu) + "%";
   const newDiv = component(
     "div",
@@ -16,6 +16,17 @@ const composantCampFire = (objectGlobal) => {
   img.setAttribute("alt", "recuperer la vie");
   regenDiv.appendChild(img);
   component("p", {}, regenDiv, "Vous recuperez tous vos points de vie");
+  component(
+    "p",
+    {},
+    regenDiv,
+    "Vous avez " +
+      Player.life +
+      " " +
+      " / " +
+      Commons.PlayerDefault.life +
+      " vie"
+  );
 
   //                         Modal bonus
   const BonusDiv = component("div", { id: "bonus" }, newDiv);

@@ -2,7 +2,7 @@ import { addBallOnArray } from "../../../../controler/objetGlobalchange/constrol
 import playSound from "../../../../controler/sound/playSound.js";
 const boss2 = (objectGlobal) => {
   // go left and right
-  const { Boss, canvasPlay, Commons } = objectGlobal;
+  const { Boss, canvasPlay, Commons, Ball } = objectGlobal;
   const speedBoss = (Boss.speed * canvasPlay.width) / 100;
   const bossWidth = (Boss.width * canvasPlay.width) / 100;
   if (Boss.move === "left") {
@@ -18,7 +18,7 @@ const boss2 = (objectGlobal) => {
   }
   // create Ball
   Boss.frame = Boss.frame === undefined ? 1 : Boss.frame + 1;
-  if (Boss.frame % Boss.frameAddBall === 0) {
+  if (Boss.frame % Boss.frameAddBall === 0 && Ball.length < Boss.maxBall) {
     // add Ball
     // create ball no lose life
     const heightBoss =

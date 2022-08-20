@@ -22,3 +22,8 @@ export const setPositioMapPlayer = (objectGlobal, elementCible) => {
 export const pushPassiveBonus = (objectGlobal, id) => {
   objectGlobal.Player.passiveBonus.push(id);
 };
+
+export const playerFullLife = (objectGlobal) => {
+  objectGlobal.Player.life = objectGlobal.Commons.PlayerDefault.life;
+  objectGlobal.Player.width = objectGlobal.Commons.PlayerDefault.width;
+};

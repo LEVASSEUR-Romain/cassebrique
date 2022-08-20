@@ -3,7 +3,6 @@ import floatRandom from "../../tools/floatRandom.js";
 import { addParticule } from "../../controler/objetGlobalchange/controleurParticule.js";
 const littleParticule = (objectGlobal, objectCollision, type) => {
   //const
-  console.log(objectGlobal);
   const minimumParticule = 8;
   const maxParticule = 15;
   const widthParticule = objectGlobal.Commons.widthParticule;

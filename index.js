@@ -96,7 +96,7 @@ const objectGlobal = {
   htmlCollectionImg: listImg,
   htmlCollectionSound: listSound,
 };
-console.log(objectGlobal);
+
 main(objectGlobal);
 
 //console.log(JSON.stringify(itemMapPosition));
