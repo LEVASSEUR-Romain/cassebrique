@@ -2,7 +2,7 @@ const commonsPassive = [
   {
     id: 1,
     name: "Bonus vie",
-    description: "le joueur gange +1 vie maximum",
+    description: "le joueur gagne +1 vie maximum",
     image: "playerlife",
     effect: (player, ball = 0, Commons = 0) => {
       Commons.PlayerDefault.life += 1;
@@ -11,8 +11,8 @@ const commonsPassive = [
   },
   {
     id: 2,
-    name: "Raquette largueur augmenter",
-    description: "vous gagnez +5% largueur",
+    name: "Raquette largeur augmente",
+    description: "vous gagnez +5% largeur",
     image: "passiflargeur",
     effect: (player, ball = 0, Commons = 0) => {
       player.width = player.width * 1.05;
@@ -21,7 +21,7 @@ const commonsPassive = [
   },
   {
     id: 3,
-    name: "Raquette hauteur augmenter",
+    name: "Raquette hauteur augmente",
     description: "vous gagnez +5% hauteur",
     image: "passifhauteur",
     effect: (player, ball = 0, Commons = 0) => {
@@ -31,7 +31,7 @@ const commonsPassive = [
   },
   {
     id: 4,
-    name: "Rayon de la ball",
+    name: "Rayon de la balle",
     description: "vous gagnez +5% rayon",
     image: "passifradius",
     effect: (player = 0, ball, Commons = 0) => {
@@ -41,7 +41,7 @@ const commonsPassive = [
   },
   {
     id: 5,
-    name: "Vitesse de la ball",
+    name: "Vitesse de la balle",
     description: "vous gagnez -5% vitesse",
     image: "passifballslow",
     effect: (player = 0, ball, Commons = 0) => {
@@ -51,8 +51,8 @@ const commonsPassive = [
   },
   {
     id: 6,
-    name: "Vitesse général",
-    description: "la vitesse du jeu est ralenti de -2%",
+    name: "Vitesse générale",
+    description: "la vitesse du jeu est ralentie de -2%",
     image: "passifslow",
     effect: (player = 0, ball = 0, Commons) => {
       Commons.gameSpeedMillisecond = Commons.gameSpeedMillisecond * 0.98;
@@ -60,8 +60,8 @@ const commonsPassive = [
   },
   {
     id: 7,
-    name: "Bonus personnage taille, ball rayon",
-    description: "vous gagnez +2.5% taille ainsi que votre ball",
+    name: "Bonus personnage taille, balle rayon",
+    description: "vous gagnez +2.5% taille ainsi que votre balle",
     image: "passifupall",
     effect: (player, ball, Commons = 0) => {
       player.width = player.width * 1.025;

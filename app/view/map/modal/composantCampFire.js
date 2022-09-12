@@ -10,12 +10,12 @@ const composantCampFire = (objectGlobal) => {
   );
   //                    modal regen
   const regenDiv = component("div", { id: "regen" }, newDiv);
-  component("header", {}, regenDiv, "Cliquer pour recuperer votre récompense");
+  component("header", {}, regenDiv, "Cliquer pour récupérer votre récompense");
   // img
   const img = getHtmlCollectionImg(objectGlobal, "campfiresleep");
-  img.setAttribute("alt", "recuperer la vie");
+  img.setAttribute("alt", "récupérez la vie");
   regenDiv.appendChild(img);
-  component("p", {}, regenDiv, "Vous recuperez tous vos points de vie");
+  component("p", {}, regenDiv, "Vous récupérez tous vos points de vie");
   component(
     "p",
     {},
@@ -30,12 +30,12 @@ const composantCampFire = (objectGlobal) => {
 
   //                         Modal bonus
   const BonusDiv = component("div", { id: "bonus" }, newDiv);
-  component("header", {}, BonusDiv, "Cliquer pour recuperer votre récompense");
+  component("header", {}, BonusDiv, "Cliquer pour récupérer votre récompense");
   // img
   const imgBonus = getHtmlCollectionImg(objectGlobal, "chest");
-  imgBonus.setAttribute("alt", "recuperer un bonus");
+  imgBonus.setAttribute("alt", "récupérer un bonus");
   BonusDiv.appendChild(imgBonus);
   //paragraph
-  component("p", {}, BonusDiv, "Vous recuperez un bonus");
+  component("p", {}, BonusDiv, "Vous récupérez un bonus");
 };
 export default composantCampFire;

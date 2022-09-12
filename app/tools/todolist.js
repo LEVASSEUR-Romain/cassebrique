@@ -1,4 +1,3 @@
-// bug sur tel
 // debug local Storage
 // map dans objet global utilité??
 

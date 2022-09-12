@@ -50,7 +50,7 @@ const composantInterrogation = (objectGlobal) => {
     { px: 50, py: 50 },
     { ctx: ctxMob, canvas: canvasMob, radius: widthCanvas / 2 }
   );
-  component("p", {}, liMob, "Niveau casse brique");
+  component("p", {}, liMob, "Niveau casse briques");
   //campfire
   const liCamp = component("li", {}, ul);
   const canvasCamp = component(
@@ -116,6 +116,6 @@ const composantInterrogation = (objectGlobal) => {
     widthCanvas,
     heightCanvas
   );
-  component("p", {}, liLife, "Votre nombre de point de vie");
+  component("p", {}, liLife, "Votre nombre de points de vie");
 };
 export default composantInterrogation;

@@ -3,7 +3,7 @@ import component from "../tools/component.js";
 const componantWinFinal = () => {
   const addDiv = component("div", { id: "win" }, document.body);
 
-  const header = component("header", {}, addDiv, "Vous avez gagner");
+  const header = component("header", {}, addDiv, "Vous avez gagné");
   const logo = component("h2", {}, addDiv, "😁");
   const describe = component(
     "p",
