@@ -1,5 +1,5 @@
-## casse brique rogue like
+# casse brique rogue like
 
-# vous demarez en bas de la carte
+## vous demarez en bas de la carte
 
-liens : cinequiz.fb.free.fr/project/cassebrick/
+liens : http://cinequiz.fb.free.fr/project/cassebrick/
